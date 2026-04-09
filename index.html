@@ -2184,39 +2184,21 @@
         }
 
         // Visitor Counter Animation
-        function animateVisitorCounter() {
-            const counterElement = document.getElementById('visitorCountDisplay');
-            if (!counterElement) return;
-            
-            const targetCount = 150;
-            let currentCount = 0;
-            const duration = 2000;
-            const increment = targetCount / (duration / 16);
-            
-            function updateCounter() {
-                currentCount += increment;
-                if (currentCount < targetCount) {
-                    counterElement.textContent = Math.floor(currentCount);
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    counterElement.textContent = targetCount + '+';
-                }
-            }
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        updateCounter();
-                        observer.disconnect();
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            const visitorSection = document.querySelector('.visitor-section');
-            if (visitorSection) {
-                observer.observe(visitorSection);
-            }
+        fetch("https://api.countapi.xyz/hit/alaguvel-portfolio/visits")
+.then(function(response) {
+    return response.json();
+})
+.then(function(data) {
+    let count = 0;
+    let target = data.value;
+    let interval = setInterval(function() {
+        count++;
+        document.getElementById("visitorCountDisplay").innerText = count;
+        if (count >= target) {
+            clearInterval(interval);
         }
+    }, 20);
+});
 
         // Parallax Effect
         window.addEventListener('scroll', () => {
