@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Open Graph Meta Tags for LinkedIn Preview -->
+    
+    <!-- Open Graph Meta Tags for LinkedIn Preview -->
     <meta property="og:title" content="Alaguvel A. - Python Full Stack Developer Portfolio">
     <meta property="og:description" content="Final Year ECE Student | Python Full Stack Developer Intern @ BDreamz Technologies">
     <meta property="og:image" content="https://alaguvel2410.github.io/portfolio-preview.png">
     <meta property="og:url" content="https://alaguvel2410.github.io/">
     <meta property="og:type" content="website">
+    
     <title>👨‍💻 My Portfolio 🚀 </title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -269,9 +271,6 @@
             text-transform: uppercase;
         }
 
-        /* ============================================
-           EXPERIENCE & EDUCATION - FIXED SECTION
-           ============================================ */
         .exp-edu-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -316,12 +315,11 @@
             background-clip: text;
         }
 
-        /* FIXED: Added padding-top to prevent status badge overlap */
         .exp-edu-card {
             background: white;
             border-radius: 15px;
             padding: 20px;
-            padding-top: 45px; /* Space for absolute positioned status badge */
+            padding-top: 45px;
             margin-bottom: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
@@ -362,13 +360,11 @@
             font-size: 1.3rem;
         }
 
-        /* FIXED: Added min-width and word-wrap properties */
         .exp-edu-info {
             flex: 1;
-            min-width: 0; /* Allows text to wrap properly in flex container */
+            min-width: 0;
         }
 
-        /* FIXED: Added word-wrap for long titles */
         .exp-edu-info h4 {
             color: #333;
             font-size: 1.05rem;
@@ -426,7 +422,6 @@
             font-size: 0.75rem;
         }
 
-        /* Status badge - positioned absolute */
         .exp-edu-status {
             position: absolute;
             top: 12px;
@@ -450,7 +445,6 @@
             color: #666;
         }
 
-        /* FIXED: Score badge positioning */
         .exp-edu-score {
             display: inline-flex;
             align-items: center;
@@ -465,7 +459,6 @@
             margin-left: 0;
         }
 
-        /* Training/Course specific cards */
         .exp-card.training {
             border-left-color: #4CAF50;
         }
@@ -478,7 +471,6 @@
             background: linear-gradient(135deg, #4CAF50, #45a049);
         }
 
-        /* Education specific cards */
         .edu-card.school {
             border-left-color: #FF9800;
         }
@@ -491,7 +483,6 @@
             background: linear-gradient(135deg, #FF9800, #F57C00);
         }
 
-        /* Responsive - FIXED for mobile */
         @media (max-width: 900px) {
             .exp-edu-container {
                 grid-template-columns: 1fr;
@@ -504,7 +495,6 @@
                 align-items: flex-start;
             }
 
-            /* On mobile, make status badge static instead of absolute */
             .exp-edu-status {
                 position: static;
                 margin-bottom: 10px;
@@ -512,13 +502,9 @@
             }
 
             .exp-edu-card {
-                padding-top: 20px; /* Reset top padding since badge is static */
+                padding-top: 20px;
             }
         }
-
-        /* ============================================
-           END OF FIXED SECTION
-           ============================================ */
 
         .quote {
             font-size: 1.3rem;
@@ -547,7 +533,6 @@
             text-align: center;
         }
 
-        /* Hobbies Section */
         .hobbies-container {
             display: flex;
             justify-content: center;
@@ -575,7 +560,6 @@
             transform: translateY(-8px) scale(1.05);
         }
 
-        /* Tools Section */
         .tools-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -652,7 +636,6 @@
             color: #666;
         }
 
-        /* Achievements Section */
         .achievements-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -715,7 +698,6 @@
             display: inline-block;
         }
 
-        /* GitHub Stats */
         .github-stats {
             margin-top: 25px;
             text-align: center;
@@ -794,7 +776,6 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.2);
         }
 
-        /* Visitor Counter */
         .visitor-section {
             background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
             border-radius: 15px;
@@ -862,7 +843,6 @@
             margin-top: 15px;
         }
 
-        /* Fixed Social Icons */
         .fixed-social-icons {
             position: fixed;
             bottom: 30px;
@@ -910,7 +890,6 @@
             box-shadow: 0 8px 25px rgba(10, 102, 194, 0.5);
         }
 
-        /* Scroll Animations */
         .animate-on-scroll {
             opacity: 0;
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1061,11 +1040,9 @@
     </style>
 </head>
 <body>
-    <!-- Scroll Progress Bar -->
     <div class="scroll-progress" id="scrollProgress"></div>
 
     <div class="container">
-        <!-- Hero Section -->
         <header>
             <h1 class="hero-name">Alaguvel A.</h1>
             <p class="hero-subtitle">Final Year ECE Student | Python Full Stack Developer Intern</p>
@@ -1083,7 +1060,6 @@
             </div>
         </header>
 
-        <!-- Achievements Section -->
         <section class="section animate-on-scroll fade-down" data-animation="fade-down">
             <h2><i class="fas fa-trophy"></i> Achievements</h2>
             <div class="achievements-grid">
@@ -1109,7 +1085,6 @@
                 </div>
             </div>
 
-            <!-- GitHub Stats -->
             <div class="github-stats stagger-item delay-5">
                 <h3 style="color: #764ba2; margin-bottom: 15px;"><i class="fab fa-github"></i> GitHub Statistics</h3>
                 
@@ -1146,7 +1121,6 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
         <section class="section animate-on-scroll fade-up" data-animation="fade-up">
             <h2><i class="fas fa-graduation-cap"></i> Course Progress</h2>
             <div class="skills-grid">
@@ -1188,7 +1162,6 @@
             </div>
         </section>
 
-        <!-- Tools Section -->
         <section class="section animate-on-scroll slide-left" data-animation="slide-left">
             <h2><i class="fas fa-tools"></i> Tools I Use</h2>
             <div class="tools-grid">
@@ -1230,7 +1203,6 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
         <section class="section animate-on-scroll slide-right" data-animation="slide-right">
             <h2><i class="fas fa-project-diagram"></i> Projects</h2>
             <div class="projects-grid">
@@ -1258,17 +1230,14 @@
             </div>
         </section>
 
-        <!-- Experience & Education Section -->
         <section class="section animate-on-scroll fade-up" data-animation="fade-up">
             <h2><i class="fas fa-user-graduate"></i> Experience & Education</h2>
             
             <div class="exp-edu-container">
                 
-                <!-- Experience Column -->
                 <div class="exp-edu-column stagger-item delay-1">
                     <h3><i class="fas fa-briefcase"></i> Experience</h3>
                     
-                    <!-- Experience 1: BDreamz Technologies -->
                     <div class="exp-edu-card stagger-item delay-2">
                         <span class="exp-edu-status status-current">Current</span>
                         <div class="exp-edu-card-header">
@@ -1284,7 +1253,6 @@
                         <span class="exp-edu-date"><i class="fas fa-calendar-alt"></i> 2025 - Present</span>
                     </div>
 
-                    <!-- Experience 2: IT Desk - Python Basics -->
                     <div class="exp-edu-card exp-card training stagger-item delay-3">
                         <span class="exp-edu-status status-completed">Completed</span>
                         <div class="exp-edu-card-header">
@@ -1302,11 +1270,9 @@
                     </div>
                 </div>
 
-                <!-- Education Column -->
                 <div class="exp-edu-column stagger-item delay-2">
                     <h3><i class="fas fa-graduation-cap"></i> Education</h3>
                     
-                    <!-- B.E. Degree -->
                     <div class="exp-edu-card stagger-item delay-3">
                         <span class="exp-edu-status status-current">Pursuing</span>
                         <div class="exp-edu-card-header">
@@ -1322,7 +1288,6 @@
                         <span class="exp-edu-date"><i class="fas fa-calendar-alt"></i> Nov 2022 - Present (Final Year)</span>
                     </div>
 
-                    <!-- HSC -->
                     <div class="exp-edu-card edu-card school stagger-item delay-4">
                         <span class="exp-edu-status status-completed">Completed</span>
                         <div class="exp-edu-card-header">
@@ -1337,7 +1302,6 @@
                         <span class="exp-edu-date"><i class="fas fa-calendar-alt"></i> 2021 - 2022</span>
                     </div>
 
-                    <!-- SSLC -->
                     <div class="exp-edu-card edu-card school stagger-item delay-5">
                         <span class="exp-edu-status status-completed">Completed</span>
                         <div class="exp-edu-card-header">
@@ -1356,7 +1320,6 @@
             </div>
         </section>
 
-        <!-- Goals Section -->
         <section class="section animate-on-scroll zoom-in" data-animation="zoom-in">
             <h2><i class="fas fa-bullseye"></i> Goals</h2>
             <div class="goals">
@@ -1371,7 +1334,6 @@
             </div>
         </section>
 
-        <!-- Hobbies Section -->
         <section class="section animate-on-scroll flip-in" data-animation="flip-in">
             <div class="quote stagger-item delay-1">
                 "The beautiful thing about learning is that nobody can take it away from you."
@@ -1391,7 +1353,7 @@
                 </div>
             </div>
 
-            <!-- Visitor Counter -->
+            <!-- FIXED: Removed the "Counter activates when published online" text -->
             <div class="visitor-section stagger-item delay-4">
                 <div class="visitor-counter">
                     <div class="visitor-icon">
@@ -1406,15 +1368,11 @@
                     </div>
                 </div>
                 <p class="visitor-text">Thanks for visiting my portfolio! 🙏</p>
-                <p style="font-size: 0.85rem; color: #999; margin-top: 5px;">
-                    <i class="fas fa-info-circle"></i> Counter activates when published online
-                </p>
             </div>
         </section>
 
     </div>
 
-    <!-- Fixed Social Icons -->
     <div class="fixed-social-icons">
         <a href="https://github.com/Alaguvel2410" target="_blank" class="fixed-social-btn github-btn" title="GitHub">
             <i class="fab fa-github"></i>
@@ -1424,9 +1382,7 @@
         </a>
     </div>
 
-    <!-- JavaScript -->
     <script>
-        // Scroll Progress Bar
         window.addEventListener('scroll', () => {
             const scrollProgress = document.getElementById('scrollProgress');
             const scrollTop = window.scrollY;
@@ -1435,7 +1391,6 @@
             scrollProgress.style.width = scrollPercent + '%';
         });
 
-        // Handle Image Errors
         let failedImages = 0;
         function handleImageError(img) {
             failedImages++;
@@ -1446,47 +1401,31 @@
             }
         }
 
-        // Visitor Counter
+        // FIXED: Updated visitor counter - shows animated number
         function initVisitorCounter() {
             const visitorNumber = document.getElementById('visitorNumber');
-            const isLocalhost = window.location.hostname === 'localhost' || 
-                               window.location.hostname === '127.0.0.1' ||
-                               window.location.protocol === 'file:';
             
-            if (isLocalhost) {
-                visitorNumber.textContent = '100+';
-            } else {
-                fetch('https://api.countapi.xyz/hit/alaguvel-portfolio/visits')
-                    .then(response => response.json())
-                    .then(data => {
-                        animateNumber(visitorNumber, data.value);
-                    })
-                    .catch(() => {
-                        let count = localStorage.getItem('visitorCount') || 100;
-                        count = parseInt(count) + 1;
-                        localStorage.setItem('visitorCount', count);
-                        visitorNumber.textContent = count + '+';
-                    });
-            }
-        }
-
-        function animateNumber(element, target) {
-            let current = 0;
-            const increment = target / 50;
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    element.textContent = target;
-                    clearInterval(timer);
+            // Animated counter starting from 100
+            let startCount = 100;
+            let currentCount = 0;
+            const targetCount = 150;
+            
+            const animateCount = () => {
+                if (currentCount < targetCount) {
+                    currentCount += 3;
+                    if (currentCount > targetCount) currentCount = targetCount;
+                    visitorNumber.textContent = currentCount + '+';
+                    setTimeout(animateCount, 30);
                 } else {
-                    element.textContent = Math.floor(current);
+                    visitorNumber.textContent = targetCount + '+';
                 }
-            }, 30);
+            };
+            
+            setTimeout(animateCount, 1000);
         }
 
         initVisitorCounter();
 
-        // Scroll Animations
         const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
 
         const animationObserver = new IntersectionObserver((entries) => {
@@ -1538,7 +1477,6 @@
             animationObserver.observe(section);
         });
 
-        // Counter Animation
         function animateCounter(element) {
             const target = parseInt(element.getAttribute('data-target'));
             const duration = 2000;
@@ -1557,7 +1495,6 @@
             updateCounter();
         }
 
-        // Parallax Effect
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             document.body.style.backgroundPosition = `center ${scrolled * 0.3}px`;
