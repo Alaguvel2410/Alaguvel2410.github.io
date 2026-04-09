@@ -1009,7 +1009,7 @@
         .status-not-started { background: #f8f9fa; color: #666; }
 
         /* ========================================
-           GOALS SECTION STYLES (Fixed Inline)
+           GOALS SECTION STYLES
         ======================================== */
         .goals-card-wrapper {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -1082,7 +1082,7 @@
         }
 
         /* ========================================
-           VISITOR SECTION STYLES (Fixed Inline)
+           VISITOR SECTION STYLES
         ======================================== */
         .visitor-header {
             display: flex;
@@ -1197,6 +1197,32 @@
             font-weight: 600;
         }
 
+        /* Visitor Badge Fallback */
+        #visitorBadgeFallback {
+            margin-top: 15px;
+        }
+
+        #visitorBadgeFallback img {
+            height: 35px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Loading Spinner */
+        .visitor-loading {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
         /* ========================================
            MOBILE RESPONSIVE STYLES
         ======================================== */
@@ -1209,12 +1235,10 @@
         }
 
         @media (max-width: 768px) {
-            /* Container & Spacing */
             .container {
                 padding: 15px;
             }
 
-            /* Header */
             header {
                 padding: 25px 20px;
                 border-radius: 15px;
@@ -1236,7 +1260,6 @@
                 font-size: 0.95rem;
             }
 
-            /* Contact Info */
             .contact-info {
                 flex-direction: column;
                 gap: 12px;
@@ -1250,7 +1273,6 @@
                 font-size: 0.9rem;
             }
 
-            /* Section */
             .section {
                 padding: 25px 20px;
                 border-radius: 15px;
@@ -1269,7 +1291,6 @@
                 font-size: 1.4rem;
             }
 
-            /* Skills Grid */
             .skills-grid {
                 grid-template-columns: 1fr;
                 gap: 15px;
@@ -1295,7 +1316,6 @@
                 margin-left: 5px;
             }
 
-            /* Projects */
             .projects-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
@@ -1318,7 +1338,6 @@
                 padding: 4px 10px;
             }
 
-            /* Experience & Education */
             .exp-edu-column {
                 padding: 20px;
             }
@@ -1375,7 +1394,6 @@
                 padding: 3px 10px;
             }
 
-            /* Tools */
             .tools-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 15px;
@@ -1398,7 +1416,6 @@
                 font-size: 0.75rem;
             }
 
-            /* Achievements */
             .achievements-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 15px;
@@ -1420,7 +1437,6 @@
                 font-size: 0.85rem;
             }
 
-            /* GitHub Stats */
             .github-stats-container {
                 flex-direction: column;
                 gap: 15px;
@@ -1442,7 +1458,6 @@
                 font-size: 1.2rem;
             }
 
-            /* Goals Section - Mobile */
             .goals-card-wrapper {
                 padding: 25px 20px;
                 border-radius: 15px;
@@ -1488,14 +1503,12 @@
                 left: -20px;
             }
 
-            /* Quote */
             .quote {
                 font-size: 1.05rem;
                 padding: 20px;
                 margin: 20px 0;
             }
 
-            /* Hobbies */
             .hobbies-container {
                 flex-direction: column;
                 gap: 15px;
@@ -1512,7 +1525,6 @@
                 font-size: 2rem;
             }
 
-            /* Visitor Section - Mobile */
             .visitor-section {
                 padding: 20px 15px;
             }
@@ -1581,7 +1593,6 @@
                 font-size: 0.9rem;
             }
 
-            /* Fixed Social Icons */
             .fixed-social-icons {
                 bottom: 20px;
                 right: 20px;
@@ -1594,7 +1605,6 @@
                 font-size: 1.4rem;
             }
 
-            /* Animations - Reduce Movement on Mobile */
             .animate-on-scroll {
                 transition: all 0.5s ease;
             }
@@ -1617,7 +1627,6 @@
                 transform: translateY(20px);
             }
 
-            /* Disable hover effects on mobile */
             .skill-card:hover,
             .project-card:hover,
             .tool-card:hover,
@@ -1629,7 +1638,6 @@
         }
 
         @media (max-width: 480px) {
-            /* Extra Small Screens */
             .hero-name {
                 font-size: 1.8rem;
             }
@@ -1656,7 +1664,6 @@
                 font-size: 0.95rem;
             }
 
-            /* Goals - Extra Small */
             .goals-emoji {
                 font-size: 2rem;
             }
@@ -1674,7 +1681,6 @@
                 padding: 5px 12px;
             }
 
-            /* Visitor - Extra Small */
             .visitor-count-number {
                 font-size: 2rem;
             }
@@ -1688,7 +1694,6 @@
             }
         }
 
-        /* Landscape Mode for Mobile */
         @media (max-width: 900px) and (orientation: landscape) {
             .hero-name {
                 font-size: 2rem;
@@ -2036,6 +2041,7 @@
                 </div>
             </div>
 
+            <!-- UPDATED VISITOR SECTION -->
             <div class="visitor-section stagger-item delay-4">
                 <div class="visitor-counter" style="flex-direction: column; gap: 25px;">
                     <div class="visitor-header">
@@ -2053,10 +2059,18 @@
                         
                         <div class="visitor-count-wrapper">
                             <div class="visitor-label">TOTAL VISITORS</div>
-                            <div id="visitorCountDisplay" class="visitor-count-number">0</div>
+                            <div id="visitorCountDisplay" class="visitor-count-number">
+                                <div class="visitor-loading"></div>
+                            </div>
                         </div>
                         
                         <i class="fas fa-chart-line visitor-side-icon"></i>
+                    </div>
+                    
+                    <!-- Fallback Badge -->
+                    <div id="visitorBadgeFallback" style="display: none;">
+                        <img src="https://komarev.com/ghpvc/?username=Alaguvel2410&label=Profile%20Views&color=764ba2&style=for-the-badge" 
+                             alt="Profile Views">
                     </div>
                     
                     <div class="visitor-info-grid">
@@ -2092,7 +2106,9 @@
     </div>
 
     <script>
-        // Scroll Progress Bar
+        // ========================================
+        // SCROLL PROGRESS BAR
+        // ========================================
         window.addEventListener('scroll', () => {
             const scrollProgress = document.getElementById('scrollProgress');
             const scrollTop = window.scrollY;
@@ -2101,7 +2117,9 @@
             scrollProgress.style.width = scrollPercent + '%';
         });
 
-        // Handle GitHub Image Errors
+        // ========================================
+        // GITHUB IMAGE ERROR HANDLER
+        // ========================================
         let failedImages = 0;
         function handleImageError(img) {
             failedImages++;
@@ -2112,7 +2130,9 @@
             }
         }
 
-        // Scroll Animation Observer
+        // ========================================
+        // SCROLL ANIMATION OBSERVER
+        // ========================================
         const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
 
         const animationObserver = new IntersectionObserver((entries) => {
@@ -2148,7 +2168,10 @@
                         setTimeout(() => {
                             card.classList.add('animated');
                             const counter = card.querySelector('.counter');
-                            if (counter) { animateCounter(counter); }
+                            if (counter && !counter.classList.contains('counted')) {
+                                counter.classList.add('counted');
+                                animateAchievementCounter(counter);
+                            }
                         }, index * 150);
                     });
 
@@ -2164,8 +2187,10 @@
             animationObserver.observe(section);
         });
 
-        // Achievement Counter Animation
-        function animateCounter(element) {
+        // ========================================
+        // ACHIEVEMENT COUNTER ANIMATION
+        // ========================================
+        function animateAchievementCounter(element) {
             const target = parseInt(element.getAttribute('data-target'));
             const duration = 2000;
             const step = target / (duration / 16);
@@ -2183,33 +2208,150 @@
             updateCounter();
         }
 
-        // Visitor Counter Animation
-        fetch("https://api.countapi.xyz/hit/alaguvel-portfolio/visits")
-.then(function(response) {
-    return response.json();
-})
-.then(function(data) {
-    let count = 0;
-    let target = data.value;
-    let interval = setInterval(function() {
-        count++;
-        document.getElementById("visitorCountDisplay").innerText = count;
-        if (count >= target) {
-            clearInterval(interval);
-        }
-    }, 20);
-});
+        // ========================================
+        // VISITOR COUNTER SYSTEM - UPDATED
+        // ========================================
+        const COUNTER_CONFIG = {
+            namespace: 'alaguvel-portfolio-2024',
+            key: 'total-visits',
+            startCount: 0, // Change this to your estimated previous visitors
+        };
 
-        // Parallax Effect
+        const visitorDisplay = document.getElementById('visitorCountDisplay');
+
+        // Animate counter display
+        function animateVisitorCount(targetCount) {
+            let currentCount = 0;
+            const duration = 2500;
+            const steps = 80;
+            const increment = targetCount / steps;
+            const stepDuration = duration / steps;
+            
+            const counterInterval = setInterval(() => {
+                currentCount += increment;
+                if (currentCount >= targetCount) {
+                    visitorDisplay.textContent = Math.floor(targetCount).toLocaleString();
+                    clearInterval(counterInterval);
+                } else {
+                    visitorDisplay.textContent = Math.floor(currentCount).toLocaleString();
+                }
+            }, stepDuration);
+        }
+
+        // Primary Counter API - counterapi.dev
+        async function fetchPrimaryCounter() {
+            try {
+                const response = await fetch(
+                    `https://api.counterapi.dev/v1/${COUNTER_CONFIG.namespace}/${COUNTER_CONFIG.key}/up`,
+                    { 
+                        method: 'GET',
+                        mode: 'cors',
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    }
+                );
+                if (!response.ok) throw new Error('API response not ok');
+                const data = await response.json();
+                console.log('Counter API Response:', data);
+                return data.count ? data.count + COUNTER_CONFIG.startCount : null;
+            } catch (error) {
+                console.warn('Primary counter failed:', error.message);
+                return null;
+            }
+        }
+
+        // Secondary Counter - localStorage based with session tracking
+        function getSecondaryCounter() {
+            const storageKey = 'portfolio_visitor_count_v2';
+            const sessionKey = 'portfolio_session_visited_v2';
+            
+            let totalVisits = parseInt(localStorage.getItem(storageKey) || '0');
+            
+            // Only increment once per session
+            if (!sessionStorage.getItem(sessionKey)) {
+                totalVisits++;
+                localStorage.setItem(storageKey, totalVisits.toString());
+                sessionStorage.setItem(sessionKey, 'true');
+            }
+            
+            return totalVisits + COUNTER_CONFIG.startCount;
+        }
+
+        // Tertiary Counter - Using hit counter image
+        function triggerHitCounter() {
+            // This loads the counter image to increment the count
+            const img = new Image();
+            img.src = `https://hits.dwyl.com/alaguvel2410/portfolio.svg?${Date.now()}`;
+        }
+
+        // Fallback: Show visual badge
+        function showVisitorBadge() {
+            const fallbackDiv = document.getElementById('visitorBadgeFallback');
+            if (fallbackDiv) {
+                fallbackDiv.style.display = 'block';
+            }
+            
+            visitorDisplay.innerHTML = `
+                <img src="https://komarev.com/ghpvc/?username=Alaguvel2410&label=Views&color=764ba2&style=for-the-badge" 
+                     alt="Profile Views"
+                     style="height: 45px; border-radius: 8px;">
+            `;
+        }
+
+        // Initialize visitor counter
+        async function initVisitorCounter() {
+            try {
+                // Trigger hit counter in background
+                triggerHitCounter();
+                
+                // Try primary API first
+                let count = await fetchPrimaryCounter();
+                
+                // If primary fails, use secondary (localStorage)
+                if (!count || count <= COUNTER_CONFIG.startCount) {
+                    console.log('Using secondary counter (localStorage)');
+                    count = getSecondaryCounter();
+                }
+                
+                // Animate and display
+                if (count > 0) {
+                    animateVisitorCount(count);
+                } else {
+                    showVisitorBadge();
+                }
+            } catch (error) {
+                console.error('Visitor counter error:', error);
+                // Last resort - show badge
+                showVisitorBadge();
+            }
+        }
+
+        // ========================================
+        // PARALLAX EFFECT
+        // ========================================
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             document.body.style.backgroundPosition = `center ${scrolled * 0.3}px`;
         });
 
-        // Initialize
+        // ========================================
+        // INITIALIZATION
+        // ========================================
         window.addEventListener('load', () => {
             document.body.classList.add('loaded');
-            animateVisitorCounter();
+            // Initialize visitor counter after page loads
+            setTimeout(initVisitorCounter, 300);
+        });
+
+        // Also try on DOMContentLoaded as backup
+        document.addEventListener('DOMContentLoaded', () => {
+            // Delay to ensure DOM is ready
+            setTimeout(() => {
+                if (visitorDisplay.querySelector('.visitor-loading')) {
+                    initVisitorCounter();
+                }
+            }, 1000);
         });
     </script>
 
