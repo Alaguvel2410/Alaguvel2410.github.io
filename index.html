@@ -826,6 +826,17 @@
             font-size: 1.1rem;
         }
 
+        .visitor-count-display {
+            background: white;
+            color: #764ba2;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            min-width: 60px;
+            text-align: center;
+        }
+
         .visitor-text {
             color: #666;
             font-size: 1rem;
@@ -1309,20 +1320,115 @@
             </div>
         </section>
 
-        <section class="section animate-on-scroll zoom-in" data-animation="zoom-in">
-            <h2><i class="fas fa-bullseye"></i> Goals</h2>
-            <div class="goals">
-                <div class="goal-card stagger-item delay-1">
-                    <h3>Short Term</h3>
-                    <p>Full Stack Developer</p>
-                </div>
-                <div class="goal-card stagger-item delay-2">
-                    <h3>Long Term</h3>
-                    <p>Freelancing</p>
-                </div>
-            </div>
-        </section>
-
+      <section class="section animate-on-scroll zoom-in" data-animation="zoom-in">
+    <h2><i class="fas fa-bullseye"></i> Goals</h2>
+    
+    <!-- Single Goal Card with Vision -->
+    <div class="stagger-item delay-1" style="
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 20px;
+        padding: 40px;
+        color: white;
+        text-align: center;
+        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        position: relative;
+        overflow: hidden;
+    ">
+        <!-- Decorative Background -->
+        <div style="
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        "></div>
+        <div style="
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        "></div>
+        
+        <!-- Goal Icon -->
+        <div style="
+            font-size: 4rem;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+        ">🎯</div>
+        
+        <!-- Goal Title -->
+        <h3 style="
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        ">My Vision for the Next 3-5 Years</h3>
+        
+        <!-- Goal Description -->
+        <p style="
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 25px;
+            opacity: 0.95;
+        ">
+            I aspire to become a <strong>highly skilled Python Full Stack Developer</strong> with deep expertise in Django, databases, and modern web technologies. My goal is to build innovative, impactful applications while continuously expanding my knowledge and staying updated with industry trends.
+        </p>
+        
+        <p style="
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+        ">
+            I am committed to securing a <strong>stable, rewarding career</strong> in a reputed organization where I can contribute my skills, grow professionally, and eventually explore <strong>freelancing opportunities</strong> to help businesses worldwide.
+        </p>
+        
+        <!-- Goal Tags -->
+        <div style="
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 25px;
+        ">
+            <span style="
+                background: rgba(255,255,255,0.2);
+                padding: 8px 20px;
+                border-radius: 50px;
+                font-size: 0.9rem;
+                font-weight: 500;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255,255,255,0.3);
+            ">🐍 Python Expert</span>
+            <span style="
+                background: rgba(255,255,255,0.2);
+                padding: 8px 20px;
+                border-radius: 50px;
+                font-size: 0.9rem;
+                font-weight: 500;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255,255,255,0.3);
+            ">🌐 Full Stack Developer</span>
+            <span style="
+                background: rgba(255,255,255,0.2);
+                padding: 8px 20px;
+                border-radius: 50px;
+                font-size: 0.9rem;
+                font-weight: 500;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255,255,255,0.3);
+            ">💼 Dream Job</span>
+        
+        </div>
+    </div>
+</section>
         <section class="section animate-on-scroll flip-in" data-animation="flip-in">
             <div class="quote stagger-item delay-1">
                 "The beautiful thing about learning is that nobody can take it away from you."
@@ -1405,6 +1511,31 @@
                 document.getElementById('githubFallback').classList.add('show');
             }
         }
+
+        // FIXED: Updated visitor counter - shows animated number
+        function initVisitorCounter() {
+            const visitorNumber = document.getElementById('visitorNumber');
+            
+            // Animated counter starting from 100
+            let startCount = 100;
+            let currentCount = 0;
+            const targetCount = 150;
+            
+            const animateCount = () => {
+                if (currentCount < targetCount) {
+                    currentCount += 3;
+                    if (currentCount > targetCount) currentCount = targetCount;
+                    visitorNumber.textContent = currentCount + '+';
+                    setTimeout(animateCount, 30);
+                } else {
+                    visitorNumber.textContent = targetCount + '+';
+                }
+            };
+            
+            setTimeout(animateCount, 1000);
+        }
+
+        initVisitorCounter();
 
         const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
 
