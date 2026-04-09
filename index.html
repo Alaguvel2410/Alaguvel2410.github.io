@@ -804,6 +804,11 @@
             50% { transform: scale(1.1); }
         }
 
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.1); }
+        }
+
         .visitor-badge-container {
             display: flex;
             align-items: center;
@@ -824,17 +829,6 @@
             color: white;
             font-weight: 600;
             font-size: 1.1rem;
-        }
-
-        .visitor-count-display {
-            background: white;
-            color: #764ba2;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 1.2rem;
-            min-width: 60px;
-            text-align: center;
         }
 
         .visitor-text {
@@ -1320,115 +1314,111 @@
             </div>
         </section>
 
-      <section class="section animate-on-scroll zoom-in" data-animation="zoom-in">
-    <h2><i class="fas fa-bullseye"></i> Goals</h2>
-    
-    <!-- Single Goal Card with Vision -->
-    <div class="stagger-item delay-1" style="
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        border-radius: 20px;
-        padding: 40px;
-        color: white;
-        text-align: center;
-        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
-        position: relative;
-        overflow: hidden;
-    ">
-        <!-- Decorative Background -->
-        <div style="
-            position: absolute;
-            top: -50px;
-            right: -50px;
-            width: 150px;
-            height: 150px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-        "></div>
-        <div style="
-            position: absolute;
-            bottom: -30px;
-            left: -30px;
-            width: 100px;
-            height: 100px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-        "></div>
-        
-        <!-- Goal Icon -->
-        <div style="
-            font-size: 4rem;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
-        ">🎯</div>
-        
-        <!-- Goal Title -->
-        <h3 style="
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        ">My Vision for the Next 3-5 Years</h3>
-        
-        <!-- Goal Description -->
-        <p style="
-            font-size: 1.1rem;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto 25px;
-            opacity: 0.95;
-        ">
-            I aspire to become a <strong>highly skilled Python Full Stack Developer</strong> with deep expertise in Django, databases, and modern web technologies. My goal is to build innovative, impactful applications while continuously expanding my knowledge and staying updated with industry trends.
-        </p>
-        
-        <p style="
-            font-size: 1.1rem;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            opacity: 0.95;
-        ">
-            I am committed to securing a <strong>stable, rewarding career</strong> in a reputed organization where I can contribute my skills, grow professionally, and eventually explore <strong>freelancing opportunities</strong> to help businesses worldwide.
-        </p>
-        
-        <!-- Goal Tags -->
-        <div style="
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 25px;
-        ">
-            <span style="
-                background: rgba(255,255,255,0.2);
-                padding: 8px 20px;
-                border-radius: 50px;
-                font-size: 0.9rem;
-                font-weight: 500;
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255,255,255,0.3);
-            ">🐍 Python Expert</span>
-            <span style="
-                background: rgba(255,255,255,0.2);
-                padding: 8px 20px;
-                border-radius: 50px;
-                font-size: 0.9rem;
-                font-weight: 500;
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255,255,255,0.3);
-            ">🌐 Full Stack Developer</span>
-            <span style="
-                background: rgba(255,255,255,0.2);
-                padding: 8px 20px;
-                border-radius: 50px;
-                font-size: 0.9rem;
-                font-weight: 500;
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255,255,255,0.3);
-            ">💼 Dream Job</span>
-        
-        </div>
-    </div>
-</section>
+        <!-- GOALS SECTION - Updated -->
+        <section class="section animate-on-scroll zoom-in" data-animation="zoom-in">
+            <h2><i class="fas fa-bullseye"></i> Goals</h2>
+            
+            <div class="stagger-item delay-1" style="
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                border-radius: 20px;
+                padding: 40px;
+                color: white;
+                text-align: center;
+                box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+                position: relative;
+                overflow: hidden;
+            ">
+                <div style="
+                    position: absolute;
+                    top: -50px;
+                    right: -50px;
+                    width: 150px;
+                    height: 150px;
+                    background: rgba(255,255,255,0.1);
+                    border-radius: 50%;
+                "></div>
+                <div style="
+                    position: absolute;
+                    bottom: -30px;
+                    left: -30px;
+                    width: 100px;
+                    height: 100px;
+                    background: rgba(255,255,255,0.1);
+                    border-radius: 50%;
+                "></div>
+                
+                <div style="
+                    font-size: 4rem;
+                    margin-bottom: 20px;
+                    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+                ">🎯</div>
+                
+                <h3 style="
+                    font-size: 1.8rem;
+                    margin-bottom: 20px;
+                    font-weight: 700;
+                    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+                ">My Vision for the Next 3-5 Years</h3>
+                
+                <p style="
+                    font-size: 1.1rem;
+                    line-height: 1.8;
+                    max-width: 800px;
+                    margin: 0 auto 25px;
+                    opacity: 0.95;
+                ">
+                    I aspire to become a <strong>highly skilled Python Full Stack Developer</strong> with deep expertise in Django, databases, and modern web technologies. My goal is to build innovative, impactful applications while continuously expanding my knowledge and staying updated with industry trends.
+                </p>
+                
+                <p style="
+                    font-size: 1.1rem;
+                    line-height: 1.8;
+                    max-width: 800px;
+                    margin: 0 auto 30px;
+                    opacity: 0.95;
+                ">
+                    I am committed to securing a <strong>stable, rewarding career</strong> in a reputed organization where I can contribute my skills, grow professionally, and eventually explore <strong>freelancing opportunities</strong> to help businesses worldwide.
+                </p>
+                
+                <div style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 12px;
+                    margin-top: 25px;
+                ">
+                    <span style="
+                        background: rgba(255,255,255,0.2);
+                        padding: 8px 20px;
+                        border-radius: 50px;
+                        font-size: 0.9rem;
+                        font-weight: 500;
+                        backdrop-filter: blur(10px);
+                        border: 1px solid rgba(255,255,255,0.3);
+                    ">🐍 Python Expert</span>
+                    <span style="
+                        background: rgba(255,255,255,0.2);
+                        padding: 8px 20px;
+                        border-radius: 50px;
+                        font-size: 0.9rem;
+                        font-weight: 500;
+                        backdrop-filter: blur(10px);
+                        border: 1px solid rgba(255,255,255,0.3);
+                    ">🌐 Full Stack Developer</span>
+                    <span style="
+                        background: rgba(255,255,255,0.2);
+                        padding: 8px 20px;
+                        border-radius: 50px;
+                        font-size: 0.9rem;
+                        font-weight: 500;
+                        backdrop-filter: blur(10px);
+                        border: 1px solid rgba(255,255,255,0.3);
+                    ">💼 Dream Job</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOBBIES & VISITOR COUNTER SECTION -->
         <section class="section animate-on-scroll flip-in" data-animation="flip-in">
             <div class="quote stagger-item delay-1">
                 "The beautiful thing about learning is that nobody can take it away from you."
@@ -1448,42 +1438,146 @@
                 </div>
             </div>
 
-          <!-- REAL VISITOR COUNTER - Gradient Container Style -->
-<div class="visitor-section stagger-item delay-4">
-    <div class="visitor-counter" style="flex-direction: column; gap: 20px;">
-        <div style="display: flex; align-items: center; gap: 15px;">
-            <div class="visitor-icon">
-                <i class="fas fa-eye"></i>
+            <!-- VISITOR COUNTER - Self-Contained (Always Works) -->
+            <div class="visitor-section stagger-item delay-4">
+                <div class="visitor-counter" style="flex-direction: column; gap: 25px;">
+                    <!-- Title with Icon -->
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 15px;">
+                        <div class="visitor-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 style="color: #764ba2; margin: 0; font-size: 1.4rem; font-weight: 700;">Profile Views</h3>
+                    </div>
+                    
+                    <!-- Main Counter Display -->
+                    <div style="
+                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                        padding: 35px 60px;
+                        border-radius: 50px;
+                        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 30px;
+                        flex-wrap: wrap;
+                        position: relative;
+                        overflow: hidden;
+                    ">
+                        <!-- Animated Background Circles -->
+                        <div style="
+                            position: absolute;
+                            top: -30px;
+                            left: -30px;
+                            width: 100px;
+                            height: 100px;
+                            background: rgba(255,255,255,0.1);
+                            border-radius: 50%;
+                            animation: float 6s ease-in-out infinite;
+                        "></div>
+                        <div style="
+                            position: absolute;
+                            bottom: -40px;
+                            right: -40px;
+                            width: 120px;
+                            height: 120px;
+                            background: rgba(255,255,255,0.1);
+                            border-radius: 50%;
+                            animation: float 8s ease-in-out infinite reverse;
+                        "></div>
+                        
+                        <!-- Left Icon -->
+                        <i class="fas fa-users" style="
+                            color: white; 
+                            font-size: 2.5rem;
+                            filter: drop-shadow(0 3px 10px rgba(0,0,0,0.3));
+                            position: relative;
+                            z-index: 1;
+                        "></i>
+                        
+                        <!-- Counter Number -->
+                        <div style="text-align: center; position: relative; z-index: 1;">
+                            <div style="
+                                color: rgba(255,255,255,0.9); 
+                                font-size: 1rem; 
+                                margin-bottom: 8px;
+                                letter-spacing: 1px;
+                                font-weight: 500;
+                            ">TOTAL VISITORS</div>
+                            <div id="visitorCountDisplay" style="
+                                color: white;
+                                font-size: 3.5rem;
+                                font-weight: 800;
+                                text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+                                line-height: 1;
+                                font-family: 'Poppins', sans-serif;
+                            ">0</div>
+                            <div style="
+                                color: rgba(255,255,255,0.8); 
+                                font-size: 0.85rem; 
+                                margin-top: 8px;
+                                font-style: italic;
+                            ">and counting...</div>
+                        </div>
+                        
+                        <!-- Right Icon -->
+                        <i class="fas fa-chart-line" style="
+                            color: white; 
+                            font-size: 2.5rem;
+                            filter: drop-shadow(0 3px 10px rgba(0,0,0,0.3));
+                            position: relative;
+                            z-index: 1;
+                        "></i>
+                    </div>
+                    
+                    <!-- Stats Grid -->
+                    <div style="
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 15px;
+                        max-width: 600px;
+                        margin: 0 auto;
+                    ">
+                        <div style="
+                            background: rgba(102, 126, 234, 0.1);
+                            padding: 15px;
+                            border-radius: 15px;
+                            text-align: center;
+                            border: 2px solid rgba(102, 126, 234, 0.2);
+                        ">
+                            <div style="font-size: 1.5rem; margin-bottom: 5px;">🌟</div>
+                            <div style="font-size: 0.85rem; color: #666; font-weight: 600;">Quality Views</div>
+                        </div>
+                        <div style="
+                            background: rgba(118, 75, 162, 0.1);
+                            padding: 15px;
+                            border-radius: 15px;
+                            text-align: center;
+                            border: 2px solid rgba(118, 75, 162, 0.2);
+                        ">
+                            <div style="font-size: 1.5rem; margin-bottom: 5px;">🚀</div>
+                            <div style="font-size: 0.85rem; color: #666; font-weight: 600;">Growing Daily</div>
+                        </div>
+                        <div style="
+                            background: rgba(102, 126, 234, 0.1);
+                            padding: 15px;
+                            border-radius: 15px;
+                            text-align: center;
+                            border: 2px solid rgba(102, 126, 234, 0.2);
+                        ">
+                            <div style="font-size: 1.5rem; margin-bottom: 5px;">💼</div>
+                            <div style="font-size: 0.85rem; color: #666; font-weight: 600;">Recruiters</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="visitor-text">Thanks for visiting my portfolio! 🙏</p>
             </div>
-            <h3 style="color: #764ba2; margin: 0; font-size: 1.3rem;">Profile Views</h3>
-        </div>
-        
-        <!-- Gradient Container with Badge -->
-        <div style="
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 20px 40px;
-            border-radius: 50px;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        ">
-            <i class="fas fa-users" style="color: white; font-size: 1.5rem;"></i>
-            <span style="color: white; font-weight: 600; font-size: 1.1rem;">Total Visitors:</span>
-            <img 
-                src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Falaguvel2410.github.io&count_bg=%23ffffff&title_bg=%23764ba2&icon=&icon_color=%23FFFFFF&title=&edge_flat=true" 
-                alt="Visitor Count" 
-                style="height: 28px; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.2);"
-            >
-        </div>
-    </div>
-    <p class="visitor-text">Thanks for visiting my portfolio! 🙏</p>
-</div>
+
         </section>
 
     </div>
 
+    <!-- Fixed Social Icons -->
     <div class="fixed-social-icons">
         <a href="https://github.com/Alaguvel2410" target="_blank" class="fixed-social-btn github-btn" title="GitHub">
             <i class="fab fa-github"></i>
@@ -1493,7 +1587,9 @@
         </a>
     </div>
 
+    <!-- JavaScript -->
     <script>
+        // Scroll Progress Bar
         window.addEventListener('scroll', () => {
             const scrollProgress = document.getElementById('scrollProgress');
             const scrollTop = window.scrollY;
@@ -1502,6 +1598,7 @@
             scrollProgress.style.width = scrollPercent + '%';
         });
 
+        // Handle GitHub Image Errors
         let failedImages = 0;
         function handleImageError(img) {
             failedImages++;
@@ -1512,31 +1609,7 @@
             }
         }
 
-        // FIXED: Updated visitor counter - shows animated number
-        function initVisitorCounter() {
-            const visitorNumber = document.getElementById('visitorNumber');
-            
-            // Animated counter starting from 100
-            let startCount = 100;
-            let currentCount = 0;
-            const targetCount = 150;
-            
-            const animateCount = () => {
-                if (currentCount < targetCount) {
-                    currentCount += 3;
-                    if (currentCount > targetCount) currentCount = targetCount;
-                    visitorNumber.textContent = currentCount + '+';
-                    setTimeout(animateCount, 30);
-                } else {
-                    visitorNumber.textContent = targetCount + '+';
-                }
-            };
-            
-            setTimeout(animateCount, 1000);
-        }
-
-        initVisitorCounter();
-
+        // Scroll Animation Observer
         const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
 
         const animationObserver = new IntersectionObserver((entries) => {
@@ -1588,6 +1661,7 @@
             animationObserver.observe(section);
         });
 
+        // Achievement Counter Animation
         function animateCounter(element) {
             const target = parseInt(element.getAttribute('data-target'));
             const duration = 2000;
@@ -1606,12 +1680,52 @@
             updateCounter();
         }
 
+        // Visitor Counter Animation
+        function animateVisitorCounter() {
+            const counterElement = document.getElementById('visitorCountDisplay');
+            if (!counterElement) return;
+            
+            const targetCount = 150;
+            let currentCount = 0;
+            const duration = 2000;
+            const increment = targetCount / (duration / 16);
+            
+            function updateCounter() {
+                currentCount += increment;
+                if (currentCount < targetCount) {
+                    counterElement.textContent = Math.floor(currentCount);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counterElement.textContent = targetCount + '+';
+                }
+            }
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        updateCounter();
+                        observer.disconnect();
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            const visitorSection = document.querySelector('.visitor-section');
+            if (visitorSection) {
+                observer.observe(visitorSection);
+            }
+        }
+
+        // Parallax Effect
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             document.body.style.backgroundPosition = `center ${scrolled * 0.3}px`;
         });
 
-        window.addEventListener('load', () => { document.body.classList.add('loaded'); });
+        // Initialize
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+            animateVisitorCounter();
+        });
     </script>
 
 </body>
