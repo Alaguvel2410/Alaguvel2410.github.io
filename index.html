@@ -826,17 +826,6 @@
             font-size: 1.1rem;
         }
 
-        .visitor-count-display {
-            background: white;
-            color: #764ba2;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 1.2rem;
-            min-width: 60px;
-            text-align: center;
-        }
-
         .visitor-text {
             color: #666;
             font-size: 1rem;
@@ -1353,18 +1342,18 @@
                 </div>
             </div>
 
-            <!-- FIXED: Removed the "Counter activates when published online" text -->
+            <!-- REAL VISITOR COUNTER - Using hits.seeyoufarm.com -->
             <div class="visitor-section stagger-item delay-4">
-                <div class="visitor-counter">
-                    <div class="visitor-icon">
-                        <i class="fas fa-eye"></i>
+                <div class="visitor-counter" style="flex-direction: column; gap: 20px;">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div class="visitor-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 style="color: #764ba2; margin: 0; font-size: 1.3rem;">Profile Views</h3>
                     </div>
-                    <div class="visitor-badge-container">
-                        <i class="fas fa-users"></i>
-                        <span>Total Visitors:</span>
-                        <span class="visitor-count-display" id="visitorCountDisplay">
-                            <span id="visitorNumber">--</span>
-                        </span>
+                    
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Falaguvel2410.github.io&count_bg=%23764ba2&title_bg=%23667eea&icon=github.svg&icon_color=%23FFFFFF&title=Visitors&edge_flat=false" alt="Visitor Count" style="height: 30px; border-radius: 5px;">
                     </div>
                 </div>
                 <p class="visitor-text">Thanks for visiting my portfolio! 🙏</p>
@@ -1400,31 +1389,6 @@
                 document.getElementById('githubFallback').classList.add('show');
             }
         }
-
-        // FIXED: Updated visitor counter - shows animated number
-        function initVisitorCounter() {
-            const visitorNumber = document.getElementById('visitorNumber');
-            
-            // Animated counter starting from 100
-            let startCount = 100;
-            let currentCount = 0;
-            const targetCount = 150;
-            
-            const animateCount = () => {
-                if (currentCount < targetCount) {
-                    currentCount += 3;
-                    if (currentCount > targetCount) currentCount = targetCount;
-                    visitorNumber.textContent = currentCount + '+';
-                    setTimeout(animateCount, 30);
-                } else {
-                    visitorNumber.textContent = targetCount + '+';
-                }
-            };
-            
-            setTimeout(animateCount, 1000);
-        }
-
-        initVisitorCounter();
 
         const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
 
