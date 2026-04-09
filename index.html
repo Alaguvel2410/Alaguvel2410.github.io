@@ -28,7 +28,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://img.icons8.com/color/48/python--v1.png">
     
-    <title>👨‍💻 Alaguvel A. | Portfolio 🚀</title>
+    <title> alagu...✌️ </title>
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -500,29 +500,6 @@
 
         .edu-card.school .exp-edu-date {
             background: linear-gradient(135deg, #FF9800, #F57C00);
-        }
-
-        @media (max-width: 900px) {
-            .exp-edu-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .exp-edu-card-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .exp-edu-status {
-                position: static;
-                margin-bottom: 10px;
-                display: inline-block;
-            }
-
-            .exp-edu-card {
-                padding-top: 20px;
-            }
         }
 
         .quote {
@@ -1018,26 +995,6 @@
             transition: width 0.1s ease;
         }
 
-        @media (max-width: 768px) {
-            .hero-name { font-size: 2.5rem; }
-            .contact-info { flex-direction: column; align-items: center; }
-            .goals { grid-template-columns: 1fr; }
-            .tech-logo { width: 70px; height: 70px; }
-            .hobbies-container { flex-direction: column; align-items: center; }
-            .fixed-social-icons { right: 20px; bottom: 20px; }
-            .fixed-social-btn { width: 50px; height: 50px; font-size: 1.4rem; }
-            .animate-on-scroll { transition: all 0.5s ease; }
-            .fade-up, .fade-down { transform: translateY(30px); }
-            .slide-left, .slide-right { transform: translateX(50px); }
-            .tools-grid { grid-template-columns: repeat(2, 1fr); }
-            .achievements-grid { grid-template-columns: repeat(2, 1fr); }
-            .achievement-number { font-size: 2rem; }
-            .visitor-badge-container { padding: 12px 20px; flex-direction: column; }
-            .github-stats-container { flex-direction: column; align-items: center; }
-            .projects-grid { grid-template-columns: 1fr; }
-            .project-card h3 { font-size: 1.1rem; }
-        }
-
         .status-badge {
             display: inline-block;
             padding: 5px 15px;
@@ -1050,6 +1007,407 @@
         .status-completed { background: #4CAF50; color: white; }
         .status-ongoing { background: #FF9800; color: white; }
         .status-not-started { background: #f8f9fa; color: #666; }
+
+        /* ========================================
+           MOBILE RESPONSIVE STYLES - NEW
+        ======================================== */
+
+        @media (max-width: 900px) {
+            .exp-edu-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Container & Spacing */
+            .container {
+                padding: 15px;
+            }
+
+            /* Header */
+            header {
+                padding: 25px 20px;
+                border-radius: 15px;
+                margin-bottom: 25px;
+            }
+
+            .hero-name {
+                font-size: 2.2rem;
+                margin-bottom: 8px;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 15px;
+                line-height: 1.5;
+            }
+
+            .location {
+                font-size: 0.95rem;
+            }
+
+            /* Contact Info */
+            .contact-info {
+                flex-direction: column;
+                gap: 12px;
+                margin-top: 20px;
+            }
+
+            .contact-item {
+                width: 100%;
+                justify-content: center;
+                padding: 12px 15px;
+                font-size: 0.9rem;
+            }
+
+            /* Section */
+            .section {
+                padding: 25px 20px;
+                border-radius: 15px;
+                margin-bottom: 20px;
+            }
+
+            .section h2 {
+                font-size: 1.6rem;
+                margin-bottom: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .section h2 i {
+                font-size: 1.4rem;
+            }
+
+            /* Skills Grid */
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .skill-card {
+                padding: 20px;
+            }
+
+            .tech-logo {
+                width: 60px;
+                height: 60px;
+            }
+
+            .tech-logo img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .status-badge {
+                font-size: 0.75rem;
+                padding: 4px 10px;
+                margin-left: 5px;
+            }
+
+            /* Projects */
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .project-card {
+                padding: 20px;
+            }
+
+            .project-card h3 {
+                font-size: 1.05rem;
+            }
+
+            .project-card p {
+                font-size: 0.9rem;
+            }
+
+            .tech-tag {
+                font-size: 0.75rem;
+                padding: 4px 10px;
+            }
+
+            /* Experience & Education */
+            .exp-edu-column {
+                padding: 20px;
+            }
+
+            .exp-edu-column h3 {
+                font-size: 1.2rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .exp-edu-card {
+                padding: 15px;
+                padding-top: 15px;
+            }
+
+            .exp-edu-card-header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .exp-edu-icon {
+                width: 45px;
+                height: 45px;
+            }
+
+            .exp-edu-icon i {
+                font-size: 1.1rem;
+            }
+
+            .exp-edu-info h4 {
+                font-size: 0.95rem;
+            }
+
+            .exp-edu-info .company,
+            .exp-edu-info .institution {
+                font-size: 0.85rem;
+                flex-wrap: wrap;
+            }
+
+            .exp-edu-info .location-text {
+                font-size: 0.8rem;
+            }
+
+            .exp-edu-date {
+                font-size: 0.75rem;
+                padding: 4px 10px;
+            }
+
+            .exp-edu-status {
+                position: static;
+                margin-bottom: 10px;
+                font-size: 0.65rem;
+                padding: 3px 10px;
+            }
+
+            /* Tools */
+            .tools-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .tool-card {
+                padding: 20px 15px;
+            }
+
+            .tool-icon {
+                width: 50px;
+                height: 50px;
+            }
+
+            .tool-card h3 {
+                font-size: 0.95rem;
+            }
+
+            .tool-card p {
+                font-size: 0.75rem;
+            }
+
+            /* Achievements */
+            .achievements-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .achievement-card {
+                padding: 20px 15px;
+            }
+
+            .achievement-icon {
+                font-size: 2rem;
+            }
+
+            .achievement-number {
+                font-size: 1.8rem;
+            }
+
+            .achievement-label {
+                font-size: 0.85rem;
+            }
+
+            /* GitHub Stats */
+            .github-stats-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .github-stat-card {
+                width: 100%;
+            }
+
+            .github-stats-fallback {
+                padding: 25px 20px;
+            }
+
+            .github-stats-fallback i {
+                font-size: 2.5rem;
+            }
+
+            .github-stats-fallback h3 {
+                font-size: 1.2rem;
+            }
+
+            /* Goals Section */
+            .goals {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .goal-card {
+                padding: 25px 20px;
+            }
+
+            /* Quote */
+            .quote {
+                font-size: 1.05rem;
+                padding: 20px;
+                margin: 20px 0;
+            }
+
+            /* Hobbies */
+            .hobbies-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hobby-card {
+                width: 100%;
+                max-width: 250px;
+                padding: 20px;
+            }
+
+            .hobby-card i {
+                font-size: 2rem;
+            }
+
+            /* Visitor Section */
+            .visitor-section {
+                padding: 20px 15px;
+            }
+
+            .visitor-badge-container {
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+            }
+
+            .visitor-badge-container i {
+                font-size: 1.1rem;
+            }
+
+            .visitor-badge-container span {
+                font-size: 0.95rem;
+            }
+
+            #visitorCountDisplay {
+                font-size: 2.5rem !important;
+            }
+
+            .visitor-text {
+                font-size: 0.9rem;
+            }
+
+            /* Fixed Social Icons */
+            .fixed-social-icons {
+                bottom: 20px;
+                right: 20px;
+                gap: 12px;
+            }
+
+            .fixed-social-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+
+            /* Animations - Reduce Movement on Mobile */
+            .animate-on-scroll {
+                transition: all 0.5s ease;
+            }
+
+            .fade-up,
+            .fade-down {
+                transform: translateY(30px);
+            }
+
+            .slide-left,
+            .slide-right {
+                transform: translateX(0);
+            }
+
+            .zoom-in {
+                transform: scale(0.9);
+            }
+
+            .stagger-item {
+                transform: translateY(20px);
+            }
+
+            /* Disable hover effects on mobile */
+            .skill-card:hover,
+            .project-card:hover,
+            .tool-card:hover,
+            .achievement-card:hover,
+            .exp-edu-card:hover,
+            .hobby-card:hover {
+                transform: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Extra Small Screens */
+            .hero-name {
+                font-size: 1.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .section h2 {
+                font-size: 1.4rem;
+            }
+
+            .tools-grid,
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-item {
+                font-size: 0.85rem;
+                padding: 10px 12px;
+            }
+
+            .project-card h3 {
+                font-size: 0.95rem;
+            }
+
+            #visitorCountDisplay {
+                font-size: 2rem !important;
+            }
+        }
+
+        /* Landscape Mode for Mobile */
+        @media (max-width: 900px) and (orientation: landscape) {
+            .hero-name {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .fixed-social-icons {
+                bottom: 15px;
+                right: 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1527,7 +1885,7 @@
                                 font-size: 0.85rem; 
                                 margin-top: 8px;
                                 font-style: italic;
-                            ">and counting...</div>
+                            "></div>
                         </div>
                         
                         <i class="fas fa-chart-line" style="
