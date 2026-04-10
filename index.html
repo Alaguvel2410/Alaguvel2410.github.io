@@ -2284,6 +2284,28 @@
                 return null;
             }
         }
+
+        // Get current count WITHOUT adding +1
+async function fetchCurrentCount() {
+    try {
+        const response = await fetch(
+            `https://api.counterapi.dev/v1/${COUNTER_CONFIG.namespace}/${COUNTER_CONFIG.key}`,
+            { 
+                method: 'GET',
+                mode: 'cors',
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }
+        );
+        if (!response.ok) throw new Error('API response not ok');
+        const data = await response.json();
+        return data.count ? data.count + COUNTER_CONFIG.startCount : null;
+    } catch (error) {
+        console.warn('Fetch count failed:', error.message);
+        return null;
+    }
+}
         // Fallback: Show visual badge
         function showVisitorBadge() {
             const fallbackDiv = document.getElementById('visitorBadgeFallback');
@@ -2298,15 +2320,28 @@
             `;
         }
 
-        // Initialize visitor counter
-async function initVisitorCounter() {
+      async function initVisitorCounter() {
     try {
-        let count = await fetchPrimaryCounter();
+        const alreadyVisited = sessionStorage.getItem('already_counted');
         
-        if (count && count > 0) {
-            animateVisitorCount(count);
+        if (!alreadyVisited) {
+            // First visit in this session - count it
+            let count = await fetchPrimaryCounter();
+            sessionStorage.setItem('already_counted', 'true');
+            
+            if (count && count > 0) {
+                animateVisitorCount(count);
+            } else {
+                showVisitorBadge();
+            }
         } else {
-            showVisitorBadge();
+            // Already counted - just show current count without adding
+            let count = await fetchCurrentCount();
+            if (count && count > 0) {
+                animateVisitorCount(count);
+            } else {
+                showVisitorBadge();
+            }
         }
     } catch (error) {
         console.error('Visitor counter error:', error);
