@@ -2262,34 +2262,11 @@
 }, stepDuration);
         }
 
-        // Primary Counter API - counterapi.dev
-        async function fetchPrimaryCounter() {
-            try {
-                const response = await fetch(
-                    `https://api.counterapi.dev/v1/${COUNTER_CONFIG.namespace}/${COUNTER_CONFIG.key}/up`,
-                    { 
-                        method: 'GET',
-                        mode: 'cors',
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    }
-                );
-                if (!response.ok) throw new Error('API response not ok');
-                const data = await response.json();
-                console.log('Counter API Response:', data);
-                return data.count ? data.count + COUNTER_CONFIG.startCount : null;
-            } catch (error) {
-                console.warn('Primary counter failed:', error.message);
-                return null;
-            }
-        }
-
-        // Get current count WITHOUT adding +1
-async function fetchCurrentCount() {
+       // Primary Counter API - countapi.xyz (CORS-friendly)
+async function fetchPrimaryCounter() {
     try {
         const response = await fetch(
-            `https://api.counterapi.dev/v1/${COUNTER_CONFIG.namespace}/${COUNTER_CONFIG.key}`,
+            `https://api.countapi.xyz/hit/${COUNTER_CONFIG.namespace}/${COUNTER_CONFIG.key}`,
             { 
                 method: 'GET',
                 mode: 'cors',
@@ -2300,7 +2277,29 @@ async function fetchCurrentCount() {
         );
         if (!response.ok) throw new Error('API response not ok');
         const data = await response.json();
-        return data.count ? data.count + COUNTER_CONFIG.startCount : null;
+        console.log('Counter API Response:', data);
+        return data.value ? data.value + COUNTER_CONFIG.startCount : null;
+    } catch (error) {
+        console.warn('Primary counter failed:', error.message);
+        return null;
+    }
+}
+// Get current count WITHOUT adding +1
+async function fetchCurrentCount() {
+    try {
+        const response = await fetch(
+            `https://api.countapi.xyz/get/${COUNTER_CONFIG.namespace}/${COUNTER_CONFIG.key}`,
+            { 
+                method: 'GET',
+                mode: 'cors',
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }
+        );
+        if (!response.ok) throw new Error('API response not ok');
+        const data = await response.json();
+        return data.value ? data.value + COUNTER_CONFIG.startCount : null;
     } catch (error) {
         console.warn('Fetch count failed:', error.message);
         return null;
