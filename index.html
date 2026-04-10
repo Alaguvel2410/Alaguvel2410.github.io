@@ -2232,134 +2232,46 @@
             };
             updateCounter();
         }
-        // ========================================
-        // VISITOR COUNTER SYSTEM - UPDATED
-        // ========================================
-        const COUNTER_CONFIG = {
-            namespace: 'alaguvel-portfolio-final-2026',
-            key: 'total-visits',
-            startCount: 0, // Change this to your estimated previous visitors
-        };
+       // ========================================
+// VISITOR COUNTER SYSTEM - Simple Badge
+// ========================================
+function initVisitorCounter() {
+    const visitorDisplay = document.getElementById('visitorCountDisplay');
+    
+    if (visitorDisplay) {
+        visitorDisplay.innerHTML = `
+            <img src="https://komarev.com/ghpvc/?username=Alaguvel2410&label=Visitors&color=764ba2&style=for-the-badge" 
+                 alt="Profile Views"
+                 style="height: 50px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+        `;
+    }
+}
 
+// ========================================
+// PARALLAX EFFECT
+// ========================================
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    document.body.style.backgroundPosition = `center ${scrolled * 0.3}px`;
+});
+
+// ========================================
+// INITIALIZATION
+// ========================================
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+    setTimeout(initVisitorCounter, 300);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
         const visitorDisplay = document.getElementById('visitorCountDisplay');
-
-        // Animate counter display
-        function animateVisitorCount(targetCount) {
-            let currentCount = 0;
-            const duration = 3000;
-            const steps = 80;
-            const increment = targetCount / steps;
-            const stepDuration = duration / steps;
-            
-           const counterInterval = setInterval(() => {
-    currentCount += increment;
-    if (currentCount >= targetCount) {
-        visitorDisplay.textContent = Math.floor(targetCount).toLocaleString('en-US');
-        clearInterval(counterInterval);
-    } else {
-        visitorDisplay.textContent = Math.floor(currentCount).toLocaleString('en-US');
-    }
-}, stepDuration);
+        if (visitorDisplay && visitorDisplay.querySelector('.visitor-loading')) {
+            initVisitorCounter();
         }
+    }, 1000);
+});
 
-       // Primary Counter API - countapi.xyz (CORS-friendly)
-async function fetchPrimaryCounter() {
-    try {
-        const response = await fetch(
-            `https://api.countapi.xyz/hit/${COUNTER_CONFIG.namespace}/${COUNTER_CONFIG.key}`,
-            { 
-                method: 'GET',
-                mode: 'cors',
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }
-        );
-        if (!response.ok) throw new Error('API response not ok');
-        const data = await response.json();
-        console.log('Counter API Response:', data);
-        return data.value ? data.value + COUNTER_CONFIG.startCount : null;
-    } catch (error) {
-        console.warn('Primary counter failed:', error.message);
-        return null;
-    }
-}
-// Get current count WITHOUT adding +1
-async function fetchCurrentCount() {
-    try {
-        const response = await fetch(
-            `https://api.countapi.xyz/get/${COUNTER_CONFIG.namespace}/${COUNTER_CONFIG.key}`,
-            { 
-                method: 'GET',
-                mode: 'cors',
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }
-        );
-        if (!response.ok) throw new Error('API response not ok');
-        const data = await response.json();
-        return data.value ? data.value + COUNTER_CONFIG.startCount : null;
-    } catch (error) {
-        console.warn('Fetch count failed:', error.message);
-        return null;
-    }
-}
-
-      async function initVisitorCounter() {
-    try {
-        const alreadyVisited = sessionStorage.getItem('already_counted');
-        
-        if (!alreadyVisited) {
-            // First visit in this session - count it
-            let count = await fetchPrimaryCounter();
-            sessionStorage.setItem('already_counted', 'true');
-            
-            if (count && count > 0) {
-                animateVisitorCount(count);
-            } else {
-                showVisitorBadge();
-            }
-        } else {
-            // Already counted - just show current count without adding
-            let count = await fetchCurrentCount();
-            if (count && count > 0) {
-                animateVisitorCount(count);
-            } else {
-                showVisitorBadge();
-            }
-        }
-    } catch (error) {
-        console.error('Visitor counter error:', error);
-        showVisitorBadge();
-    }
-}
-        // ========================================
-        // PARALLAX EFFECT
-        // ========================================
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            document.body.style.backgroundPosition = `center ${scrolled * 0.3}px`;
-        });
-
-        // ========================================
-        // INITIALIZATION
-        // ========================================
-        window.addEventListener('load', () => {
-            document.body.classList.add('loaded');
-            // Initialize visitor counter after page loads
-            setTimeout(initVisitorCounter, 300);
-        });
-
-        // Also try on DOMContentLoaded as backup
-        document.addEventListener('DOMContentLoaded', () => {
-            // Delay to ensure DOM is ready
-            setTimeout(() => {
-                if (visitorDisplay.querySelector('.visitor-loading')) {
-                    initVisitorCounter();
-                }
-            }, 1000);
-        });
     </script>
 
 </body>
