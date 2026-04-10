@@ -2251,15 +2251,15 @@
             const increment = targetCount / steps;
             const stepDuration = duration / steps;
             
-            const counterInterval = setInterval(() => {
-                currentCount += increment;
-                if (currentCount >= targetCount) {
-                    visitorDisplay.textContent = Math.floor(targetCount).toLocaleString();
-                    clearInterval(counterInterval);
-                } else {
-                    visitorDisplay.textContent = Math.floor(currentCount).toLocaleString();
-                }
-            }, stepDuration);
+           const counterInterval = setInterval(() => {
+    currentCount += increment;
+    if (currentCount >= targetCount) {
+        visitorDisplay.textContent = Math.floor(targetCount).toLocaleString('en-US');
+        clearInterval(counterInterval);
+    } else {
+        visitorDisplay.textContent = Math.floor(currentCount).toLocaleString('en-US');
+    }
+}, stepDuration);
         }
 
         // Primary Counter API - counterapi.dev
