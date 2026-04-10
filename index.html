@@ -2284,31 +2284,6 @@
                 return null;
             }
         }
-
-        // Secondary Counter - localStorage based with session tracking
-        function getSecondaryCounter() {
-            const storageKey = 'portfolio_visitor_count_v2';
-            const sessionKey = 'portfolio_session_visited_v2';
-            
-            let totalVisits = parseInt(localStorage.getItem(storageKey) || '0');
-            
-            // Only increment once per session
-            if (!sessionStorage.getItem(sessionKey)) {
-                totalVisits++;
-                localStorage.setItem(storageKey, totalVisits.toString());
-                sessionStorage.setItem(sessionKey, 'true');
-            }
-            
-            return totalVisits + COUNTER_CONFIG.startCount;
-        }
-
-        // Tertiary Counter - Using hit counter image
-        function triggerHitCounter() {
-            // This loads the counter image to increment the count
-            const img = new Image();
-            img.src = `https://hits.dwyl.com/alaguvel2410/portfolio.svg?${Date.now()}`;
-        }
-
         // Fallback: Show visual badge
         function showVisitorBadge() {
             const fallbackDiv = document.getElementById('visitorBadgeFallback');
@@ -2324,33 +2299,20 @@
         }
 
         // Initialize visitor counter
-        async function initVisitorCounter() {
-            try {
-                // Trigger hit counter in background
-                triggerHitCounter();
-                
-                // Try primary API first
-                let count = await fetchPrimaryCounter();
-                
-                // If primary fails, use secondary (localStorage)
-                if (!count || count <= COUNTER_CONFIG.startCount) {
-                    console.log('Using secondary counter (localStorage)');
-                    count = getSecondaryCounter();
-                }
-                
-                // Animate and display
-                if (count > 0) {
-                    animateVisitorCount(count);
-                } else {
-                    showVisitorBadge();
-                }
-            } catch (error) {
-                console.error('Visitor counter error:', error);
-                // Last resort - show badge
-                showVisitorBadge();
-            }
+async function initVisitorCounter() {
+    try {
+        let count = await fetchPrimaryCounter();
+        
+        if (count && count > 0) {
+            animateVisitorCount(count);
+        } else {
+            showVisitorBadge();
         }
-
+    } catch (error) {
+        console.error('Visitor counter error:', error);
+        showVisitorBadge();
+    }
+}
         // ========================================
         // PARALLAX EFFECT
         // ========================================
