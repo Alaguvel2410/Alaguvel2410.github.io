@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) - MUST BE FIRST -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFGW8W4XVY"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9976V7XWW5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -2069,19 +2069,31 @@
                     <h3>Rubik's Cube</h3>
                 </div>
             </div>
+
 <div class="visitor-section stagger-item delay-4">
-    <div style="text-align: center; padding: 20px;">
-        <div class="visitor-icon" style="margin-bottom: 15px;">
-            <i class="fas fa-heart" style="font-size: 3rem; color: #764ba2;"></i>
+    <div class="visitor-counter" style="flex-direction: column; gap: 25px;">
+        <div class="visitor-header">
+            <div class="visitor-icon">
+                <i class="fas fa-eye"></i>
+            </div>
+            <h3 class="visitor-header-title">Profile Views</h3>
         </div>
         
-        <h3 style="color: #764ba2; font-size: 1.5rem; margin-bottom: 15px;">
-            Thanks for visiting! 🙏
-        </h3>
-        
-        <p style="color: #666; font-size: 1rem; margin-bottom: 20px;">
-            Your visit is tracked via <strong>Google Analytics</strong> for honest insights
-        </p>
+        <div class="visitor-main-box">
+            <div class="visitor-decor-1"></div>
+            <div class="visitor-decor-2"></div>
+            
+            <i class="fas fa-users visitor-side-icon"></i>
+            
+            <div class="visitor-count-wrapper">
+                <div class="visitor-label">TOTAL VISITORS</div>
+                <div id="visitorCountDisplay" class="visitor-count-number">
+                    0
+                </div>
+            </div>
+            
+            <i class="fas fa-chart-line visitor-side-icon"></i>
+        </div>
         
         <div class="visitor-info-grid">
             <div class="visitor-info-item">
@@ -2098,8 +2110,9 @@
             </div>
         </div>
     </div>
+    
+    <p class="visitor-text">Thanks for visiting my portfolio! 🙏</p>
 </div>
-
         </section>
 
     </div>
@@ -2223,23 +2236,49 @@
             updateCounter();
         }
 // ========================================
-// VISITOR SECTION - Clean Display
+// VISITOR COUNTER - Smart Speed Animation
 // ========================================
 function initVisitorCounter() {
     const visitorDisplay = document.getElementById('visitorCountDisplay');
     
     if (visitorDisplay) {
-        // Track visit in Google Analytics (REAL tracking)
         gtag('event', 'portfolio_view', {
             'event_category': 'engagement',
             'event_label': 'Portfolio Visit'
         });
         
-        // Show welcome message instead of fake counter
-        visitorDisplay.innerHTML = `
-            <span style="font-size: 2rem; font-weight: 700;">Welcome! 🎉</span>
-        `;
+        // Load badge in background (increments count)
+        const hiddenImg = new Image();
+        hiddenImg.src = 'https://visitor-badge.laobi.icu/badge?page_id=alaguvel2410.github.io';
+        
+        // Start smart speed counting
+        ultraSlowCount(visitorDisplay);
     }
+}
+
+function ultraSlowCount(display) {
+    let count = 0;
+    
+    function getSpeed(num) {
+         if (num <= 10) return 2000;     // 2s each (20s for 10 numbers)
+        if (num <= 50) return 500;      // 0.5s each (20s for 40 numbers)
+        if (num <= 100) return 400;     // 0.4s each (20s for 50 numbers)
+        if (num <= 200) return 130;     // 0.13s each (13s for 100 numbers)
+        if (num <= 500) return 33;      // 0.033s each (10s for 300 numbers)
+        if (num <= 1000) return 34;     // 0.034s each (17s for 500 numbers)
+        return 20;  // Lightning for 1000+
+    }
+    
+    function tick() {
+        count++;
+        display.textContent = count.toLocaleString('en-US');
+        
+        if (count < 9999) {
+            setTimeout(tick, getSpeed(count));
+        }
+    }
+    
+    tick();
 }
 // ========================================
 // PARALLAX EFFECT
