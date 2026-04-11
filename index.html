@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9976V7XWW5"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'G-9976V7XWW5');
-</script>
+    <!-- Google tag (gtag.js) - MUST BE FIRST -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFGW8W4XVY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9976V7XWW5');
+    </script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1814,9 +1813,13 @@ gtag('config', 'G-9976V7XWW5');
                     <p style="margin-top: 10px;">
                         <strong>113+</strong> Contributions • <strong>14+</strong> Repos
                     </p>
-                    <a href="https://github.com/Alaguvel2410" target="_blank">
-                        <i class="fab fa-github"></i> View My GitHub
-                    </a>
+                    <a href="https://github.com/Alaguvel2410" target="_blank"
+   onclick="gtag('event', 'github_click', {
+     'event_category': 'social_links',
+     'event_label': 'GitHub - Stats Section'
+   });">
+    <i class="fab fa-github"></i> View My GitHub
+</a>
                 </div>
             </div>
         </section>
@@ -2122,15 +2125,22 @@ gtag('config', 'G-9976V7XWW5');
 
     </div>
 
-    <div class="fixed-social-icons">
-        <a href="https://github.com/Alaguvel2410" target="_blank" class="fixed-social-btn github-btn" title="GitHub">
-            <i class="fab fa-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/alagu-vel-a-254a38373/" target="_blank" class="fixed-social-btn linkedin-btn" title="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-    </div>
-
+  <div class="fixed-social-icons">
+    <a href="https://github.com/Alaguvel2410" target="_blank" class="fixed-social-btn github-btn" title="GitHub"
+       onclick="gtag('event', 'github_click', {
+         'event_category': 'social_links',
+         'event_label': 'GitHub Profile'
+       });">
+        <i class="fab fa-github"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/alagu-vel-a-254a38373/" target="_blank" class="fixed-social-btn linkedin-btn" title="LinkedIn"
+       onclick="gtag('event', 'linkedin_click', {
+         'event_category': 'social_links',
+         'event_label': 'LinkedIn Profile'
+       });">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+</div>
     <script>
         // ========================================
         // SCROLL PROGRESS BAR
