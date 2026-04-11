@@ -2069,57 +2069,36 @@
                     <h3>Rubik's Cube</h3>
                 </div>
             </div>
-
-            <!-- UPDATED VISITOR SECTION -->
-            <div class="visitor-section stagger-item delay-4">
-                <div class="visitor-counter" style="flex-direction: column; gap: 25px;">
-                    <div class="visitor-header">
-                        <div class="visitor-icon">
-                            <i class="fas fa-eye"></i>
-                        </div>
-                        <h3 class="visitor-header-title">Profile Views</h3>
-                    </div>
-                    
-                    <div class="visitor-main-box">
-                        <div class="visitor-decor-1"></div>
-                        <div class="visitor-decor-2"></div>
-                        
-                        <i class="fas fa-users visitor-side-icon"></i>
-                        
-                        <div class="visitor-count-wrapper">
-                            <div class="visitor-label">TOTAL VISITORS</div>
-                            <div id="visitorCountDisplay" class="visitor-count-number">
-                                <div class="visitor-loading"></div>
-                            </div>
-                        </div>
-                        
-                        <i class="fas fa-chart-line visitor-side-icon"></i>
-                    </div>
-                    
-                    <!-- Fallback Badge -->
-                    <div id="visitorBadgeFallback" style="display: none;">
-                        <img src="https://hits.sh/alaguvel2410.github.io.svg?style=for-the-badge&label=Visitors&color=764ba2&labelColor=555555" 
-                             alt="Profile Views">
-                    </div>
-                    
-                    <div class="visitor-info-grid">
-                        <div class="visitor-info-item">
-                            <div class="visitor-info-emoji">🌟</div>
-                            <div class="visitor-info-label">Quality Views</div>
-                        </div>
-                        <div class="visitor-info-item alt">
-                            <div class="visitor-info-emoji">🚀</div>
-                            <div class="visitor-info-label">Growing Daily</div>
-                        </div>
-                        <div class="visitor-info-item">
-                            <div class="visitor-info-emoji">💼</div>
-                            <div class="visitor-info-label">Recruiters</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <p class="visitor-text">Thanks for visiting my portfolio! 🙏</p>
+<div class="visitor-section stagger-item delay-4">
+    <div style="text-align: center; padding: 20px;">
+        <div class="visitor-icon" style="margin-bottom: 15px;">
+            <i class="fas fa-heart" style="font-size: 3rem; color: #764ba2;"></i>
+        </div>
+        
+        <h3 style="color: #764ba2; font-size: 1.5rem; margin-bottom: 15px;">
+            Thanks for visiting! 🙏
+        </h3>
+        
+        <p style="color: #666; font-size: 1rem; margin-bottom: 20px;">
+            Your visit is tracked via <strong>Google Analytics</strong> for honest insights
+        </p>
+        
+        <div class="visitor-info-grid">
+            <div class="visitor-info-item">
+                <div class="visitor-info-emoji">🌟</div>
+                <div class="visitor-info-label">Quality Views</div>
             </div>
+            <div class="visitor-info-item alt">
+                <div class="visitor-info-emoji">🚀</div>
+                <div class="visitor-info-label">Growing Daily</div>
+            </div>
+            <div class="visitor-info-item">
+                <div class="visitor-info-emoji">💼</div>
+                <div class="visitor-info-label">Recruiters</div>
+            </div>
+        </div>
+    </div>
+</div>
 
         </section>
 
@@ -2244,25 +2223,21 @@
             updateCounter();
         }
 // ========================================
-// VISITOR COUNTER - Global Badge
+// VISITOR SECTION - Clean Display
 // ========================================
 function initVisitorCounter() {
     const visitorDisplay = document.getElementById('visitorCountDisplay');
     
     if (visitorDisplay) {
+        // Track visit in Google Analytics (REAL tracking)
         gtag('event', 'portfolio_view', {
             'event_category': 'engagement',
             'event_label': 'Portfolio Visit'
         });
         
+        // Show welcome message instead of fake counter
         visitorDisplay.innerHTML = `
-            <img src="https://visitor-badge.laobi.icu/badge?page_id=alaguvel2410.github.io&left_color=%23764ba2&right_color=%23667eea&left_text=Visitors" 
-                 alt="Visitor Count"
-                 style="height: 45px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);"
-                 onerror="this.style.display='none'; document.getElementById('visitorFallbackText').style.display='block';">
-            <div id="visitorFallbackText" style="display:none; color: white; font-size: 1.5rem; font-weight: 700;">
-                Welcome! 🎉
-            </div>
+            <span style="font-size: 2rem; font-weight: 700;">Welcome! 🎉</span>
         `;
     }
 }
