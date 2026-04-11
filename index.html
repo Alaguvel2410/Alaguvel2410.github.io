@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9976V7XWW5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-9976V7XWW5');
-</script>
+    <!-- Google tag (gtag.js) - MUST BE FIRST -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFGW8W4XVY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9976V7XWW5');
+    </script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -2243,64 +2244,27 @@
             updateCounter();
         }
 // ========================================
-// VISITOR COUNTER SYSTEM - Honest localStorage
+// VISITOR COUNTER - Global Badge
 // ========================================
 function initVisitorCounter() {
     const visitorDisplay = document.getElementById('visitorCountDisplay');
-    const storageKey = 'portfolio_total_visitors';
-    const sessionKey = 'portfolio_current_session';
-    const timestampKey = 'portfolio_last_visit';
     
-    // Check if already counted in this session
-    const sessionCounted = sessionStorage.getItem(sessionKey);
-    
-    if (!sessionCounted) {
-        // Get current count
-        let totalVisitors = parseInt(localStorage.getItem(storageKey) || '0');
+    if (visitorDisplay) {
+        gtag('event', 'portfolio_view', {
+            'event_category': 'engagement',
+            'event_label': 'Portfolio Visit'
+        });
         
-        // Check last visit time (optional: count again after 24 hours)
-        const lastVisit = localStorage.getItem(timestampKey);
-        const now = Date.now();
-        const oneDayAgo = now - (24 * 60 * 60 * 1000);
-        
-        // Only increment if:
-        // 1. First time visitor, OR
-        // 2. Last visit was more than 24 hours ago
-        if (!lastVisit || parseInt(lastVisit) < oneDayAgo) {
-            totalVisitors++;
-            localStorage.setItem(storageKey, totalVisitors.toString());
-            localStorage.setItem(timestampKey, now.toString());
-        }
-        
-        // Mark this session as counted
-        sessionStorage.setItem(sessionKey, 'true');
-        
-        // Animate the count
-        animateCount(totalVisitors);
-    } else {
-        // Already counted, just show current count
-        const totalVisitors = parseInt(localStorage.getItem(storageKey) || '1');
-        animateCount(totalVisitors);
+        visitorDisplay.innerHTML = `
+            <img src="https://visitor-badge.laobi.icu/badge?page_id=alaguvel2410.github.io&left_color=%23764ba2&right_color=%23667eea&left_text=Visitors" 
+                 alt="Visitor Count"
+                 style="height: 45px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);"
+                 onerror="this.style.display='none'; document.getElementById('visitorFallbackText').style.display='block';">
+            <div id="visitorFallbackText" style="display:none; color: white; font-size: 1.5rem; font-weight: 700;">
+                Welcome! 🎉
+            </div>
+        `;
     }
-}
-
-function animateCount(targetCount) {
-    const visitorDisplay = document.getElementById('visitorCountDisplay');
-    let currentCount = 0;
-    const duration = 2000;
-    const steps = 60;
-    const increment = targetCount / steps;
-    const stepDuration = duration / steps;
-    
-    const counterInterval = setInterval(() => {
-        currentCount += increment;
-        if (currentCount >= targetCount) {
-            visitorDisplay.textContent = Math.floor(targetCount).toLocaleString('en-US');
-            clearInterval(counterInterval);
-        } else {
-            visitorDisplay.textContent = Math.floor(currentCount).toLocaleString('en-US');
-        }
-    }, stepDuration);
 }
 // ========================================
 // PARALLAX EFFECT
