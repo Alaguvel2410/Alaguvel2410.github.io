@@ -28,7 +28,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://img.icons8.com/color/48/python--v1.png">
     
-    <title> alagu...✌️ </title>
+    <title> alagu...✌️</title>
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -75,6 +75,7 @@
             background: linear-gradient(45deg, #667eea, #764ba2);
             background-clip: text;
             -webkit-background-clip: text;
+            color: transparent;
             -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
         }
@@ -478,7 +479,6 @@
             margin-left: 0;
         }
 
-        /* CGPA Badge - Special styling for visibility */
         .exp-edu-cgpa {
             display: inline-flex;
             align-items: center;
@@ -531,21 +531,6 @@
             background: rgba(118, 75, 162, 0.05);
             border-radius: 15px;
             border-left: 5px solid #764ba2;
-        }
-
-        .goals {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 25px;
-        }
-
-        .goal-card {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
         }
 
         .hobbies-container {
@@ -669,7 +654,7 @@
             overflow: hidden;
         }
 
-        .achievement-card::before {
+        .achievement-card:hover::before {
             content: '';
             position: absolute;
             top: -50%;
@@ -678,7 +663,7 @@
             height: 200%;
             background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
             transform: rotate(45deg);
-            animation: achievementShine 3s infinite;
+            animation: achievementShine 1s ease;
         }
 
         @keyframes achievementShine {
@@ -824,28 +809,6 @@
             50% { transform: translateY(-20px) scale(1.1); }
         }
 
-        .visitor-badge-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            padding: 15px 25px;
-            border-radius: 50px;
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
-        }
-
-        .visitor-badge-container i {
-            color: white;
-            font-size: 1.3rem;
-        }
-
-        .visitor-badge-container span {
-            color: white;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
         .visitor-text {
             color: #666;
             font-size: 1rem;
@@ -881,24 +844,21 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.4);
         }
 
-        .github-btn {
-            background: #181717;
-        }
-
+        .github-btn { background: #181717; }
         .github-btn:hover {
             background: #333;
             box-shadow: 0 8px 25px rgba(24, 23, 23, 0.5);
         }
 
-        .linkedin-btn {
-            background: #0A66C2;
-        }
-
+        .linkedin-btn { background: #0A66C2; }
         .linkedin-btn:hover {
             background: #0077B5;
             box-shadow: 0 8px 25px rgba(10, 102, 194, 0.5);
         }
 
+        /* ========================================
+           SCROLL ANIMATIONS
+        ======================================== */
         .animate-on-scroll {
             opacity: 0;
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -942,14 +902,12 @@
             0% { opacity: 0; transform: translateY(-50px) scale(0.95); }
             100% { opacity: 1; transform: translateY(0) scale(1); }
         }
-
         header { animation: headerEntrance 1s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
 
         @keyframes nameGlow {
             0%, 100% { filter: drop-shadow(0 0 5px rgba(102, 126, 234, 0.3)); }
             50% { filter: drop-shadow(0 0 20px rgba(118, 75, 162, 0.6)); }
         }
-
         .hero-name { animation: nameGlow 3s ease-in-out infinite; }
 
         .contact-item { opacity: 0; animation: contactEntrance 0.6s ease forwards; }
@@ -966,13 +924,6 @@
         @keyframes quoteReveal {
             from { opacity: 0; transform: scale(0.95); border-left-width: 0; }
             to { opacity: 1; transform: scale(1); border-left-width: 5px; }
-        }
-
-        .goal-card.animated { animation: goalBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards; }
-
-        @keyframes goalBounce {
-            from { opacity: 0; transform: scale(0.5); }
-            to { opacity: 1; transform: scale(1); }
         }
 
         .hobby-card.animated { animation: hobbySpinIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards; }
@@ -1028,7 +979,7 @@
         .status-not-started { background: #f8f9fa; color: #666; }
 
         /* ========================================
-           GOALS SECTION STYLES
+           GOALS SECTION
         ======================================== */
         .goals-card-wrapper {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -1043,20 +994,16 @@
 
         .goals-decor-1 {
             position: absolute;
-            top: -50px;
-            right: -50px;
-            width: 150px;
-            height: 150px;
+            top: -50px; right: -50px;
+            width: 150px; height: 150px;
             background: rgba(255,255,255,0.1);
             border-radius: 50%;
         }
 
         .goals-decor-2 {
             position: absolute;
-            bottom: -30px;
-            left: -30px;
-            width: 100px;
-            height: 100px;
+            bottom: -30px; left: -30px;
+            width: 100px; height: 100px;
             background: rgba(255,255,255,0.1);
             border-radius: 50%;
         }
@@ -1101,7 +1048,7 @@
         }
 
         /* ========================================
-           VISITOR SECTION STYLES
+           VISITOR SECTION
         ======================================== */
         .visitor-header {
             display: flex;
@@ -1133,10 +1080,8 @@
 
         .visitor-decor-1 {
             position: absolute;
-            top: -30px;
-            left: -30px;
-            width: 100px;
-            height: 100px;
+            top: -30px; left: -30px;
+            width: 100px; height: 100px;
             background: rgba(255,255,255,0.1);
             border-radius: 50%;
             animation: float 6s ease-in-out infinite;
@@ -1144,10 +1089,8 @@
 
         .visitor-decor-2 {
             position: absolute;
-            bottom: -40px;
-            right: -40px;
-            width: 120px;
-            height: 120px;
+            bottom: -40px; right: -40px;
+            width: 120px; height: 120px;
             background: rgba(255,255,255,0.1);
             border-radius: 50%;
             animation: float 8s ease-in-out infinite reverse;
@@ -1216,18 +1159,6 @@
             font-weight: 600;
         }
 
-        /* Visitor Badge Fallback */
-        #visitorBadgeFallback {
-            margin-top: 15px;
-        }
-
-        #visitorBadgeFallback img {
-            height: 35px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        /* Loading Spinner */
         .visitor-loading {
             display: inline-block;
             width: 40px;
@@ -1243,20 +1174,53 @@
         }
 
         /* ========================================
-           MOBILE RESPONSIVE STYLES
+           RESPONSIVE — 1024px (Small Laptops)
         ======================================== */
+        @media (max-width: 1024px) {
+            .container { padding: 18px; }
 
+            .hero-name { font-size: 3rem; }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .tools-grid {
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            }
+
+            .achievements-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .visitor-main-box {
+                padding: 30px 40px;
+            }
+        }
+
+        /* ========================================
+           RESPONSIVE — 900px (Tablets Landscape)
+        ======================================== */
         @media (max-width: 900px) {
             .exp-edu-container {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .visitor-main-box {
+                padding: 28px 30px;
+            }
         }
 
+        /* ========================================
+           RESPONSIVE — 768px (Tablets Portrait)
+        ======================================== */
         @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
+            .container { padding: 15px; }
 
             header {
                 padding: 25px 20px;
@@ -1264,20 +1228,9 @@
                 margin-bottom: 25px;
             }
 
-            .hero-name {
-                font-size: 2.2rem;
-                margin-bottom: 8px;
-            }
-
-            .hero-subtitle {
-                font-size: 1rem;
-                margin-bottom: 15px;
-                line-height: 1.5;
-            }
-
-            .location {
-                font-size: 0.95rem;
-            }
+            .hero-name { font-size: 2.2rem; margin-bottom: 8px; }
+            .hero-subtitle { font-size: 1rem; margin-bottom: 15px; line-height: 1.5; }
+            .location { font-size: 0.95rem; }
 
             .contact-info {
                 flex-direction: column;
@@ -1306,28 +1259,10 @@
                 text-align: center;
             }
 
-            .section h2 i {
-                font-size: 1.4rem;
-            }
+            .skills-grid { grid-template-columns: 1fr; gap: 15px; }
+            .skill-card { padding: 20px; }
 
-            .skills-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-
-            .skill-card {
-                padding: 20px;
-            }
-
-            .tech-logo {
-                width: 60px;
-                height: 60px;
-            }
-
-            .tech-logo img {
-                width: 100%;
-                height: 100%;
-            }
+            .tech-logo { width: 60px; height: 60px; }
 
             .status-badge {
                 font-size: 0.75rem;
@@ -1335,409 +1270,478 @@
                 margin-left: 5px;
             }
 
-            .projects-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
+            .project-card { padding: 20px; }
+            .project-card h3 { font-size: 1.05rem; }
+            .project-card p { font-size: 0.9rem; }
+            .tech-tag { font-size: 0.75rem; padding: 4px 10px; }
 
-            .project-card {
-                padding: 20px;
-            }
-
-            .project-card h3 {
-                font-size: 1.05rem;
-            }
-
-            .project-card p {
-                font-size: 0.9rem;
-            }
-
-            .tech-tag {
-                font-size: 0.75rem;
-                padding: 4px 10px;
-            }
-
-            .exp-edu-column {
-                padding: 20px;
-            }
-
-            .exp-edu-column h3 {
-                font-size: 1.2rem;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-            }
-
-            .exp-edu-card {
-                padding: 15px;
-                padding-top: 15px;
-            }
-
-            .exp-edu-card-header {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .exp-edu-icon {
-                width: 45px;
-                height: 45px;
-            }
-
-            .exp-edu-icon i {
-                font-size: 1.1rem;
-            }
-
-            .exp-edu-info h4 {
-                font-size: 0.95rem;
-            }
-
+            .exp-edu-column { padding: 20px; }
+            .exp-edu-column h3 { font-size: 1.2rem; }
+            .exp-edu-card { padding: 15px; padding-top: 15px; }
+            .exp-edu-card-header { flex-direction: column; gap: 12px; }
+            .exp-edu-icon { width: 45px; height: 45px; }
+            .exp-edu-icon i { font-size: 1.1rem; }
+            .exp-edu-info h4 { font-size: 0.95rem; }
             .exp-edu-info .company,
-            .exp-edu-info .institution {
-                font-size: 0.85rem;
-                flex-wrap: wrap;
-            }
+            .exp-edu-info .institution { font-size: 0.85rem; flex-wrap: wrap; }
+            .exp-edu-info .location-text { font-size: 0.8rem; }
+            .exp-edu-date { font-size: 0.75rem; padding: 4px 10px; }
+            .exp-edu-status { position: static; margin-bottom: 10px; font-size: 0.65rem; padding: 3px 10px; }
+            .exp-edu-cgpa { font-size: 0.8rem; padding: 5px 12px; }
 
-            .exp-edu-info .location-text {
-                font-size: 0.8rem;
-            }
+            .tools-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+            .tool-card { padding: 20px 15px; }
+            .tool-icon { width: 50px; height: 50px; }
+            .tool-card h3 { font-size: 0.95rem; }
+            .tool-card p { font-size: 0.75rem; }
 
-            .exp-edu-date {
-                font-size: 0.75rem;
-                padding: 4px 10px;
-            }
+            .achievements-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+            .achievement-card { padding: 20px 15px; }
+            .achievement-icon { font-size: 2rem; }
+            .achievement-number { font-size: 1.8rem; }
+            .achievement-label { font-size: 0.85rem; }
 
-            .exp-edu-status {
-                position: static;
-                margin-bottom: 10px;
-                font-size: 0.65rem;
-                padding: 3px 10px;
-            }
+            .github-stats-container { flex-direction: column; gap: 15px; }
+            .github-stat-card { width: 100%; }
+            .github-stats-fallback { padding: 25px 20px; }
+            .github-stats-fallback i { font-size: 2.5rem; }
+            .github-stats-fallback h3 { font-size: 1.2rem; }
 
-            .exp-edu-cgpa {
-                font-size: 0.8rem;
-                padding: 5px 12px;
-            }
+            .goals-card-wrapper { padding: 25px 20px; border-radius: 15px; }
+            .goals-emoji { font-size: 2.5rem; margin-bottom: 15px; }
+            .goals-title { font-size: 1.3rem; margin-bottom: 15px; }
+            .goals-text { font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px; }
+            .goals-tags-container { gap: 8px; margin-top: 15px; }
+            .goals-tag { padding: 6px 14px; font-size: 0.8rem; }
+            .goals-decor-1 { width: 80px; height: 80px; top: -30px; right: -30px; }
+            .goals-decor-2 { width: 60px; height: 60px; bottom: -20px; left: -20px; }
 
-            .tools-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
+            .quote { font-size: 1.05rem; padding: 20px; margin: 20px 0; }
 
-            .tool-card {
-                padding: 20px 15px;
-            }
+            .hobbies-container { flex-direction: column; gap: 15px; align-items: center; }
+            .hobby-card { width: 100%; max-width: 250px; padding: 20px; }
+            .hobby-card i { font-size: 2rem; }
 
-            .tool-icon {
-                width: 50px;
-                height: 50px;
-            }
+            .visitor-section { padding: 20px 15px; }
+            .visitor-header { flex-direction: column; gap: 10px; }
+            .visitor-header-title { font-size: 1.2rem; }
+            .visitor-main-box { padding: 25px 20px; border-radius: 30px; flex-direction: column; gap: 20px; }
+            .visitor-side-icon { font-size: 1.8rem; }
+            .visitor-label { font-size: 0.85rem; }
+            .visitor-count-number { font-size: 2.5rem; }
+            .visitor-decor-1 { width: 60px; height: 60px; top: -20px; left: -20px; }
+            .visitor-decor-2 { width: 80px; height: 80px; bottom: -30px; right: -30px; }
+            .visitor-info-grid { grid-template-columns: 1fr; gap: 10px; max-width: 100%; }
+            .visitor-info-item { padding: 12px; }
+            .visitor-info-emoji { font-size: 1.2rem; }
+            .visitor-info-label { font-size: 0.8rem; }
+            .visitor-text { font-size: 0.9rem; }
 
-            .tool-card h3 {
-                font-size: 0.95rem;
-            }
+            .fixed-social-icons { bottom: 20px; right: 20px; gap: 12px; }
+            .fixed-social-btn { width: 50px; height: 50px; font-size: 1.4rem; }
 
-            .tool-card p {
-                font-size: 0.75rem;
+            /* Simplified animations on tablet */
+            .animate-on-scroll { transition: all 0.5s ease; }
+            .fade-up, .fade-down { transform: translateY(30px); }
+            .slide-left, .slide-right { transform: translateY(30px); }
+            .zoom-in { transform: scale(0.9); }
+            .stagger-item { transform: translateY(20px); }
+            .fade-up.animated, .fade-down.animated,
+            .slide-left.animated, .slide-right.animated {
+                opacity: 1;
+                transform: translateY(0) !important;
             }
-
-            .achievements-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-
-            .achievement-card {
-                padding: 20px 15px;
-            }
-
-            .achievement-icon {
-                font-size: 2rem;
-            }
-
-            .achievement-number {
-                font-size: 1.8rem;
-            }
-
-            .achievement-label {
-                font-size: 0.85rem;
-            }
-
-            .github-stats-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .github-stat-card {
-                width: 100%;
-            }
-
-            .github-stats-fallback {
-                padding: 25px 20px;
-            }
-
-            .github-stats-fallback i {
-                font-size: 2.5rem;
-            }
-
-            .github-stats-fallback h3 {
-                font-size: 1.2rem;
-            }
-
-            .goals-card-wrapper {
-                padding: 25px 20px;
-                border-radius: 15px;
-            }
-
-            .goals-emoji {
-                font-size: 2.5rem;
-                margin-bottom: 15px;
-            }
-
-            .goals-title {
-                font-size: 1.3rem;
-                margin-bottom: 15px;
-            }
-
-            .goals-text {
-                font-size: 0.95rem;
-                line-height: 1.6;
-                margin-bottom: 15px;
-            }
-
-            .goals-tags-container {
-                gap: 8px;
-                margin-top: 15px;
-            }
-
-            .goals-tag {
-                padding: 6px 14px;
-                font-size: 0.8rem;
-            }
-
-            .goals-decor-1 {
-                width: 80px;
-                height: 80px;
-                top: -30px;
-                right: -30px;
-            }
-
-            .goals-decor-2 {
-                width: 60px;
-                height: 60px;
-                bottom: -20px;
-                left: -20px;
-            }
-
-            .quote {
-                font-size: 1.05rem;
-                padding: 20px;
-                margin: 20px 0;
-            }
-
-            .hobbies-container {
-                flex-direction: column;
-                gap: 15px;
-                align-items: center;
-            }
-
-            .hobby-card {
-                width: 100%;
-                max-width: 250px;
-                padding: 20px;
-            }
-
-            .hobby-card i {
-                font-size: 2rem;
-            }
-
-            .visitor-section {
-                padding: 20px 15px;
-            }
-
-            .visitor-header {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .visitor-header-title {
-                font-size: 1.2rem;
-            }
-
-            .visitor-main-box {
-                padding: 25px 20px;
-                border-radius: 30px;
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .visitor-side-icon {
-                font-size: 1.8rem;
-            }
-
-            .visitor-label {
-                font-size: 0.85rem;
-            }
-
-            .visitor-count-number {
-                font-size: 2.5rem;
-            }
-
-            .visitor-decor-1 {
-                width: 60px;
-                height: 60px;
-                top: -20px;
-                left: -20px;
-            }
-
-            .visitor-decor-2 {
-                width: 80px;
-                height: 80px;
-                bottom: -30px;
-                right: -30px;
-            }
-
-            .visitor-info-grid {
-                grid-template-columns: 1fr;
-                gap: 10px;
-                max-width: 100%;
-            }
-
-            .visitor-info-item {
-                padding: 12px;
-            }
-
-            .visitor-info-emoji {
-                font-size: 1.2rem;
-            }
-
-            .visitor-info-label {
-                font-size: 0.8rem;
-            }
-
-            .visitor-text {
-                font-size: 0.9rem;
-            }
-
-            .fixed-social-icons {
-                bottom: 20px;
-                right: 20px;
-                gap: 12px;
-            }
-
-            .fixed-social-btn {
-                width: 50px;
-                height: 50px;
-                font-size: 1.4rem;
-            }
-
-            .animate-on-scroll {
-                transition: all 0.5s ease;
-            }
-
-            .fade-up,
-            .fade-down {
-                transform: translateY(30px);
-            }
-
-            .slide-left,
-            .slide-right {
-                transform: translateX(0);
-            }
-
-            .zoom-in {
-                transform: scale(0.9);
-            }
-
-            .stagger-item {
-                transform: translateY(20px);
-            }
-
-            .skill-card:hover,
-            .project-card:hover,
-            .tool-card:hover,
-            .achievement-card:hover,
-            .exp-edu-card:hover,
-            .hobby-card:hover {
+            .skill-card:hover, .project-card:hover,
+            .tool-card:hover, .achievement-card:hover,
+            .exp-edu-card:hover, .hobby-card:hover {
                 transform: none;
             }
         }
 
-        @media (max-width: 480px) {
-            .hero-name {
-                font-size: 1.8rem;
+        /* ========================================
+           RESPONSIVE — 600px (Large Phones)
+        ======================================== */
+        @media (max-width: 600px) {
+            .container { padding: 12px; }
+
+            header {
+                padding: 22px 15px;
+                border-radius: 12px;
+                margin-bottom: 18px;
             }
 
-            .hero-subtitle {
-                font-size: 0.9rem;
-            }
+            .hero-name { font-size: 1.9rem; }
+            .hero-subtitle { font-size: 0.92rem; }
+            .location { font-size: 0.88rem; }
 
-            .section h2 {
-                font-size: 1.4rem;
-            }
-
-            .tools-grid,
-            .achievements-grid {
-                grid-template-columns: 1fr;
-            }
-
+            .contact-info { gap: 10px; margin-top: 18px; }
             .contact-item {
+                padding: 10px 14px;
                 font-size: 0.85rem;
-                padding: 10px 12px;
-            }
-
-            .project-card h3 {
-                font-size: 0.95rem;
-            }
-
-            .goals-emoji {
-                font-size: 2rem;
-            }
-
-            .goals-title {
-                font-size: 1.1rem;
-            }
-
-            .goals-text {
-                font-size: 0.85rem;
-            }
-
-            .goals-tag {
-                font-size: 0.75rem;
-                padding: 5px 12px;
-            }
-
-            .visitor-count-number {
-                font-size: 2rem;
-            }
-
-            .visitor-main-box {
-                padding: 20px 15px;
-            }
-
-            .visitor-side-icon {
-                font-size: 1.5rem;
-            }
-        }
-
-        @media (max-width: 900px) and (orientation: landscape) {
-            .hero-name {
-                font-size: 2rem;
+                border-radius: 40px;
             }
 
             .section {
-                padding: 20px;
+                padding: 20px 15px;
+                border-radius: 12px;
+                margin-bottom: 15px;
             }
 
-            .fixed-social-icons {
-                bottom: 15px;
-                right: 15px;
+            .section h2 { font-size: 1.4rem; gap: 10px; }
+            .section h2 i { font-size: 1.2rem; }
+
+            .skills-grid { gap: 12px; }
+            .skill-card { padding: 18px; border-radius: 12px; }
+            .tech-logo { width: 55px; height: 55px; }
+            .skill-card h3 { font-size: 0.95rem; }
+            .status-badge { font-size: 0.7rem; padding: 3px 8px; }
+
+            .projects-grid { gap: 15px; }
+            .project-card { padding: 18px; border-radius: 12px; }
+            .project-card h3 { font-size: 0.95rem; }
+            .project-card p { font-size: 0.85rem; }
+            .tech-tag { font-size: 0.7rem; padding: 4px 8px; }
+            .project-type { font-size: 0.7rem; }
+
+            .exp-edu-column { padding: 15px; border-radius: 15px; }
+            .exp-edu-column h3 { font-size: 1.1rem; }
+            .exp-edu-card { border-radius: 12px; padding: 12px; }
+            .exp-edu-info h4 { font-size: 0.88rem; }
+            .exp-edu-info .company,
+            .exp-edu-info .institution { font-size: 0.8rem; }
+            .exp-edu-info .location-text { font-size: 0.75rem; }
+            .exp-edu-cgpa { font-size: 0.75rem; padding: 4px 10px; }
+            .exp-edu-score { font-size: 0.78rem; }
+            .exp-edu-date { font-size: 0.7rem; padding: 4px 9px; }
+            .exp-edu-icon { width: 40px; height: 40px; border-radius: 10px; }
+            .exp-edu-icon i { font-size: 1rem; }
+
+            .tools-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .tool-card { padding: 18px 12px; border-radius: 12px; }
+            .tool-icon { width: 45px; height: 45px; }
+            .tool-card h3 { font-size: 0.88rem; }
+            .tool-card p { font-size: 0.72rem; }
+
+            .achievements-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .achievement-card { padding: 18px 12px; border-radius: 12px; }
+            .achievement-icon { font-size: 1.8rem; margin-bottom: 10px; }
+            .achievement-number { font-size: 1.6rem; }
+            .achievement-label { font-size: 0.78rem; }
+
+            .goals-card-wrapper { padding: 20px 15px; border-radius: 12px; }
+            .goals-emoji { font-size: 2.2rem; }
+            .goals-title { font-size: 1.15rem; }
+            .goals-text { font-size: 0.88rem; }
+            .goals-tag { font-size: 0.78rem; padding: 5px 12px; }
+
+            .quote { font-size: 0.95rem; padding: 18px; border-radius: 12px; }
+            .hobby-card { border-radius: 12px; }
+            .hobby-card i { font-size: 1.8rem; }
+            .hobby-card h3 { font-size: 0.95rem; }
+
+            .visitor-section { padding: 18px 12px; border-radius: 12px; }
+            .visitor-header-title { font-size: 1.1rem; }
+            .visitor-count-number { font-size: 2.2rem; }
+            .visitor-label { font-size: 0.8rem; letter-spacing: 0.5px; }
+            .visitor-main-box { padding: 22px 15px; border-radius: 20px; gap: 15px; }
+            .visitor-side-icon { font-size: 1.5rem; }
+            .visitor-info-grid { gap: 8px; }
+            .visitor-info-item { padding: 10px; border-radius: 10px; }
+            .visitor-info-emoji { font-size: 1.1rem; }
+            .visitor-info-label { font-size: 0.75rem; }
+            .visitor-text { font-size: 0.85rem; }
+
+            .fixed-social-icons { bottom: 15px; right: 15px; gap: 10px; }
+            .fixed-social-btn { width: 46px; height: 46px; font-size: 1.25rem; }
+        }
+
+        /* ========================================
+           RESPONSIVE — 480px (Standard Phones)
+        ======================================== */
+        @media (max-width: 480px) {
+            .container { padding: 10px; }
+
+            header { padding: 20px 12px; border-radius: 12px; }
+            .hero-name { font-size: 1.7rem; }
+            .hero-subtitle { font-size: 0.88rem; }
+            .location { font-size: 0.82rem; }
+
+            .contact-item {
+                font-size: 0.82rem;
+                padding: 9px 12px;
+                gap: 8px;
             }
 
-            .visitor-info-grid {
-                grid-template-columns: repeat(3, 1fr);
+            .section { padding: 18px 12px; }
+            .section h2 { font-size: 1.3rem; }
+
+            .skills-grid { grid-template-columns: 1fr; }
+            .skill-card {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                text-align: left;
+                padding: 15px;
             }
+            .tech-logo {
+                width: 50px;
+                height: 50px;
+                flex-shrink: 0;
+                margin: 0;
+            }
+            .skill-card h3 { font-size: 0.92rem; margin-bottom: 4px; }
+            .status-badge { margin-left: 0; font-size: 0.68rem; }
+
+            .tools-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .tool-card { padding: 15px 10px; }
+            .tool-icon { width: 42px; height: 42px; margin-bottom: 10px; }
+            .tool-card h3 { font-size: 0.82rem; }
+            .tool-card p { font-size: 0.7rem; }
+
+            .achievements-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .achievement-card { padding: 15px 10px; }
+            .achievement-icon { font-size: 1.6rem; margin-bottom: 8px; }
+            .achievement-number { font-size: 1.5rem; }
+            .achievement-label { font-size: 0.72rem; }
+
+            .github-stats-fallback { padding: 20px 15px; }
+            .github-stats-fallback i { font-size: 2rem; }
+            .github-stats-fallback h3 { font-size: 1.1rem; }
+
+            .goals-card-wrapper { padding: 18px 12px; }
+            .goals-emoji { font-size: 2rem; }
+            .goals-title { font-size: 1.05rem; }
+            .goals-text { font-size: 0.82rem; line-height: 1.6; }
+            .goals-tags-container { gap: 6px; }
+            .goals-tag { font-size: 0.72rem; padding: 5px 10px; }
+
+            .visitor-count-number { font-size: 2rem; }
+            .visitor-main-box { padding: 18px 12px; }
+        }
+
+        /* ========================================
+           RESPONSIVE — 380px (Small Phones: iPhone SE, Galaxy A series)
+        ======================================== */
+        @media (max-width: 380px) {
+            .container { padding: 8px; }
+
+            header { padding: 18px 10px; border-radius: 10px; margin-bottom: 12px; }
+            .hero-name { font-size: 1.5rem; }
+            .hero-subtitle { font-size: 0.82rem; line-height: 1.4; }
+            .location { font-size: 0.78rem; }
+
+            .contact-info { gap: 8px; margin-top: 14px; }
+            .contact-item {
+                padding: 9px 10px;
+                font-size: 0.78rem;
+                gap: 6px;
+                border-radius: 30px;
+            }
+            .contact-item i { font-size: 0.9rem; }
+
+            .section { padding: 15px 10px; border-radius: 10px; margin-bottom: 12px; }
+            .section h2 { font-size: 1.15rem; gap: 8px; margin-bottom: 15px; }
+            .section h2 i { font-size: 1rem; }
+
+            .skill-card { padding: 12px; gap: 12px; }
+            .tech-logo { width: 44px; height: 44px; }
+            .skill-card h3 { font-size: 0.85rem; }
+            .status-badge { font-size: 0.62rem; padding: 2px 7px; }
+
+            .project-card { padding: 14px; border-radius: 10px; }
+            .project-card h3 { font-size: 0.85rem; margin-bottom: 10px; }
+            .project-card p { font-size: 0.78rem; line-height: 1.6; }
+            .tech-tag { font-size: 0.65rem; padding: 3px 7px; }
+            .project-type { font-size: 0.62rem; }
+
+            .exp-edu-column { padding: 12px; border-radius: 12px; }
+            .exp-edu-column h3 { font-size: 1rem; margin-bottom: 12px; }
+            .exp-edu-card { padding: 10px; border-radius: 10px; margin-bottom: 10px; }
+            .exp-edu-info h4 { font-size: 0.8rem; }
+            .exp-edu-info .company,
+            .exp-edu-info .institution { font-size: 0.72rem; }
+            .exp-edu-info .location-text { font-size: 0.68rem; }
+            .exp-edu-cgpa { font-size: 0.68rem; padding: 3px 8px; }
+            .exp-edu-score { font-size: 0.7rem; }
+            .exp-edu-date { font-size: 0.65rem; padding: 3px 8px; }
+            .exp-edu-icon { width: 36px; height: 36px; border-radius: 8px; }
+            .exp-edu-icon i { font-size: 0.9rem; }
+            .exp-edu-info .course-tag { font-size: 0.65rem; padding: 2px 7px; }
+            .exp-edu-status { font-size: 0.6rem; padding: 2px 8px; }
+
+            .tools-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .tool-card { padding: 12px 8px; border-radius: 10px; }
+            .tool-icon { width: 38px; height: 38px; margin-bottom: 8px; border-radius: 10px; }
+            .tool-card h3 { font-size: 0.75rem; }
+            .tool-card p { font-size: 0.65rem; }
+
+            .achievements-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .achievement-card { padding: 12px 8px; border-radius: 10px; }
+            .achievement-icon { font-size: 1.4rem; margin-bottom: 6px; }
+            .achievement-number { font-size: 1.3rem; }
+            .achievement-label { font-size: 0.65rem; }
+
+            .github-stats-fallback { padding: 18px 12px; border-radius: 10px; }
+            .github-stats-fallback i { font-size: 1.8rem; margin-bottom: 12px; }
+            .github-stats-fallback h3 { font-size: 1rem; }
+            .github-stats-fallback p { font-size: 0.8rem; }
+            .github-stats-fallback a { padding: 8px 18px; font-size: 0.82rem; }
+
+            .goals-card-wrapper { padding: 15px 10px; border-radius: 10px; }
+            .goals-emoji { font-size: 1.8rem; margin-bottom: 10px; }
+            .goals-title { font-size: 0.95rem; margin-bottom: 10px; }
+            .goals-text { font-size: 0.78rem; line-height: 1.55; margin-bottom: 10px; }
+            .goals-tag { font-size: 0.68rem; padding: 4px 9px; }
+            .goals-decor-1 { width: 60px; height: 60px; top: -20px; right: -20px; }
+            .goals-decor-2 { width: 40px; height: 40px; bottom: -15px; left: -15px; }
+
+            .quote { font-size: 0.82rem; padding: 14px; border-radius: 10px; margin: 12px 0; }
+
+            .hobbies-container { gap: 10px; }
+            .hobby-card { max-width: 200px; padding: 15px; border-radius: 10px; }
+            .hobby-card i { font-size: 1.6rem; margin-bottom: 6px; }
+            .hobby-card h3 { font-size: 0.85rem; }
+
+            .visitor-section { padding: 14px 10px; border-radius: 10px; }
+            .visitor-header-title { font-size: 1rem; }
+            .visitor-icon { font-size: 1.8rem; }
+            .visitor-count-number { font-size: 1.8rem; }
+            .visitor-label { font-size: 0.72rem; }
+            .visitor-main-box { padding: 16px 10px; border-radius: 15px; gap: 12px; }
+            .visitor-side-icon { font-size: 1.3rem; }
+            .visitor-decor-1 { width: 50px; height: 50px; }
+            .visitor-decor-2 { width: 60px; height: 60px; }
+            .visitor-info-grid { gap: 6px; }
+            .visitor-info-item { padding: 8px; border-radius: 8px; }
+            .visitor-info-emoji { font-size: 1rem; }
+            .visitor-info-label { font-size: 0.68rem; }
+            .visitor-text { font-size: 0.78rem; }
+            .visitor-loading { width: 28px; height: 28px; border-width: 3px; }
+
+            .fixed-social-icons { bottom: 12px; right: 12px; gap: 8px; }
+            .fixed-social-btn { width: 42px; height: 42px; font-size: 1.1rem; }
+        }
+
+        /* ========================================
+           RESPONSIVE — 320px (Very Small: iPhone 4/5, Galaxy S5)
+        ======================================== */
+        @media (max-width: 320px) {
+            .container { padding: 6px; }
+
+            header { padding: 15px 8px; border-radius: 8px; margin-bottom: 10px; }
+            .hero-name { font-size: 1.3rem; letter-spacing: -0.3px; }
+            .hero-subtitle { font-size: 0.75rem; }
+            .location { font-size: 0.72rem; }
+
+            .contact-info { gap: 6px; margin-top: 12px; }
+            .contact-item {
+                padding: 8px 9px;
+                font-size: 0.72rem;
+                gap: 5px;
+                border-radius: 25px;
+            }
+
+            .section { padding: 12px 8px; border-radius: 8px; margin-bottom: 10px; }
+            .section h2 { font-size: 1.05rem; gap: 7px; margin-bottom: 12px; }
+            .section h2 i { font-size: 0.95rem; }
+
+            .skill-card { padding: 10px; gap: 10px; border-radius: 8px; }
+            .tech-logo { width: 38px; height: 38px; border-radius: 10px; padding: 6px; }
+            .skill-card h3 { font-size: 0.78rem; }
+            .status-badge { font-size: 0.58rem; padding: 2px 6px; }
+
+            .project-card { padding: 12px; border-radius: 8px; border-left-width: 3px; }
+            .project-card h3 { font-size: 0.78rem; margin-bottom: 8px; }
+            .project-card p { font-size: 0.72rem; line-height: 1.55; }
+            .tech-tag { font-size: 0.6rem; padding: 2px 6px; }
+
+            .exp-edu-column { padding: 10px; border-radius: 10px; }
+            .exp-edu-column h3 { font-size: 0.9rem; }
+            .exp-edu-card { padding: 9px; border-radius: 8px; margin-bottom: 8px; border-left-width: 3px; }
+            .exp-edu-info h4 { font-size: 0.72rem; }
+            .exp-edu-info .company,
+            .exp-edu-info .institution { font-size: 0.65rem; }
+            .exp-edu-info .location-text { font-size: 0.62rem; }
+            .exp-edu-cgpa { font-size: 0.62rem; padding: 2px 7px; border-radius: 8px; }
+            .exp-edu-date { font-size: 0.6rem; padding: 2px 7px; }
+            .exp-edu-icon { width: 32px; height: 32px; border-radius: 7px; }
+            .exp-edu-icon i { font-size: 0.8rem; }
+            .exp-edu-status { font-size: 0.55rem; padding: 1px 6px; }
+
+            .tools-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+            .tool-card { padding: 10px 6px; border-radius: 8px; }
+            .tool-icon { width: 34px; height: 34px; margin-bottom: 7px; border-radius: 8px; padding: 6px; }
+            .tool-card h3 { font-size: 0.68rem; margin-bottom: 2px; }
+            .tool-card p { font-size: 0.6rem; }
+
+            .achievements-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+            .achievement-card { padding: 10px 6px; border-radius: 8px; }
+            .achievement-icon { font-size: 1.2rem; margin-bottom: 5px; }
+            .achievement-number { font-size: 1.15rem; }
+            .achievement-label { font-size: 0.6rem; }
+
+            .goals-card-wrapper { padding: 12px 8px; border-radius: 8px; }
+            .goals-emoji { font-size: 1.6rem; margin-bottom: 8px; }
+            .goals-title { font-size: 0.85rem; margin-bottom: 8px; }
+            .goals-text { font-size: 0.72rem; line-height: 1.5; margin-bottom: 8px; }
+            .goals-tag { font-size: 0.62rem; padding: 3px 8px; }
+
+            .quote { font-size: 0.75rem; padding: 12px; border-radius: 8px; }
+            .hobby-card { max-width: 180px; padding: 12px; border-radius: 8px; }
+            .hobby-card i { font-size: 1.4rem; margin-bottom: 5px; }
+            .hobby-card h3 { font-size: 0.78rem; }
+
+            .visitor-section { padding: 12px 8px; border-radius: 8px; }
+            .visitor-header-title { font-size: 0.9rem; }
+            .visitor-icon { font-size: 1.5rem; }
+            .visitor-count-number { font-size: 1.6rem; }
+            .visitor-label { font-size: 0.65rem; letter-spacing: 0; }
+            .visitor-main-box { padding: 14px 8px; border-radius: 12px; gap: 10px; }
+            .visitor-side-icon { font-size: 1.1rem; }
+            .visitor-info-item { padding: 7px; }
+            .visitor-info-emoji { font-size: 0.9rem; }
+            .visitor-info-label { font-size: 0.62rem; }
+            .visitor-text { font-size: 0.72rem; }
+            .visitor-loading { width: 24px; height: 24px; border-width: 2px; }
+
+            .fixed-social-icons { bottom: 10px; right: 10px; gap: 6px; }
+            .fixed-social-btn { width: 38px; height: 38px; font-size: 1rem; }
+
+            .github-stats-fallback { padding: 14px 10px; }
+            .github-stats-fallback i { font-size: 1.6rem; }
+            .github-stats-fallback h3 { font-size: 0.9rem; }
+            .github-stats-fallback p { font-size: 0.72rem; }
+            .github-stats-fallback a { padding: 7px 14px; font-size: 0.75rem; }
+        }
+
+        /* ========================================
+           LANDSCAPE ORIENTATION FIXES
+        ======================================== */
+        @media (max-width: 900px) and (orientation: landscape) {
+            header { padding: 15px 20px; margin-bottom: 15px; }
+            .hero-name { font-size: 1.8rem; }
+            .hero-subtitle { font-size: 0.88rem; margin-bottom: 10px; }
+            .contact-info { flex-direction: row; gap: 10px; margin-top: 12px; }
+            .contact-item { width: auto; padding: 8px 14px; font-size: 0.82rem; }
+            .section { padding: 18px; margin-bottom: 15px; }
+            .section h2 { font-size: 1.3rem; margin-bottom: 15px; }
+            .fixed-social-icons { bottom: 10px; right: 10px; }
+            .visitor-info-grid { grid-template-columns: repeat(3, 1fr); }
+            .skills-grid { grid-template-columns: repeat(2, 1fr); }
+            .tools-grid { grid-template-columns: repeat(3, 1fr); }
+            .achievements-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+
+        @media (max-width: 480px) and (orientation: landscape) {
+            .hero-name { font-size: 1.4rem; }
+            .section h2 { font-size: 1.1rem; }
+            .skills-grid { grid-template-columns: repeat(2, 1fr); }
+            .achievements-grid { grid-template-columns: repeat(4, 1fr); }
+            .achievement-card { padding: 10px 6px; }
+            .achievement-number { font-size: 1.2rem; }
+            .achievement-icon { font-size: 1.2rem; }
         }
     </style>
-    
 
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
@@ -1763,7 +1767,8 @@
             </div>
         </header>
 
-        <section class="section animate-on-scroll fade-down" data-animation="fade-down">
+        <!-- Achievements Section -->
+        <section class="section animate-on-scroll fade-down" data-animation="fade-down" aria-label="Achievements" role="region">
             <h2><i class="fas fa-trophy"></i> Achievements</h2>
             <div class="achievements-grid">
                 <div class="achievement-card stagger-item delay-1">
@@ -1792,18 +1797,20 @@
                 <h3 style="color: #764ba2; margin-bottom: 15px;"><i class="fab fa-github"></i> GitHub Statistics</h3>
                 
                 <div class="github-stats-container" id="githubStatsContainer">
-                    <div class="github-stat-card">
+                    <div class="github-stat-card" id="githubStatCard1">
                         <img 
                             src="https://github-readme-stats.vercel.app/api?username=Alaguvel2410&show_icons=true&theme=tokyonight&hide_border=true&bg_color=1a1b27&title_color=70a5fd&icon_color=bf91f3&text_color=38bdae&cache_seconds=1800" 
-                            alt="GitHub Stats"
+                            alt="Alaguvel's GitHub Stats showing contributions, stars, and commits"
+                            loading="lazy"
                             onload="this.style.display='block'"
                             onerror="handleImageError(this)"
                         >
                     </div>
-                    <div class="github-stat-card">
+                    <div class="github-stat-card" id="githubStatCard2">
                         <img 
                             src="https://github-readme-streak-stats.herokuapp.com/?user=Alaguvel2410&theme=tokyonight&hide_border=true&background=1a1b27&stroke=70a5fd&ring=bf91f3&fire=ff9e64&currStreakLabel=70a5fd&cache_seconds=1800" 
-                            alt="GitHub Streak"
+                            alt="Alaguvel's GitHub Streak showing daily contribution streak"
+                            loading="lazy"
                             onload="this.style.display='block'"
                             onerror="handleImageError(this)"
                         >
@@ -1817,92 +1824,91 @@
                     <p style="margin-top: 10px;">
                         <strong>113+</strong> Contributions • <strong>14+</strong> Repos
                     </p>
-                    <a href="https://github.com/Alaguvel2410" target="_blank"
-   onclick="gtag('event', 'github_click', {
-     'event_category': 'social_links',
-     'event_label': 'GitHub - Stats Section'
-   });">
-    <i class="fab fa-github"></i> View My GitHub
-</a>
+                    <a href="https://github.com/Alaguvel2410" target="_blank" rel="noopener noreferrer"
+                       onclick="gtag('event', 'github_click', {'event_category': 'social_links', 'event_label': 'GitHub - Stats Section'});">
+                        <i class="fab fa-github"></i> View My GitHub
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section class="section animate-on-scroll fade-up" data-animation="fade-up">
+        <!-- Course Progress Section -->
+        <section class="section animate-on-scroll fade-up" data-animation="fade-up" aria-label="Course Progress" role="region">
             <h2><i class="fas fa-graduation-cap"></i> Course Progress</h2>
             <div class="skills-grid">
                 <div class="skill-card completed stagger-item delay-1">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" class="tech-logo" loading="lazy">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL Database - Completed Course" class="tech-logo" loading="lazy">
                     <h3>SQL</h3>
                     <span class="status-badge status-completed">Completed ✅</span>
                 </div>
                 <div class="skill-card completed stagger-item delay-2">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-logo" loading="lazy">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Programming - Completed Course" class="tech-logo" loading="lazy">
                     <h3>Python</h3>
                     <span class="status-badge status-completed">Completed ✅</span>
                 </div>
                 <div class="skill-card completed stagger-item delay-3">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="tech-logo" loading="lazy">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5 Markup - Completed Course" class="tech-logo" loading="lazy">
                     <h3>HTML</h3>
                     <span class="status-badge status-completed">Completed ✅</span>
                 </div>
                 <div class="skill-card completed stagger-item delay-4">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="tech-logo" loading="lazy">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3 Styling - Completed Course" class="tech-logo" loading="lazy">
                     <h3>CSS</h3>
                     <span class="status-badge status-completed">Completed ✅</span>
                 </div>
                 <div class="skill-card ongoing stagger-item delay-5">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" class="tech-logo" loading="lazy">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django Framework - Currently Learning" class="tech-logo" loading="lazy">
                     <h3>Django</h3>
                     <span class="status-badge status-ongoing">Ongoing 🔄</span>
                 </div>
                 <div class="skill-card not-started stagger-item delay-6">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="tech-logo" loading="lazy">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript - Not Started Yet" class="tech-logo" loading="lazy">
                     <h3>JavaScript</h3>
                     <span class="status-badge status-not-started">Not Started ❌</span>
                 </div>
                 <div class="skill-card not-started stagger-item delay-7">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="Full Stack" class="tech-logo" loading="lazy">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="Full Stack Projects - Not Started Yet" class="tech-logo" loading="lazy">
                     <h3>Full Stack Projects</h3>
                     <span class="status-badge status-not-started">Not Started ❌</span>
                 </div>
             </div>
         </section>
 
-        <section class="section animate-on-scroll slide-left" data-animation="slide-left">
+        <!-- Tools Section -->
+        <section class="section animate-on-scroll slide-left" data-animation="slide-left" aria-label="Tools" role="region">
             <h2><i class="fas fa-tools"></i> Tools I Use</h2>
             <div class="tools-grid">
                 <div class="tool-card stagger-item delay-1">
                     <div class="tool-icon">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg" alt="PyCharm">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg" alt="PyCharm Python IDE" loading="lazy">
                     </div>
                     <h3>PyCharm</h3>
                     <p>Python IDE</p>
                 </div>
                 <div class="tool-card stagger-item delay-2">
                     <div class="tool-icon">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="Visual Studio Code Editor" loading="lazy">
                     </div>
                     <h3>VS Code</h3>
                     <p>Code Editor</p>
                 </div>
                 <div class="tool-card stagger-item delay-3">
                     <div class="tool-icon">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="MySQL Workbench">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="MySQL Workbench Database Tool" loading="lazy">
                     </div>
                     <h3>MySQL Workbench</h3>
                     <p>Database Tool</p>
                 </div>
                 <div class="tool-card stagger-item delay-4">
                     <div class="tool-icon">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git Version Control" loading="lazy">
                     </div>
                     <h3>Git</h3>
                     <p>Version Control</p>
                 </div>
                 <div class="tool-card stagger-item delay-5">
                     <div class="tool-icon">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Code Hosting" loading="lazy">
                     </div>
                     <h3>GitHub</h3>
                     <p>Code Hosting</p>
@@ -1910,7 +1916,8 @@
             </div>
         </section>
 
-        <section class="section animate-on-scroll slide-right" data-animation="slide-right">
+        <!-- Projects Section -->
+        <section class="section animate-on-scroll slide-right" data-animation="slide-right" aria-label="Projects" role="region">
             <h2><i class="fas fa-project-diagram"></i> Projects</h2>
             <div class="projects-grid">
                 <div class="project-card stagger-item delay-1">
@@ -1932,16 +1939,16 @@
                         <span class="tech-tag"><i class="fas fa-table"></i> SQL Queries</span>
                         <span class="tech-tag"><i class="fas fa-chart-bar"></i> Data Analysis</span>
                     </div>
-                    <p>A robust database management system designed entirely using MySQL to handle addiction recovery programs, behavioural counselling sessions, patient progress tracking, and comprehensive reporting with complex SQL queries and data relationships.</p>
+                    <p>A robust database management system designed entirely using MySQL to handle addiction recovery programs, behavioural counselling sessions, patient progress tracking, and comprehensive reporting with complex SQL queries.</p>
                 </div>
             </div>
         </section>
 
-        <section class="section animate-on-scroll fade-up" data-animation="fade-up">
+        <!-- Experience & Education Section -->
+        <section class="section animate-on-scroll fade-up" data-animation="fade-up" aria-label="Experience and Education" role="region">
             <h2><i class="fas fa-user-graduate"></i> Experience & Education</h2>
             
             <div class="exp-edu-container">
-                
                 <div class="exp-edu-column stagger-item delay-1">
                     <h3><i class="fas fa-briefcase"></i> Experience</h3>
                     
@@ -2024,29 +2031,24 @@
                         <span class="exp-edu-date"><i class="fas fa-calendar-alt"></i> 2019 - 2020</span>
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <section class="section animate-on-scroll zoom-in" data-animation="zoom-in">
+        <!-- Goals Section -->
+        <section class="section animate-on-scroll zoom-in" data-animation="zoom-in" aria-label="Goals" role="region">
             <h2><i class="fas fa-bullseye"></i> Goals</h2>
             
             <div class="goals-card-wrapper stagger-item delay-1">
                 <div class="goals-decor-1"></div>
                 <div class="goals-decor-2"></div>
-                
                 <div class="goals-emoji">🎯</div>
-                
                 <h3 class="goals-title">My Vision for the Next 3-5 Years</h3>
-                
                 <p class="goals-text">
                     I aspire to become a <strong>highly skilled Python Full Stack Developer</strong> with deep expertise in Django, databases, and modern web technologies. My goal is to build innovative, impactful applications while continuously expanding my knowledge and staying updated with industry trends.
                 </p>
-                
                 <p class="goals-text">
                     I am committed to securing a <strong>stable, rewarding career</strong> in a reputed organization where I can contribute my skills, grow professionally, and eventually explore <strong>freelancing opportunities</strong> to help businesses worldwide.
                 </p>
-                
                 <div class="goals-tags-container">
                     <span class="goals-tag">🐍 Python Expert</span>
                     <span class="goals-tag">🌐 Full Stack Developer</span>
@@ -2055,7 +2057,8 @@
             </div>
         </section>
 
-        <section class="section animate-on-scroll flip-in" data-animation="flip-in">
+        <!-- Hobbies & Visitor Section -->
+        <section class="section animate-on-scroll flip-in" data-animation="flip-in" aria-label="Hobbies and Visitor Counter" role="region">
             <div class="quote stagger-item delay-1">
                 "The beautiful thing about learning is that nobody can take it away from you."
             </div>
@@ -2067,155 +2070,156 @@
                     <i class="fas fa-chess"></i>
                     <h3>Chess</h3>
                 </div>
-
                 <div class="hobby-card stagger-item delay-3">
                     <i class="fas fa-cube"></i>
                     <h3>Rubik's Cube</h3>
                 </div>
             </div>
 
-<div class="visitor-section stagger-item delay-4">
-    <div class="visitor-counter" style="flex-direction: column; gap: 25px;">
-        <div class="visitor-header">
-            <div class="visitor-icon">
-                <i class="fas fa-eye"></i>
+            <div class="visitor-section stagger-item delay-4">
+                <div class="visitor-counter" style="flex-direction: column; gap: 25px;">
+                    <div class="visitor-header">
+                        <div class="visitor-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="visitor-header-title">Profile Views</h3>
+                    </div>
+                    
+                    <div class="visitor-main-box">
+                        <div class="visitor-decor-1"></div>
+                        <div class="visitor-decor-2"></div>
+                        <i class="fas fa-users visitor-side-icon"></i>
+                        <div class="visitor-count-wrapper">
+                            <div class="visitor-label">TOTAL VISITORS</div>
+                            <div id="visitorCountDisplay" class="visitor-count-number">
+                                <div class="visitor-loading"></div>
+                            </div>
+                        </div>
+                        <i class="fas fa-chart-line visitor-side-icon"></i>
+                    </div>
+                    
+                    <div class="visitor-info-grid">
+                        <div class="visitor-info-item">
+                            <div class="visitor-info-emoji">🌟</div>
+                            <div class="visitor-info-label">Quality Views</div>
+                        </div>
+                        <div class="visitor-info-item alt">
+                            <div class="visitor-info-emoji">🚀</div>
+                            <div class="visitor-info-label">Growing Daily</div>
+                        </div>
+                        <div class="visitor-info-item">
+                            <div class="visitor-info-emoji">💼</div>
+                            <div class="visitor-info-label">Recruiters</div>
+                        </div>
+                    </div>
+                </div>
+                <p class="visitor-text">Thanks for visiting my portfolio! 🙏</p>
             </div>
-            <h3 class="visitor-header-title">Profile Views</h3>
-        </div>
-        
-        <div class="visitor-main-box">
-            <div class="visitor-decor-1"></div>
-            <div class="visitor-decor-2"></div>
-            
-            <i class="fas fa-users visitor-side-icon"></i>
-            
-            <div class="visitor-count-wrapper">
-                <div class="visitor-label">TOTAL VISITORS</div>
-            <div id="visitorCountDisplay" class="visitor-count-number">
-    0
-</div>
-            </div>
-            
-            <i class="fas fa-chart-line visitor-side-icon"></i>
-        </div>
-        
-        <div class="visitor-info-grid">
-            <div class="visitor-info-item">
-                <div class="visitor-info-emoji">🌟</div>
-                <div class="visitor-info-label">Quality Views</div>
-            </div>
-            <div class="visitor-info-item alt">
-                <div class="visitor-info-emoji">🚀</div>
-                <div class="visitor-info-label">Growing Daily</div>
-            </div>
-            <div class="visitor-info-item">
-                <div class="visitor-info-emoji">💼</div>
-                <div class="visitor-info-label">Recruiters</div>
-            </div>
-        </div>
-    </div>
-    
-    <p class="visitor-text">Thanks for visiting my portfolio! 🙏</p>
-</div>
         </section>
-
     </div>
 
-  <div class="fixed-social-icons">
-    <a href="https://github.com/Alaguvel2410" target="_blank" class="fixed-social-btn github-btn" title="GitHub"
-       onclick="gtag('event', 'github_click', {
-         'event_category': 'social_links',
-         'event_label': 'GitHub Profile'
-       });">
-        <i class="fab fa-github"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/alagu-vel-a-254a38373/" target="_blank" class="fixed-social-btn linkedin-btn" title="LinkedIn"
-       onclick="gtag('event', 'linkedin_click', {
-         'event_category': 'social_links',
-         'event_label': 'LinkedIn Profile'
-       });">
-        <i class="fab fa-linkedin-in"></i>
-    </a>
-</div>
+    <!-- Fixed Social Icons -->
+    <div class="fixed-social-icons">
+        <a href="https://github.com/Alaguvel2410" target="_blank" rel="noopener noreferrer" 
+           class="fixed-social-btn github-btn" title="GitHub Profile"
+           onclick="gtag('event', 'github_click', {'event_category': 'social_links', 'event_label': 'GitHub Profile'});">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/alagu-vel-a-254a38373/" target="_blank" rel="noopener noreferrer" 
+           class="fixed-social-btn linkedin-btn" title="LinkedIn Profile"
+           onclick="gtag('event', 'linkedin_click', {'event_category': 'social_links', 'event_label': 'LinkedIn Profile'});">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+    </div>
+
     <script>
         // ========================================
-        // SCROLL PROGRESS BAR
+        // SCROLL PROGRESS + PARALLAX (THROTTLED)
         // ========================================
-        window.addEventListener('scroll', () => {
-            const scrollProgress = document.getElementById('scrollProgress');
-            const scrollTop = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercent = (scrollTop / docHeight) * 100;
-            scrollProgress.style.width = scrollPercent + '%';
+        var scrollTicking = false;
+
+        function updateOnScroll() {
+            var scrollTop = window.scrollY;
+            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            var scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            document.getElementById('scrollProgress').style.width = scrollPercent + '%';
+            document.body.style.backgroundPosition = 'center ' + (scrollTop * 0.3) + 'px';
+            scrollTicking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!scrollTicking) {
+                requestAnimationFrame(updateOnScroll);
+                scrollTicking = true;
+            }
         });
 
         // ========================================
         // GITHUB IMAGE ERROR HANDLER
         // ========================================
-        let failedImages = 0;
+        var failedImages = 0;
+
         function handleImageError(img) {
             failedImages++;
             img.style.display = 'none';
+            if (img.parentElement) img.parentElement.style.display = 'none';
             if (failedImages >= 2) {
-                document.getElementById('githubStatsContainer').style.display = 'none';
-                document.getElementById('githubFallback').classList.add('show');
+                var container = document.getElementById('githubStatsContainer');
+                if (container) container.style.display = 'none';
+                var fallback = document.getElementById('githubFallback');
+                if (fallback) fallback.classList.add('show');
             }
         }
 
         // ========================================
         // SCROLL ANIMATION OBSERVER
         // ========================================
-        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+        var observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
 
-        const animationObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+        var animationObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animated');
-                    
-                    const staggerItems = entry.target.querySelectorAll('.stagger-item');
-                    staggerItems.forEach((item, index) => {
-                        setTimeout(() => { item.classList.add('animated'); }, index * 100);
+
+                    var staggerItems = entry.target.querySelectorAll('.stagger-item');
+                    staggerItems.forEach(function(item, index) {
+                        setTimeout(function() { item.classList.add('animated'); }, index * 100);
                     });
 
-                    const quote = entry.target.querySelector('.quote');
-                    if (quote) { setTimeout(() => { quote.classList.add('animated'); }, 200); }
+                    var quote = entry.target.querySelector('.quote');
+                    if (quote) setTimeout(function() { quote.classList.add('animated'); }, 200);
 
-                    const goalCards = entry.target.querySelectorAll('.goal-card');
-                    goalCards.forEach((card, index) => {
-                        setTimeout(() => { card.classList.add('animated'); }, index * 200);
+                    var hobbyCards = entry.target.querySelectorAll('.hobby-card');
+                    hobbyCards.forEach(function(card, index) {
+                        setTimeout(function() { card.classList.add('animated'); }, 300 + index * 200);
                     });
 
-                    const hobbyCards = entry.target.querySelectorAll('.hobby-card');
-                    hobbyCards.forEach((card, index) => {
-                        setTimeout(() => { card.classList.add('animated'); }, 300 + index * 200);
+                    var toolCards = entry.target.querySelectorAll('.tool-card');
+                    toolCards.forEach(function(card, index) {
+                        setTimeout(function() { card.classList.add('animated'); }, index * 100);
                     });
 
-                    const toolCards = entry.target.querySelectorAll('.tool-card');
-                    toolCards.forEach((card, index) => {
-                        setTimeout(() => { card.classList.add('animated'); }, index * 100);
-                    });
-
-                    const achievementCards = entry.target.querySelectorAll('.achievement-card');
-                    achievementCards.forEach((card, index) => {
-                        setTimeout(() => {
+                    var achievementCards = entry.target.querySelectorAll('.achievement-card');
+                    achievementCards.forEach(function(card, index) {
+                        setTimeout(function() {
                             card.classList.add('animated');
-                            const counter = card.querySelector('.counter');
+                            var counter = card.querySelector('.counter');
                             if (counter && !counter.classList.contains('counted')) {
                                 counter.classList.add('counted');
-                                animateAchievementCounter(counter);
+                                setTimeout(function() { animateAchievementCounter(counter); }, 300);
                             }
                         }, index * 150);
                     });
 
-                    const expEduCards = entry.target.querySelectorAll('.exp-edu-card');
-                    expEduCards.forEach((card, index) => {
-                        setTimeout(() => { card.classList.add('animated'); }, index * 150);
+                    var expEduCards = entry.target.querySelectorAll('.exp-edu-card');
+                    expEduCards.forEach(function(card, index) {
+                        setTimeout(function() { card.classList.add('animated'); }, index * 150);
                     });
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.animate-on-scroll').forEach(section => {
+        document.querySelectorAll('.animate-on-scroll').forEach(function(section) {
             animationObserver.observe(section);
         });
 
@@ -2223,116 +2227,129 @@
         // ACHIEVEMENT COUNTER ANIMATION
         // ========================================
         function animateAchievementCounter(element) {
-            const target = parseInt(element.getAttribute('data-target'));
-            const duration = 2000;
-            const step = target / (duration / 16);
-            let current = 0;
+            var target = parseInt(element.getAttribute('data-target'));
+            if (isNaN(target) || target <= 0) { element.textContent = '0+'; return; }
 
-            const updateCounter = () => {
+            var duration = 2000;
+            var totalFrames = Math.min(target, 60);
+            var step = target / totalFrames;
+            var frameDelay = duration / totalFrames;
+            var current = 0;
+
+            function updateCounter() {
                 current += step;
                 if (current < target) {
                     element.textContent = Math.floor(current) + '+';
-                    requestAnimationFrame(updateCounter);
+                    setTimeout(updateCounter, frameDelay);
                 } else {
                     element.textContent = target + '+';
                 }
-            };
+            }
             updateCounter();
         }
-// ========================================
-// ========================================
-// FIREBASE CONFIG
-// ========================================
-const firebaseConfig = {
-  apiKey: "AIzaSyDpaj5hgJXhIlVUHAaLIrgxqVwwc9lu4yE",
-  authDomain: "alaguvel-portfolio-91603.firebaseapp.com",
-  databaseURL: "https://alaguvel-portfolio-91603-default-rtdb.firebaseio.com",
-  projectId: "alaguvel-portfolio-91603",
-  storageBucket: "alaguvel-portfolio-91603.firebasestorage.app",
-  messagingSenderId: "1054256222144",
-  appId: "1:1054256222144:web:c275600ad68ba5057d0225"
-};
 
+        // ========================================
+        // FIREBASE INIT
+        // ========================================
+        var firebaseInitialized = false;
 
-firebase.initializeApp(firebaseConfig);
-const database = firebase.database();
+        try {
+            var firebaseConfig = {
+                apiKey: "AIzaSyDpaj5hgJXhIlVUHAaLIrgxqVwwc9lu4yE",
+                authDomain: "alaguvel-portfolio-91603.firebaseapp.com",
+                databaseURL: "https://alaguvel-portfolio-91603-default-rtdb.firebaseio.com",
+                projectId: "alaguvel-portfolio-91603",
+                storageBucket: "alaguvel-portfolio-91603.firebasestorage.app",
+                messagingSenderId: "1054256222144",
+                appId: "1:1054256222144:web:c275600ad68ba5057d0225"
+            };
+            firebase.initializeApp(firebaseConfig);
+            firebaseInitialized = true;
+        } catch (error) {
+            console.warn('Firebase initialization failed:', error);
+        }
 
-// ========================================
-// VISITOR COUNTER - Firebase + Slow Animation
-// ========================================
-let animationStarted = false;
+        // ========================================
+        // VISITOR COUNTER
+        // ========================================
+        var visitorAnimationStarted = false;
 
-function initVisitorCounter() {
-    const visitorDisplay = document.getElementById('visitorCountDisplay');
-    if (!visitorDisplay) return;
+        function initVisitorCounter() {
+            var visitorDisplay = document.getElementById('visitorCountDisplay');
+            if (!visitorDisplay) return;
 
-    const countRef = database.ref('visitor_count');
-    const sessionKey = 'firebase_session_counted';
+            if (!firebaseInitialized) {
+                visitorDisplay.textContent = '—';
+                return;
+            }
 
-    // Only count once per session (honest!)
-    if (!sessionStorage.getItem(sessionKey)) {
-        countRef.transaction(function(currentCount) {
-            return (currentCount || 0) + 1;
+            try {
+                var database = firebase.database();
+                var countRef = database.ref('visitor_count');
+                var sessionKey = 'firebase_session_counted';
+
+                if (!sessionStorage.getItem(sessionKey)) {
+                    countRef.transaction(function(currentCount) {
+                        return (currentCount || 0) + 1;
+                    }).catch(function(error) {
+                        console.warn('Transaction failed:', error);
+                    });
+                    sessionStorage.setItem(sessionKey, 'true');
+                }
+
+                countRef.on('value', function(snapshot) {
+                    var realCount = snapshot.val() || 0;
+                    if (!visitorAnimationStarted) {
+                        visitorAnimationStarted = true;
+                        startVisitorAnimation(visitorDisplay, realCount);
+                    } else {
+                        visitorDisplay.textContent = realCount.toLocaleString('en-US');
+                    }
+                }, function(error) {
+                    console.warn('Firebase read failed:', error);
+                    visitorDisplay.textContent = '—';
+                });
+
+            } catch (error) {
+                console.warn('Visitor counter error:', error);
+                visitorDisplay.textContent = '—';
+            }
+        }
+
+        function startVisitorAnimation(display, targetCount) {
+            if (targetCount <= 0) { display.textContent = '0'; return; }
+
+            var duration = 2500;
+            var totalSteps = Math.min(targetCount, 80);
+            var step = targetCount / totalSteps;
+            var frameDelay = duration / totalSteps;
+            var count = 0;
+
+            function tick() {
+                count += step;
+                if (count < targetCount) {
+                    display.textContent = Math.floor(count).toLocaleString('en-US');
+                    setTimeout(tick, frameDelay);
+                } else {
+                    display.textContent = targetCount.toLocaleString('en-US');
+                }
+            }
+            tick();
+        }
+
+        // ========================================
+        // INIT ON LOAD
+        // ========================================
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+            setTimeout(initVisitorCounter, 300);
+            if (typeof gtag === 'function') {
+                gtag('event', 'portfolio_view', {
+                    'event_category': 'engagement',
+                    'event_label': 'Portfolio Visit'
+                });
+            }
         });
-        sessionStorage.setItem(sessionKey, 'true');
-    }
-
-    // Get real count and animate
-    countRef.on('value', function(snapshot) {
-        const realCount = snapshot.val() || 0;
-        
-        // Only animate once (prevent re-animation on data change)
-        if (!animationStarted) {
-            animationStarted = true;
-            startHonestAnimation(visitorDisplay, realCount);
-        } else {
-            visitorDisplay.textContent = realCount.toLocaleString('en-US');
-        }
-    });
-}
-
-function startHonestAnimation(display, targetCount) {
-    let count = 0;
-    
-    function getSpeed(num) {
-        return 300;                    
-    }
-    
-    function tick() {
-        if (count < targetCount) {
-            count++;
-            display.textContent = count.toLocaleString('en-US');
-            setTimeout(tick, getSpeed(count));
-        } else {
-            // STOP at real count!
-            display.textContent = targetCount.toLocaleString('en-US');
-        }
-    }
-    
-    tick();
-}
-// ========================================
-// PARALLAX EFFECT
-// ========================================
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    document.body.style.backgroundPosition = `center ${scrolled * 0.3}px`;
-});
-
-// ========================================
-// INITIALIZATION
-// ========================================
-window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
-    setTimeout(initVisitorCounter, 300);
-    
-    // Track in Google Analytics
-    gtag('event', 'portfolio_view', {
-        'event_category': 'engagement',
-        'event_label': 'Portfolio Visit'
-    });
-});
     </script>
-
 </body>
 </html>
