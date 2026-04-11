@@ -2236,45 +2236,53 @@
             updateCounter();
         }
 // ========================================
-// VISITOR COUNTER - Smart Speed Animation
+// VISITOR COUNTER - Smart Speed reaching REAL Count
 // ========================================
-function initVisitorCounter() {
+async function initVisitorCounter() {
     const visitorDisplay = document.getElementById('visitorCountDisplay');
-    
-    if (visitorDisplay) {
-        gtag('event', 'portfolio_view', {
-            'event_category': 'engagement',
-            'event_label': 'Portfolio Visit'
-        });
+    if (!visitorDisplay) return;
+
+    // Track in Google Analytics
+    gtag('event', 'portfolio_view', {
+        'event_category': 'engagement',
+        'event_label': 'Portfolio Visit'
+    });
+
+    try {
+        // 1. Fetch the REAL count from the API (query_only mode)
+        const response = await fetch('https://visitor-badge.laobi.icu/badge?page_id=alaguvel2410.github.io&query_only=true');
+        const data = await response.json();
+        const realCount = data.value || 1; // Fallback to 1 if fails
+
+        // 2. Start animation that stops at realCount
+        startSmartAnimation(visitorDisplay, realCount);
         
-        // Load badge in background (increments count)
-        const hiddenImg = new Image();
-        hiddenImg.src = 'https://visitor-badge.laobi.icu/badge?page_id=alaguvel2410.github.io';
-        
-        // Start smart speed counting
-        ultraSlowCount(visitorDisplay);
+    } catch (error) {
+        console.warn("Counter API fail, using fallback");
+        startSmartAnimation(visitorDisplay, 10); // Fallback number if API is down
     }
 }
 
-function ultraSlowCount(display) {
+function startSmartAnimation(display, targetCount) {
     let count = 0;
     
     function getSpeed(num) {
-         if (num <= 10) return 2000;     // 2s each (20s for 10 numbers)
-        if (num <= 50) return 500;      // 0.5s each (20s for 40 numbers)
-        if (num <= 100) return 400;     // 0.4s each (20s for 50 numbers)
-        if (num <= 200) return 130;     // 0.13s each (13s for 100 numbers)
-        if (num <= 500) return 33;      // 0.033s each (10s for 300 numbers)
-        if (num <= 1000) return 34;     // 0.034s each (17s for 500 numbers)
-        return 20;  // Lightning for 1000+
+        if (num <= 10) return 2000;     // 2s each
+        if (num <= 50) return 500;      // 0.5s each
+        if (num <= 100) return 400;     // 0.4s each
+        if (num <= 200) return 130;     // 0.13s each
+        if (num <= 500) return 33;      // 0.033s each
+        return 20;                       // Faster
     }
     
     function tick() {
-        count++;
-        display.textContent = count.toLocaleString('en-US');
-        
-        if (count < 9999) {
+        if (count < targetCount) {
+            count++;
+            display.textContent = count.toLocaleString('en-US');
             setTimeout(tick, getSpeed(count));
+        } else {
+            // STOP reached!
+            display.textContent = targetCount.toLocaleString('en-US');
         }
     }
     
