@@ -2294,14 +2294,14 @@ function initVisitorCounter() {
 function startHonestAnimation(display, targetCount) {
     let count = 0;
     
-    function getSpeed(num) {
-        if (num <= 10) return 2000;     // 2s each
-        if (num <= 50) return 500;      // 0.5s each
-        if (num <= 100) return 400;     // 0.4s each
-        if (num <= 200) return 130;     // 0.13s each
-        if (num <= 500) return 33;      // 0.033s each
-        return 20;                       // Lightning
-    }
+    // function getSpeed(num) {
+    //     if (num <= 10) return 2000;     // 2s each
+    //     if (num <= 50) return 500;      // 0.5s each
+    //     if (num <= 100) return 400;     // 0.4s each
+    //     if (num <= 200) return 130;     // 0.13s each
+    //     if (num <= 500) return 33;      // 0.033s each
+    //     return 20;                       // Lightning
+    // }
     
     function tick() {
         if (count < targetCount) {
