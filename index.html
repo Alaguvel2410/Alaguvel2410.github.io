@@ -2336,7 +2336,6 @@
             }
             tick();
         }
-
         // ========================================
         // INIT ON LOAD
         // ========================================
@@ -2350,6 +2349,40 @@
                 });
             }
         });
-    </script>
+// Traffic Source Detection
+function detectTrafficSource() {
+    const referrer = document.referrer;
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmSource = urlParams.get('utm_source');
+
+    let source = 'unknown';
+    let medium = 'unknown';
+
+    if (utmSource) {
+        source = utmSource;
+        medium = urlParams.get('utm_medium') || 'unknown';
+    } else if (referrer) {
+        if (referrer.includes('linkedin.com')) { source = 'linkedin'; medium = 'social'; }
+        else if (referrer.includes('github.com')) { source = 'github'; medium = 'social'; }
+        else if (referrer.includes('google.com')) { source = 'google'; medium = 'search'; }
+        else if (referrer.includes('whatsapp.com')) { source = 'whatsapp'; medium = 'social'; }
+        else if (referrer.includes('instagram.com')) { source = 'instagram'; medium = 'social'; }
+        else if (referrer.includes('twitter.com') || referrer.includes('t.co')) { source = 'twitter'; medium = 'social'; }
+        else { source = referrer; medium = 'referral'; }
+    } else {
+        source = 'direct';
+        medium = 'none';
+    }
+
+    gtag('event', 'traffic_source', {
+        'event_category': 'traffic',
+        'event_label': source,
+        'source': source,
+        'medium': medium
+    });
+}
+detectTrafficSource();
+</script>
+   
 </body>
 </html>
