@@ -560,12 +560,12 @@
             transform: translateY(-8px) scale(1.05);
         }
 
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 25px;
-            margin-top: 25px;
-        }
+      .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(180px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
 
         .tool-card {
             background: linear-gradient(135deg, #f8f9fa, #e9ecef);
@@ -1186,8 +1186,8 @@
             }
 
             .tools-grid {
-                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            }
+    grid-template-columns: repeat(3, minmax(160px, 1fr));
+}
 
             .achievements-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -1781,11 +1781,11 @@
                     <div class="achievement-number counter" data-target="14">0</div>
                     <div class="achievement-label">Repositories</div>
                 </div>
-                <div class="achievement-card stagger-item delay-3">
-                    <div class="achievement-icon">💻</div>
-                    <div class="achievement-number counter" data-target="2">0</div>
-                    <div class="achievement-label">Projects Completed</div>
-                </div>
+               <div class="achievement-card stagger-item delay-3">
+    <div class="achievement-icon">💻</div>
+    <div class="achievement-number counter" data-target="3">0</div>
+    <div class="achievement-label">Projects Completed</div>
+</div>
                 <div class="achievement-card stagger-item delay-4">
                     <div class="achievement-icon">📜</div>
                     <div class="achievement-number counter" data-target="1">0</div>
@@ -1899,21 +1899,28 @@
                     <h3>MySQL Workbench</h3>
                     <p>Database Tool</p>
                 </div>
-                <div class="tool-card stagger-item delay-4">
-                    <div class="tool-icon">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git Version Control" loading="lazy">
-                    </div>
-                    <h3>Git</h3>
-                    <p>Version Control</p>
-                </div>
-                <div class="tool-card stagger-item delay-5">
-                    <div class="tool-icon">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Code Hosting" loading="lazy">
-                    </div>
-                    <h3>GitHub</h3>
-                    <p>Code Hosting</p>
-                </div>
-            </div>
+               <div class="tool-card stagger-item delay-4">
+    <div class="tool-icon">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git Version Control" loading="lazy">
+    </div>
+    <h3>Git</h3>
+    <p>Version Control</p>
+</div>
+<div class="tool-card stagger-item delay-5">
+    <div class="tool-icon">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Code Hosting" loading="lazy">
+    </div>
+    <h3>GitHub</h3>
+    <p>Code Hosting</p>
+</div>
+<div class="tool-card stagger-item delay-6">
+    <div class="tool-icon">
+        <img src="https://img.icons8.com/color/48/000000/arduino.png" alt="Arduino IDE" loading="lazy">
+    </div>
+    <h3>Arduino IDE</h3>
+    <p>Embedded Programming</p>
+</div>
+    </div>
         </section>
 
         <!-- Projects Section -->
@@ -1931,7 +1938,7 @@
                     <p>A comprehensive desktop application built with Python GUI (Tkinter) and MySQL database integration for managing mental health records, patient information, and recovery progress tracking with full CRUD operations.</p>
                 </div>
 
-                <div class="project-card stagger-item delay-2">
+                                <div class="project-card stagger-item delay-2">
                     <span class="project-type">Database Project</span>
                     <h3>Addiction Recovery and Behavioural Counselling Management System</h3>
                     <div class="project-tech">
@@ -1940,6 +1947,18 @@
                         <span class="tech-tag"><i class="fas fa-chart-bar"></i> Data Analysis</span>
                     </div>
                     <p>A robust database management system designed entirely using MySQL to handle addiction recovery programs, behavioural counselling sessions, patient progress tracking, and comprehensive reporting with complex SQL queries.</p>
+                </div>
+
+                <div class="project-card stagger-item delay-3">
+                    <span class="project-type">Final Year Project</span>
+                    <h3>AI-Based Smart Irrigation System Using Weather Prediction</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag"><i class="fas fa-microchip"></i> ESP32</span>
+                        <span class="tech-tag"><i class="fas fa-wifi"></i> IoT</span>
+                        <span class="tech-tag"><i class="fas fa-cloud-sun-rain"></i> OpenWeatherMap API</span>
+                        <span class="tech-tag"><i class="fas fa-code"></i> Arduino IDE</span>
+                    </div>
+                    <p>An intelligent smart irrigation system built using ESP32, Soil Moisture Sensor, DHT11, Relay Module, and OpenWeatherMap API to automate water usage based on real-time soil conditions and rain prediction. Supports AUTO and MANUAL modes with a real-time web dashboard at 192.168.4.1.</p>
                 </div>
             </div>
         </section>
