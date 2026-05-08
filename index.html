@@ -2387,7 +2387,7 @@ function detectTrafficSource() {
         else if (ref.includes('127.0.0.1') || ref.includes('localhost')) { 
             source = 'localhost'; medium = 'test'; 
         }
-        else { source = 'referral'; medium = ref; }
+        else { source = 'referral'; medium = 'referral'; }
     }
 
     if (typeof gtag === 'function') {
@@ -2399,7 +2399,14 @@ function detectTrafficSource() {
         });
     }
 }
-detectTrafficSource();
+// Don't track localhost/local testing
+if (window.location.hostname === '127.0.0.1' || 
+    window.location.hostname === 'localhost') {
+    console.log('Local testing - Analytics disabled');
+} else {
+    detectTrafficSource();
+}
+
 </script>
    
 </body>
