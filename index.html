@@ -1172,7 +1172,16 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
-
+@keyframes slideInUp {
+    from { 
+        opacity: 0; 
+        transform: translate(-50%, 50px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translate(-50%, 0); 
+    }
+}
         /* ========================================
            RESPONSIVE — 1024px (Small Laptops)
         ======================================== */
@@ -2406,7 +2415,113 @@ if (window.location.hostname === '127.0.0.1' ||
 } else {
     detectTrafficSource();
 }
+// ════════════════════════════════════
+// IDEA 5: SCROLL BOTTOM SURPRISE
+// ════════════════════════════════════
+var bottomShown = false;
 
+window.addEventListener('scroll', function() {
+    var scrollTop = window.scrollY;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+    if (scrollPercent >= 95 && !bottomShown) {
+        bottomShown = true;
+        showBottomMessage();
+    }
+});
+
+function showBottomMessage() {
+    var existing = document.getElementById('bottom-msg');
+    if (existing) existing.remove();
+
+    var msg = document.createElement('div');
+    msg.id = 'bottom-msg';
+    msg.style.cssText = `
+        position: fixed;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #0d1117;
+        border: 1px solid #00ff41;
+        color: #e6edf3;
+        font-family: 'Share Tech Mono', monospace;
+        padding: 25px 40px;
+        border-radius: 4px;
+        z-index: 99999;
+        text-align: center;
+        box-shadow: 0 0 40px rgba(0,255,65,0.25),
+                    0 -5px 30px rgba(0,255,65,0.1);
+        font-size: 0.85rem;
+        line-height: 1.9;
+        animation: slideInUp 0.5s ease;
+        max-width: 90vw;
+        min-width: 300px;
+    `;
+    msg.innerHTML = `
+        <div style="font-size:2rem;margin-bottom:10px;">🎉</div>
+        <div style="color:#00ff41;letter-spacing:2px;
+             margin-bottom:8px;font-size:0.9rem;
+             text-shadow:0 0 15px rgba(0,255,65,0.4);">
+            YOU MADE IT TO THE END!
+        </div>
+        <div style="color:#8b949e;margin-bottom:20px;font-size:0.8rem;">
+            Thanks for exploring my portfolio! 🙏<br>
+            Let's connect and build something<br>
+            <span style="color:#00d4ff">awesome</span> together! 🚀
+        </div>
+        <div style="display:flex;gap:12px;
+             justify-content:center;flex-wrap:wrap;
+             margin-bottom:15px;">
+            <a href="mailto:alaguvel431@gmail.com"
+               style="color:#00ff41;border:1px solid #00ff41;
+                      padding:8px 18px;text-decoration:none;
+                      font-size:0.78rem;letter-spacing:1px;
+                      transition:all 0.3s ease;"
+               onmouseover="this.style.background='rgba(0,255,65,0.1)'"
+               onmouseout="this.style.background='transparent'">
+                📧 HIRE ME
+            </a>
+            <a href="https://www.linkedin.com/in/alagu-vel-a-254a38373/"
+               target="_blank"
+               style="color:#00d4ff;border:1px solid #00d4ff;
+                      padding:8px 18px;text-decoration:none;
+                      font-size:0.78rem;letter-spacing:1px;
+                      transition:all 0.3s ease;"
+               onmouseover="this.style.background='rgba(0,212,255,0.1)'"
+               onmouseout="this.style.background='transparent'">
+                💼 LINKEDIN
+            </a>
+            <a href="https://github.com/Alaguvel2410"
+               target="_blank"
+               style="color:#e6edf3;border:1px solid #30363d;
+                      padding:8px 18px;text-decoration:none;
+                      font-size:0.78rem;letter-spacing:1px;
+                      transition:all 0.3s ease;"
+               onmouseover="this.style.borderColor='#e6edf3'"
+               onmouseout="this.style.borderColor='#30363d'">
+                🐙 GITHUB
+            </a>
+        </div>
+        <button onclick="document.getElementById('bottom-msg').remove()"
+            style="background:transparent;border:none;
+                   color:#30363d;
+                   font-family:'Share Tech Mono',monospace;
+                   font-size:0.7rem;cursor:pointer;
+                   letter-spacing:1px;transition:color 0.3s ease;"
+            onmouseover="this.style.color='#8b949e'"
+            onmouseout="this.style.color='#30363d'">
+            [ CLOSE ]
+        </button>
+    `;
+    document.body.appendChild(msg);
+
+    // Auto remove after 10 seconds
+    setTimeout(function() {
+        if (msg.parentElement) msg.remove();
+        bottomShown = false;
+    }, 10000);
+}
 </script>
    
 </body>
