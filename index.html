@@ -2600,6 +2600,23 @@ function showBottomMessage() {
         bottomShown = false;
     }, 10000);
 }
+ // Trigger 
+  const LOOKER_URL = "https://datastudio.google.com/reporting/1d3db738-8438-40ad-ad38-f1402e587294";
+  const PASSCODE = "2004";
+
+  function openAnalytics() {
+    const pass = prompt(" Admin Panel : ");
+    if (pass === PASSCODE) {
+      window.open(LOOKER_URL, "_blank");
+    } else if (pass) {
+      alert("❌ Wrong password!");
+    }
+  }
+  document.addEventListener("keydown", (e) => {
+if (e.ctrlKey && e.shiftKey && e.code === "Backquote") {
+  openAnalytics();
+}
+  });
 </script>
 </body>
 </html>
