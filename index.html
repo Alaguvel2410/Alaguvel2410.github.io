@@ -341,15 +341,15 @@
         }
 
        .exp-edu-card {
-    background: white;
-    border-radius: 15px;
-    padding: 20px;
-    margin-bottom: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-    position: relative;
-    border-left: 4px solid #667eea;
-}
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            border-left: 4px solid #667eea;
+        }
 
         .exp-edu-card:last-child {
             margin-bottom: 0;
@@ -565,14 +565,14 @@
         }
 
       .tools-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(180px, 1fr));
-    gap: 25px;
-    margin-top: 25px;
-}
+            display: grid;
+            grid-template-columns: repeat(3, minmax(180px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
 
         .tool-card {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             padding: 30px 20px;
             border-radius: 15px;
             text-align: center;
@@ -1176,16 +1176,16 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
-@keyframes slideInUp {
-    from { 
-        opacity: 0; 
-        transform: translate(-50%, 50px); 
-    }
-    to { 
-        opacity: 1; 
-        transform: translate(-50%, 0); 
-    }
-}
+        @keyframes slideInUp {
+            from { 
+                opacity: 0; 
+                transform: translate(-50%, 50px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translate(-50%, 0); 
+            }
+        }
         /* ========================================
            RESPONSIVE — 1024px (Small Laptops)
         ======================================== */
@@ -1199,8 +1199,8 @@
             }
 
             .tools-grid {
-    grid-template-columns: repeat(3, minmax(160px, 1fr));
-}
+                grid-template-columns: repeat(3, minmax(160px, 1fr));
+            }
 
             .achievements-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -1448,7 +1448,8 @@
             .goals-tag { font-size: 0.78rem; padding: 5px 12px; }
 
             .quote { font-size: 0.95rem; padding: 18px; border-radius: 12px; }
-            .hobby-card { border-radius: 12px; }
+            .hobbies-container { gap: 10px; }
+            .hobby-card { max-width: 200px; padding: 15px; border-radius: 12px; }
             .hobby-card i { font-size: 1.8rem; }
             .hobby-card h3 { font-size: 0.95rem; }
 
@@ -1458,6 +1459,8 @@
             .visitor-label { font-size: 0.8rem; letter-spacing: 0.5px; }
             .visitor-main-box { padding: 22px 15px; border-radius: 20px; gap: 15px; }
             .visitor-side-icon { font-size: 1.5rem; }
+            .visitor-decor-1 { width: 60px; height: 60px; top: -20px; left: -20px; }
+            .visitor-decor-2 { width: 80px; height: 80px; bottom: -30px; right: -30px; }
             .visitor-info-grid { gap: 8px; }
             .visitor-info-item { padding: 10px; border-radius: 10px; }
             .visitor-info-emoji { font-size: 1.1rem; }
@@ -1519,7 +1522,9 @@
 
             .github-stats-fallback { padding: 20px 15px; }
             .github-stats-fallback i { font-size: 2rem; }
-            .github-stats-fallback h3 { font-size: 1.1rem; }
+            .github-stats-fallback h3 { font-size: 1.05rem; }
+            .github-stats-fallback p { font-size: 0.8rem; }
+            .github-stats-fallback a { padding: 8px 18px; font-size: 0.82rem; }
 
             .goals-card-wrapper { padding: 18px 12px; }
             .goals-emoji { font-size: 2rem; }
@@ -1558,8 +1563,8 @@
 
             .skill-card { padding: 12px; gap: 12px; }
             .tech-logo { width: 44px; height: 44px; }
-            .skill-card h3 { font-size: 0.85rem; }
-            .status-badge { font-size: 0.62rem; padding: 2px 7px; }
+            .skill-card h3 { font-size: 0.85rem; margin-bottom: 4px; }
+            .status-badge { margin-left: 0; font-size: 0.62rem; padding: 2px 7px; }
 
             .project-card { padding: 14px; border-radius: 10px; }
             .project-card h3 { font-size: 0.85rem; margin-bottom: 10px; }
@@ -1596,20 +1601,19 @@
 
             .github-stats-fallback { padding: 18px 12px; border-radius: 10px; }
             .github-stats-fallback i { font-size: 1.8rem; margin-bottom: 12px; }
-            .github-stats-fallback h3 { font-size: 1rem; }
+            .github-stats-fallback h3 { font-size: 1.05rem; }
             .github-stats-fallback p { font-size: 0.8rem; }
             .github-stats-fallback a { padding: 8px 18px; font-size: 0.82rem; }
 
             .goals-card-wrapper { padding: 15px 10px; border-radius: 10px; }
             .goals-emoji { font-size: 1.8rem; margin-bottom: 10px; }
             .goals-title { font-size: 0.95rem; margin-bottom: 10px; }
-            .goals-text { font-size: 0.78rem; line-height: 1.55; margin-bottom: 10px; }
+            .goals-text { font-size: 0.82rem; line-height: 1.55; margin-bottom: 10px; }
             .goals-tag { font-size: 0.68rem; padding: 4px 9px; }
             .goals-decor-1 { width: 60px; height: 60px; top: -20px; right: -20px; }
             .goals-decor-2 { width: 40px; height: 40px; bottom: -15px; left: -15px; }
 
-            .quote { font-size: 0.82rem; padding: 14px; border-radius: 10px; margin: 12px 0; }
-
+            .quote { font-size: 0.95rem; padding: 18px; border-radius: 12px; }
             .hobbies-container { gap: 10px; }
             .hobby-card { max-width: 200px; padding: 15px; border-radius: 10px; }
             .hobby-card i { font-size: 1.6rem; margin-bottom: 6px; }
@@ -1693,6 +1697,12 @@
             .achievement-number { font-size: 1.15rem; }
             .achievement-label { font-size: 0.6rem; }
 
+            .github-stats-fallback { padding: 14px 10px; }
+            .github-stats-fallback i { font-size: 1.6rem; }
+            .github-stats-fallback h3 { font-size: 0.9rem; }
+            .github-stats-fallback p { font-size: 0.72rem; }
+            .github-stats-fallback a { padding: 7px 14px; font-size: 0.75rem; }
+
             .goals-card-wrapper { padding: 12px 8px; border-radius: 8px; }
             .goals-emoji { font-size: 1.6rem; margin-bottom: 8px; }
             .goals-title { font-size: 0.85rem; margin-bottom: 8px; }
@@ -1719,12 +1729,6 @@
 
             .fixed-social-icons { bottom: 10px; right: 10px; gap: 6px; }
             .fixed-social-btn { width: 38px; height: 38px; font-size: 1rem; }
-
-            .github-stats-fallback { padding: 14px 10px; }
-            .github-stats-fallback i { font-size: 1.6rem; }
-            .github-stats-fallback h3 { font-size: 0.9rem; }
-            .github-stats-fallback p { font-size: 0.72rem; }
-            .github-stats-fallback a { padding: 7px 14px; font-size: 0.75rem; }
         }
 
         /* ========================================
@@ -1755,10 +1759,115 @@
             .achievement-icon { font-size: 1.2rem; }
         }
         .youtube-btn {
-        background: #FF0000;    /* YouTube red */
+            background: #FF0000;    /* YouTube red */
         }
         .youtube-btn:hover {
-        background: #CC0000;    /* darker on hover */
+            background: #CC0000;    /* darker on hover */
+        }
+        /* centre & size the fake-CMD window */
+        #cmdModal{
+            display:none;                 /* stays hidden until JS sets display:flex */
+            position:fixed;
+            top:50%; left:50%;
+            transform:translate(-50%,-50%);
+            width:90vw;                   /* almost full width on small screens   */
+            max-width:800px;              /* but never wider than 800 pixels      */
+            height:70vh;                  /* 70 % of viewport height              */
+            max-height:520px;             /* cap the height on tall screens       */
+            background:#000;
+            color:#C0C0C0;
+            border:1px solid #333;
+            box-shadow:0 0 25px rgba(0,0,0,.9);
+            font-family:Consolas,'Courier New',monospace;
+            overflow:hidden; /* Ensures inner elements don't overflow the modal */
+            z-index:9999;
+
+            /* Flexbox for internal layout (only activated by JS) */
+            flex-direction: column;
+        }
+
+        .cmd-title {
+            background: #222;
+            color: #fff;
+            padding: 5px 15px;
+            font-size: 0.9em;
+            border-bottom: 1px solid #333;
+            white-space: nowrap; /* Keep title on one line */
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        #cmdScreen {
+            flex-grow: 1; /* Allows the screen to fill available vertical space */
+            padding: 10px 15px;
+            margin: 0;
+            overflow-y: auto; /* Enable scrolling for output */
+            white-space: pre-wrap; /* Preserve whitespace and wrap long lines */
+            word-break: break-all; /* Break words if they are too long */
+            display: flex; /* Use flex for individual lines */
+            flex-direction: column; /* Stack lines vertically */
+            /* Ensure the pre element doesn't have its own fixed height */
+            font-size: 1em; /* Match overall terminal font size */
+        }
+        
+        #cmdScreen span {
+            display: block; /* Ensure each line takes its own space */
+            line-height: 1.5; /* Spacing between lines */
+        }
+
+        .cmd-input-line {
+            display: flex; /* Keep input elements on one line */
+            align-items: center;
+            padding: 5px 15px;
+            background: #000;
+            border-top: 1px solid #333;
+            font-size: 1em;
+            flex-shrink: 0; /* Prevent input line from shrinking */
+        }
+
+        .cmd-input-line .cmd-caret {
+            display: inline-block;
+            vertical-align: middle;
+            width: 8px; /* Width of the caret */
+            height: 1em; /* Height of the caret */
+            background-color: #C0C0C0; /* Color of the caret */
+            animation: blinkCaret 1s infinite step-end;
+            margin-right: 5px;
+        }
+
+        .cmd-input-line input {
+            border: none; /* Make input look part of the terminal */
+            background: transparent;
+            color: #C0C0C0;
+            outline: none;
+            font-family: Consolas,'Courier New',monospace;
+            font-size: 1em; /* Match screen font size */
+            flex-grow: 1; /* Allow it to take available space */
+            caret-color: transparent; /* Hide browser's blinking caret, custom span blinks */
+            padding: 0; /* Remove default input padding */
+        }
+
+        @keyframes blinkCaret {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Status colors */
+        .cmd-success { color: #00FF00; } /* Green for success */
+        .cmd-error   { color: #FF0000; } /* Red for error */
+        .cmd-info    { color: #00FFFF; } /* Cyan for info */
+        .cmd-warning { color: #FFFF00; } /* Yellow for warnings */
+        .cmd-prompt  { color: #00FF00; } /* Green for prompt */
+        /* Animation for the bottom message */
+        @keyframes slideInUp {
+            from { 
+                opacity: 0; 
+                transform: translate(-50%, 50px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translate(-50%, 0); 
+            }
         }
     </style>
 
@@ -1767,7 +1876,7 @@
     <!-- Structured Data -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+    "@context": "https://schema.org",
   "@type": "Person",
   "name": "Alaguvel A",
   "url": "https://alaguvel2410.github.io/",
@@ -2170,7 +2279,6 @@
                         <div class="visitor-decor-2"></div>
                         <i class="fas fa-users visitor-side-icon"></i>
                         <div class="visitor-count-wrapper">
-                            <div class="visitor-label">TOTAL VISITORS</div>
                             <div id="visitorCountDisplay" class="visitor-count-number">
                                 <div class="visitor-loading"></div>
                             </div>
@@ -2212,7 +2320,26 @@
      class="fixed-social-btn youtube-btn" title="YouTube Channel">
     <i class="fab fa-youtube"></i>
   </a>
+   </div> 
+       <!-- ───────── CMD-style modal ───────── -->
+<div id="cmdModal"> <!-- Display property managed by JS, default to none -->
+    <!-- title bar -->
+    <div class="cmd-title">C:\Windows\System32\cmd.exe</div>
+
+    <!-- scrolling screen -->
+    <pre id="cmdScreen" class="cmd-screen"></pre>
+
+    <!-- input line -->
+    <div class="cmd-input-line" id="cmdInputLine">
+        <span class="cmd-caret"></span> <!-- Custom blinking caret -->
+        <input type="password"
+               id="cmdInput"
+               autocomplete="off"
+               spellcheck="false">
+        <!-- hidden button kept for JS -->
+        <button id="cmdSubmit" style="display:none;"></button>
     </div>
+</div>
     <script>
         // ========================================
         // SCROLL PROGRESS + PARALLAX (THROTTLED)
@@ -2600,23 +2727,228 @@ function showBottomMessage() {
         bottomShown = false;
     }, 10000);
 }
- // Trigger 
-  const LOOKER_URL = "https://datastudio.google.com/reporting/1d3db738-8438-40ad-ad38-f1402e587294";
-  const PASSCODE = "2004";
 
-  function openAnalytics() {
-    const pass = prompt(" Admin Panel : ");
-    if (pass === PASSCODE) {
-      window.open(LOOKER_URL, "_blank");
-    } else if (pass) {
-      alert("❌ Wrong password!");
-    }
-  }
-  document.addEventListener("keydown", (e) => {
-if (e.ctrlKey && e.shiftKey && e.code === "Backquote") {
-  openAnalytics();
+//* ---------- CMD-style admin modal ---------- */
+const LOOKER_URL = "https://datastudio.google.com/reporting/1d3db738-8438-40ad-ad38-f1402e587294";
+const PASSCODE = "4693"; // Your secret passcode
+
+const cmdModal = document.getElementById("cmdModal");
+const cmdScreen = document.getElementById("cmdScreen");
+const cmdInput = document.getElementById("cmdInput");
+const cmdInputLine = document.getElementById("cmdInputLine"); // Get the input line container
+const cmdSubmit = document.getElementById("cmdSubmit");
+
+let isProcessing = false; // Flag to prevent multiple submissions
+let animationInterval = null; // To store interval for initial loading
+let animationTimeoutId = null; // To store timeout for sequencing lines
+let currentLoadingLine = 0; // To track which line is animating
+
+// Helper to write a new line to the terminal
+function writeLine(text, className = '') {
+    const line = document.createElement('span');
+    line.className = className;
+    line.textContent = text;
+    cmdScreen.appendChild(line);
+    cmdScreen.scrollTop = cmdScreen.scrollHeight; // Scroll to bottom
 }
-  });
+
+// Helper to update the last line in the terminal
+function updateLastLine(text, className = '') {
+    const lines = cmdScreen.getElementsByTagName('span');
+    if (lines.length > 0) {
+        const lastLine = lines[lines.length - 1];
+        lastLine.textContent = text;
+        lastLine.className = className;
+    } else {
+        writeLine(text, className);
+    }
+    cmdScreen.scrollTop = cmdScreen.scrollHeight; // Scroll to bottom
+}
+
+// Helper to clear all custom output lines
+function clearScreenContent() {
+    cmdScreen.innerHTML = ''; // Clear everything within the <pre>
+}
+
+// Initial loading animation lines and states
+const initialLoadingScripts = [
+    { text: "Initializing secure connection...", className: "cmd-info", delay: 700 },
+    { text: "Fetching critical dependencies...", className: "cmd-info", animateProgress: true, total: 100, prefix: "[  ", suffix: "%] ", speed: 50 },
+    { text: "Scanning for system vulnerabilities...", className: "cmd-info", delay: 800 },
+    { text: "Verifying integrity of modules...", className: "cmd-info", animateProgressBar: true, total: 20, barChar: '#', emptyChar: '.', barLength: 20, speed: 60, prefix: "" }, // Progress bar with #
+    { text: "Establishing encrypted tunnel...", className: "cmd-info", delay: 750 },
+    { text: "Processing authentication protocols...", className: "cmd-info", animateProgressBar: true, total: 10, barChar: '>', emptyChar: '-', barLength: 15, speed: 100, prefix: "" }, // Progress bar with >
+    { text: "System ready. Awaiting command...", className: "cmd-success", delay: 1000 },
+    { text: "Enter passcode:", className: "cmd-prompt", delay: 0 }
+];
+
+function startInitialLoadingAnimation() {
+    // Ensure any previous animations are stopped
+    if (animationInterval) clearInterval(animationInterval);
+    if (animationTimeoutId) clearTimeout(animationTimeoutId);
+
+    clearScreenContent();
+    cmdInputLine.style.display = 'none'; // Hide input during loading
+    isProcessing = true;
+    currentLoadingLine = 0;
+
+    function processNextLine() {
+        if (currentLoadingLine >= initialLoadingScripts.length) {
+            clearInterval(animationInterval); 
+            animationInterval = null;
+            isProcessing = false;
+            cmdInputLine.style.display = 'flex'; // Show input after loading
+            cmdInput.focus();
+            return;
+        }
+
+        const script = initialLoadingScripts[currentLoadingLine];
+        writeLine(script.text, script.className); // <-- This line renders the script text
+
+        if (script.animateProgress || script.animateProgressBar) {
+            let progress = 0;
+            let barChar = script.barChar || '#';
+            let emptyChar = script.emptyChar || '.';
+            let barLength = script.barLength || 20;
+            const updateSpeed = script.speed || 80;
+
+            animationInterval = setInterval(() => {
+                if (script.animateProgressBar) { // Progress bar animation like [####.....]
+                    let completedChars = Math.floor(progress / script.total * barLength);
+                    let bar = barChar.repeat(completedChars) + emptyChar.repeat(barLength - completedChars);
+                    updateLastLine(`[${bar}] ${script.text.split("...")[0]}...`, script.className);
+                } else if (script.animateProgress) { // Percentage animation like [ 0%]
+                    updateLastLine(`${script.prefix}${String(Math.floor(progress)).padStart(3, ' ')}${script.suffix}${script.text.substring(script.text.indexOf('%]') + 1)}`, script.className);
+                }
+                
+                progress += script.total / (barLength * 2 || 20); // Adjust speed based on barLength or default
+                if (progress > script.total) {
+                    progress = script.total;
+                    clearInterval(animationInterval);
+                    animationInterval = null; // Clear the interval reference
+                    animationTimeoutId = setTimeout(() => { // Store timeout to be cleared if modal is closed
+                        currentLoadingLine++;
+                        processNextLine();
+                    }, script.delay || 500); // Small delay before next line
+                }
+            }, updateSpeed); // Update frequency
+        } else {
+            // Static line, just move to the next after its delay
+            animationTimeoutId = setTimeout(() => { // Store timeout to be cleared if modal is closed
+                currentLoadingLine++;
+                processNextLine();
+            }, script.delay || 700); // Default delay for static lines
+        }
+    }
+    processNextLine();
+}
+function showCmd() {
+    cmdModal.style.display = "flex"; // Make modal visible
+    cmdInput.value = ""; 
+    setTimeout(() => {
+        startInitialLoadingAnimation(); // Now start the content animation
+    }, 50); // A 50ms delay should be imperceptible but effective.
+}
+
+function hideCmd() {
+    if (animationInterval) clearInterval(animationInterval);
+    if (animationTimeoutId) clearTimeout(animationTimeoutId); 
+
+    cmdModal.style.display = "none";
+    clearScreenContent(); 
+    cmdInputLine.style.display = 'none'; 
+    isProcessing = false; 
+}
+
+async function tryLogin() {
+    if (isProcessing) return; 
+
+    const inputPasscode = cmdInput.value;
+    cmdInput.value = ""; 
+
+    isProcessing = true;
+    cmdInputLine.style.display = 'none'; 
+    if (inputPasscode === PASSCODE) {
+        await handleSuccessfulLogin();
+    } else {
+        await handleFailedLogin();
+    }
+    isProcessing = false;
+    cmdInputLine.style.display = 'flex'; 
+    cmdInput.focus();
+}
+async function handleSuccessfulLogin() {
+    clearScreenContent();
+    await typeAndScroll("Authentication successful", "cmd-success", 200);
+    await typeAndScroll("Password matched", "cmd-success", 200);
+    await typeAndScroll("Decrypting secure layer...", "cmd-info", 300);
+    await typeAndScroll("Access granted...", "cmd-success", 400);
+    await typeAndScroll("Initializing private session...", "cmd-info", 300);
+
+    await animateFullProgress("Loading dashboard modules: ", 2800, "cmd-info"); 
+    await typeAndScroll("Session ready. Redirecting...", "cmd-success", 100);
+    setTimeout(() => {
+        hideCmd();
+        window.open(LOOKER_URL, "_blank");
+    }, 1000); 
+}
+async function handleFailedLogin() {
+    clearScreenContent();
+    await typeAndScroll("Authentication failed", "cmd-error", 200);
+    await typeAndScroll("Password mismatch detected", "cmd-error", 200);
+    await typeAndScroll("Access denied", "cmd-error", 300);
+    await typeAndScroll("Retry required", "cmd-warning", 400);
+    writeLine("Enter passcode:", "cmd-prompt"); 
+}
+async function typeAndScroll(text, className, delay) {
+    return new Promise(resolve => {
+        writeLine("", className); 
+        let i = 0;
+        const interval = setInterval(() => {
+            if (i < text.length) {
+                updateLastLine(text.substring(0, i + 1) + (i === text.length - 1 ? '' : '_'), className); 
+                i++;
+            } else {
+                clearInterval(interval);
+                updateLastLine(text, className); 
+                cmdScreen.scrollTop = cmdScreen.scrollHeight;
+                setTimeout(resolve, delay); 
+            }
+        }, 40); 
+    });
+}
+async function animateFullProgress(prefix, duration, className) {
+    return new Promise(resolve => {
+        writeLine(`${prefix}0%`, className);
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += 100 / (duration / 50); 
+            if (progress >= 100) {
+                progress = 100;
+                clearInterval(interval);
+                updateLastLine(`${prefix}${Math.floor(progress)}%`, className);
+                setTimeout(resolve, 500); 
+            } else {
+                updateLastLine(`${prefix}${Math.floor(progress)}%`, className);
+            }
+        }, 50); 
+    });
+}
+document.addEventListener("keydown", (e) => {
+    if (e.ctrlKey && e.shiftKey && e.code === "Backquote") {
+        e.preventDefault();
+        showCmd();
+    }
+    if (e.key === "Escape" && cmdModal.style.display === "flex") {
+        hideCmd();
+    }
+});
+cmdSubmit.addEventListener("click", tryLogin);
+cmdInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        tryLogin();
+    }
+});
 </script>
 </body>
 </html>
