@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9976V7XWW5"></script>
     <script>function gtag() { dataLayer.push(arguments) } window.dataLayer = window.dataLayer || [], gtag("js", new Date), gtag("config", "G-9976V7XWW5")</script>
@@ -513,12 +512,12 @@
         }
 
         .quote {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-style: italic;
             text-align: center;
             color: #764ba2;
-            margin: 30px 0;
-            padding: 30px;
+            margin: 25px 0;
+            padding: 25px;
             background: rgba(118, 75, 162, .05);
             border-radius: 15px;
             border-left: 5px solid #764ba2
@@ -535,15 +534,15 @@
         .hobby-card {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: #fff;
-            padding: 25px 35px;
+            padding: 20px;
             border-radius: 15px;
             text-align: center;
-            width: 200px;
+            width: 180px;
             transition: all .3s ease
         }
 
         .hobby-card i {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 10px
         }
 
@@ -553,14 +552,14 @@
 
         .tools-grid {
             display: grid;
-            grid-template-columns: repeat(3, minmax(180px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
             margin-top: 25px
         }
 
         .tool-card {
             background: linear-gradient(135deg, #f8f9fa 0, #e9ecef 100%);
-            padding: 30px 20px;
+            padding: 25px 20px;
             border-radius: 15px;
             text-align: center;
             transition: all .3s ease;
@@ -592,8 +591,8 @@
         }
 
         .tool-icon {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             margin: 0 auto 15px;
             border-radius: 15px;
             padding: 10px;
@@ -637,7 +636,7 @@
         .achievement-card {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: #fff;
-            padding: 30px 20px;
+            padding: 25px 20px;
             border-radius: 15px;
             text-align: center;
             transition: all .3s ease;
@@ -673,20 +672,20 @@
         }
 
         .achievement-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
+            font-size: 2.5rem;
+            margin-bottom: 12px;
             filter: drop-shadow(0 5px 10px rgba(0, 0, 0, .2))
         }
 
         .achievement-number {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 700;
             margin-bottom: 5px;
             text-shadow: 0 2px 10px rgba(0, 0, 0, .2)
         }
 
         .achievement-label {
-            font-size: 1rem;
+            font-size: .9rem;
             opacity: .9
         }
 
@@ -1230,7 +1229,7 @@
 
         .visitor-main-box {
             background: linear-gradient(135deg, #667eea 0, #764ba2 100%);
-            padding: 35px 60px;
+            padding: 15px 30px;
             border-radius: 50px;
             box-shadow: 0 15px 40px rgba(102, 126, 234, .5);
             display: flex;
@@ -1369,7 +1368,7 @@
             }
 
             .tools-grid {
-                grid-template-columns: repeat(3, minmax(160px, 1fr))
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr))
             }
 
             .achievements-grid {
@@ -3092,7 +3091,7 @@
         }
 
         /* === Fix GitHub Stats Centering on Small Tablets (560px–765px) === */
-        @media (min-width: 560px) and (max-width: 765px) {
+            @media (min-width: 560px) and (max-width: 768px) {
             .github-stats {
                 text-align: center;
             }
@@ -3628,37 +3627,51 @@
                 <div class="skill-card completed stagger-item delay-1"><img
                         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
                         alt="SQL Database - Completed Course" class="tech-logo" loading="lazy">
-                    <h3>SQL</h3><span class="status-badge status-completed">Completed ✅</span>
+                    <div>
+                        <h3>SQL</h3><span class="status-badge status-completed">Completed ✅</span>
+                    </div>
                 </div>
                 <div class="skill-card completed stagger-item delay-2"><img
                         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
                         alt="Python Programming - Completed Course" class="tech-logo" loading="lazy">
-                    <h3>Python</h3><span class="status-badge status-completed">Completed ✅</span>
+                    <div>
+                        <h3>Python</h3><span class="status-badge status-completed">Completed ✅</span>
+                    </div>
                 </div>
                 <div class="skill-card completed stagger-item delay-3"><img
                         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
                         alt="HTML5 Markup - Completed Course" class="tech-logo" loading="lazy">
-                    <h3>HTML</h3><span class="status-badge status-completed">Completed ✅</span>
+                    <div>
+                        <h3>HTML</h3><span class="status-badge status-completed">Completed ✅</span>
+                    </div>
                 </div>
                 <div class="skill-card completed stagger-item delay-4"><img
                         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
                         alt="CSS3 Styling - Completed Course" class="tech-logo" loading="lazy">
-                    <h3>CSS</h3><span class="status-badge status-completed">Completed ✅</span>
+                    <div>
+                        <h3>CSS</h3><span class="status-badge status-completed">Completed ✅</span>
+                    </div>
                 </div>
-                    <div class="skill-card completed stagger-item delay-6"><img
+                <div class="skill-card completed stagger-item delay-6"><img
                         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
                         alt="JavaScript - Completed Course" class="tech-logo" loading="lazy">
+                    <div>
                         <h3>JavaScript</h3><span class="status-badge status-completed">Completed ✅</span>
+                    </div>
                 </div>
                  <div class="skill-card ongoing stagger-item delay-5"><img
                         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"
                         alt="Django Framework - Currently Learning" class="tech-logo" loading="lazy">
-                    <h3>Django</h3><span class="status-badge status-ongoing">Ongoing 🔄</span>
+                    <div>
+                        <h3>Django</h3><span class="status-badge status-ongoing">Ongoing 🔄</span>
+                    </div>
                 </div>
                 <div class="skill-card not-started stagger-item delay-7"><img
                         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
                         alt="Full Stack Projects - Not Started Yet" class="tech-logo" loading="lazy">
-                    <h3>Full Stack Projects</h3><span class="status-badge status-not-started">Not Started ❌</span>
+                    <div>
+                        <h3>Full Stack Projects</h3><span class="status-badge status-not-started">Not Started ❌</span>
+                    </div>
                 </div>
             </div>
         </section>
