@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- new code -->
+
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9976V7XWW5"></script>
     <script>function gtag() { dataLayer.push(arguments) } window.dataLayer = window.dataLayer || [], gtag("js", new Date), gtag("config", "G-9976V7XWW5")</script>
@@ -3026,6 +3027,31 @@
 
         .youtube-btn:hover {
             box-shadow: 0 8px 25px rgba(204, 0, 0, .5)
+        }
+
+        /* LeetCode */
+        .leetcode-btn {
+            background: rgba(15, 23, 42, 0.85);
+        }
+
+        .leetcode-btn:hover {
+            border-color: rgba(255, 184, 0, 0.6);
+            box-shadow: 0 12px 30px rgba(255, 184, 0, 0.35), inset 0 0 14px rgba(255, 184, 0, 0.18);
+        }
+
+        .leetcode-btn:hover i {
+            color: #fbbf24;
+        }
+
+        .leetcode-btn svg {
+            width: 24px;
+            height: 24px;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .leetcode-btn:hover svg {
+            color: #ffffff;
         }
 
         #cmdModal {
@@ -7905,7 +7931,17 @@
             href="https://www.linkedin.com/in/alaguvel2410" target="_blank" rel="noopener noreferrer"
             class="fixed-social-btn linkedin-btn" title="LinkedIn Profile"><i class="fab fa-linkedin-in"></i> </a><a
             href="https://www.youtube.com/@alaguvel2410" target="_blank" rel="noopener noreferrer"
-            class="fixed-social-btn youtube-btn" title="YouTube Channel"><i class="fab fa-youtube"></i></a></div>
+            class="fixed-social-btn youtube-btn" title="YouTube Channel"><i class="fab fa-youtube"></i></a>
+        <a href="https://leetcode.com/u/alaguvel2410/" target="_blank" rel="noopener noreferrer"
+            class="fixed-social-btn leetcode-btn" title="LeetCode Profile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                style="color: var(--text-secondary); transition: color 0.3s ease;">
+                <path
+                    d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a1.374 1.374 0 0 0 0 1.943l3.854 4.126 5.406 5.788a1.374 1.374 0 0 0 1.922 0l5.406-5.788 3.854-4.126a1.374 1.374 0 0 0 0-1.943l-3.854-4.126-5.406-5.788A1.374 1.374 0 0 0 13.483 0zm-1.973 3.557l4.528 4.848 3.123 3.345-3.123 3.345-4.528 4.848-4.528-4.848-3.123-3.345 3.123-3.345 4.528-4.848z" />
+            </svg>
+        </a>
+    </div>
+
     <div id="cmdModal">
         <div class="cmd-title">C:\Windows\System32\cmd.exe</div>
         <pre id="cmdScreen" class="cmd-screen"></pre>
@@ -7913,7 +7949,7 @@
                 id="cmdInput" aria-label="Terminal input" autocomplete="off" spellcheck="false"> <button id="cmdSubmit"
                 aria-label="Submit command" style="display:none"></button></div>
     </div>
-    <script>!function () { if (window.matchMedia("(hover: none) and (pointer: coarse)").matches) return; const e = document.getElementById("cursorMain"), t = document.getElementById("cursorTrail"), n = document.getElementById("cursorDot"); if (!e || !t || !n) return; const a = document.createElement("div"); a.className = "cursor-label", a.id = "cursorLabel", document.body.appendChild(a); let i = window.innerWidth / 2, o = window.innerHeight / 2, s = i, r = o, c = i, l = o, d = i, u = o; let m = !1, p = null; function g(e, t, n) { return e + (t - e) * n } document.addEventListener("mousemove", a => { i = a.clientX, o = a.clientY, m || (m = !0, e.classList.remove("cursor-hidden"), t.classList.remove("cursor-hidden"), n.classList.remove("cursor-hidden")) }), document.addEventListener("mouseleave", () => { e.classList.add("cursor-hidden"), t.classList.add("cursor-hidden"), n.classList.add("cursor-hidden"), a.classList.remove("visible"), m = !1 }), document.addEventListener("mouseenter", () => { e.classList.remove("cursor-hidden"), t.classList.remove("cursor-hidden"), n.classList.remove("cursor-hidden"), m = !0 }), document.addEventListener("mousedown", () => { e.classList.add("clicking"), t.classList.add("clicking") }), document.addEventListener("mouseup", () => { e.classList.remove("clicking"), t.classList.remove("clicking") }); const f = ["a", "button", ".nav-link-item", ".fixed-social-btn", ".achievement-card", ".project-card", ".skill-card", ".tool-card", ".hobby-card", ".hobby-card", ".btn-primary", ".btn-secondary", ".back-to-home", ".apply-btn", ".duration-card", ".nav-cta", ".hero-contact-item", ".goals-tag", ".tech-tag", "input", "textarea", "select", ".exp-edu-card", ".footer-social a", "#cmdModal input", ".cmd-input-line"].join(", "), y = [{ selector: ".btn-primary", label: "Click" }, { selector: ".btn-secondary", label: "View" }, { selector: ".project-card", label: "Project" }, { selector: ".achievement-card", label: "Stats" }, { selector: ".fixed-social-btn.github-btn", label: "GitHub" }, { selector: ".fixed-social-btn.linkedin-btn", label: "LinkedIn" }, { selector: ".fixed-social-btn.youtube-btn", label: "YouTube" }, { selector: ".nav-cta", label: "Contact" }, { selector: ".back-to-home", label: "Back" }, { selector: ".tool-card", label: "Tool" }, { selector: ".skill-card", label: "Skill" }, { selector: ".hobby-card", label: "♟" }]; document.addEventListener("mouseover", n => { const i = n.target; if (!i || !i.closest) return; if (i.closest(f)) { e.classList.add("expand"), t.classList.add("expand"); const n = function (e) { for (const t of y) if (e.closest(t.selector)) return t.label; return "" }(i); n && (a.textContent = n, a.classList.add("visible")) } }), document.addEventListener("mouseout", n => { const i = n.target; if (!i || !i.closest) return; i.closest(f) && (e.classList.remove("expand"), t.classList.remove("expand"), a.classList.remove("visible")) }); document.querySelectorAll(".btn-primary, .btn-secondary, .fixed-social-btn, .nav-cta").forEach(e => { e.addEventListener("mousemove", function (e) { const t = this.getBoundingClientRect(), n = t.left + t.width / 2, a = t.top + t.height / 2, i = e.clientX - n, o = e.clientY - a; this.style.transform = `translate(${.3 * i}px, ${.3 * o}px)` }), e.addEventListener("mouseleave", function () { this.style.transform = "translate(0px, 0px)" }) }), function m() { s = g(s, i, .1), r = g(r, o, .1), c = g(c, i, .06), l = g(l, o, .06), d = g(d, i + 30, .08), u = g(u, o - 14, .08), e.style.left = i + "px", e.style.top = o + "px", t.style.left = s + "px", t.style.top = r + "px", n.style.left = c + "px", n.style.top = l + "px", a.style.left = d + "px", a.style.top = u + "px", p = requestAnimationFrame(m) }(), window.addEventListener("beforeunload", () => { p && cancelAnimationFrame(p) }) }(), window.addEventListener("scroll", () => { window.scrollY > 40 ? navbar.classList.add("scrolled") : navbar.classList.remove("scrolled") }); const hamburger = document.getElementById("hamburger"), mobileMenu = document.getElementById("mobileMenu");
+    <script>!function () { if (window.matchMedia("(hover: none) and (pointer: coarse)").matches) return; const e = document.getElementById("cursorMain"), t = document.getElementById("cursorTrail"), n = document.getElementById("cursorDot"); if (!e || !t || !n) return; const a = document.createElement("div"); a.className = "cursor-label", a.id = "cursorLabel", document.body.appendChild(a); let i = window.innerWidth / 2, o = window.innerHeight / 2, s = i, r = o, c = i, l = o, d = i, u = o; let m = !1, p = null; function g(e, t, n) { return e + (t - e) * n } document.addEventListener("mousemove", a => { i = a.clientX, o = a.clientY, m || (m = !0, e.classList.remove("cursor-hidden"), t.classList.remove("cursor-hidden"), n.classList.remove("cursor-hidden")) }), document.addEventListener("mouseleave", () => { e.classList.add("cursor-hidden"), t.classList.add("cursor-hidden"), n.classList.add("cursor-hidden"), a.classList.remove("visible"), m = !1 }), document.addEventListener("mouseenter", () => { e.classList.remove("cursor-hidden"), t.classList.remove("cursor-hidden"), n.classList.remove("cursor-hidden"), m = !0 }), document.addEventListener("mousedown", () => { e.classList.add("clicking"), t.classList.add("clicking") }), document.addEventListener("mouseup", () => { e.classList.remove("clicking"), t.classList.remove("clicking") }); const f = ["a", "button", ".nav-link-item", ".fixed-social-btn", ".achievement-card", ".project-card", ".skill-card", ".tool-card", ".hobby-card", ".hobby-card", ".btn-primary", ".btn-secondary", ".back-to-home", ".apply-btn", ".duration-card", ".nav-cta", ".hero-contact-item", ".goals-tag", ".tech-tag", "input", "textarea", "select", ".exp-edu-card", ".footer-social a", "#cmdModal input", ".cmd-input-line"].join(", "), y = [{ selector: ".btn-primary", label: "Click" }, { selector: ".btn-secondary", label: "View" }, { selector: ".project-card", label: "Project" }, { selector: ".achievement-card", label: "Stats" }, { selector: ".fixed-social-btn.github-btn", label: "GitHub" }, { selector: ".fixed-social-btn.linkedin-btn", label: "LinkedIn" }, { selector: ".fixed-social-btn.youtube-btn", label: "YouTube" }, { selector: ".fixed-social-btn.leetcode-btn", label: "LeetCode" }, { selector: ".nav-cta", label: "Contact" }, { selector: ".back-to-home", label: "Back" }, { selector: ".tool-card", label: "Tool" }, { selector: ".skill-card", label: "Skill" }, { selector: ".hobby-card", label: "♟" }]; document.addEventListener("mouseover", n => { const i = n.target; if (!i || !i.closest) return; if (i.closest(f)) { e.classList.add("expand"), t.classList.add("expand"); const n = function (e) { for (const t of y) if (e.closest(t.selector)) return t.label; return "" }(i); n && (a.textContent = n, a.classList.add("visible")) } }), document.addEventListener("mouseout", n => { const i = n.target; if (!i || !i.closest) return; i.closest(f) && (e.classList.remove("expand"), t.classList.remove("expand"), a.classList.remove("visible")) }); document.querySelectorAll(".btn-primary, .btn-secondary, .fixed-social-btn, .nav-cta").forEach(e => { e.addEventListener("mousemove", function (e) { const t = this.getBoundingClientRect(), n = t.left + t.width / 2, a = t.top + t.height / 2, i = e.clientX - n, o = e.clientY - a; this.style.transform = `translate(${.3 * i}px, ${.3 * o}px)` }), e.addEventListener("mouseleave", function () { this.style.transform = "translate(0px, 0px)" }) }), function m() { s = g(s, i, .1), r = g(r, o, .1), c = g(c, i, .06), l = g(l, o, .06), d = g(d, i + 30, .08), u = g(u, o - 14, .08), e.style.left = i + "px", e.style.top = o + "px", t.style.left = s + "px", t.style.top = r + "px", n.style.left = c + "px", n.style.top = l + "px", a.style.left = d + "px", a.style.top = u + "px", p = requestAnimationFrame(m) }(), window.addEventListener("beforeunload", () => { p && cancelAnimationFrame(p) }) }(), window.addEventListener("scroll", () => { window.scrollY > 40 ? navbar.classList.add("scrolled") : navbar.classList.remove("scrolled") }); const hamburger = document.getElementById("hamburger"), mobileMenu = document.getElementById("mobileMenu");
         function closeMobileMenu() { hamburger.classList.remove("open"), mobileMenu.classList.remove("open") }
         function toggleMenu() { hamburger.classList.toggle("open"); mobileMenu.classList.toggle("open"); }
         hamburger.addEventListener("click", toggleMenu);
