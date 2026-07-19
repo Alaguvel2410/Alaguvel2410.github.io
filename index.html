@@ -2859,37 +2859,9 @@
             line-height: 1
         }
 
-        .visitor-info-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-            max-width: 560px;
-            width: 100%;
-            margin: 0 auto
-        }
-
-        .visitor-info-item {
-            background: rgba(14, 165, 233, .07);
-            border: 1px solid rgba(14, 165, 233, .15);
-            padding: 14px;
-            border-radius: var(--radius-md);
-            text-align: center
-        }
-
         .visitor-info-item.alt {
             background: rgba(99, 102, 241, .07);
             border-color: rgba(99, 102, 241, .15)
-        }
-
-        .visitor-info-emoji {
-            font-size: 1.4rem;
-            margin-bottom: 5px
-        }
-
-        .visitor-info-label {
-            font-size: .78rem;
-            color: var(--text-muted);
-            font-weight: 600
         }
 
         .visitor-loading {
@@ -4753,11 +4725,6 @@
                 gap: 16px
             }
 
-            .visitor-info-grid {
-                grid-template-columns: 1fr;
-                gap: 10px
-            }
-
             .visitor-count-number {
                 font-size: 2.6rem
             }
@@ -5222,10 +5189,6 @@
             .section {
                 padding: 24px 20px;
                 margin-bottom: 16px
-            }
-
-            .visitor-info-grid {
-                grid-template-columns: repeat(3, 1fr)
             }
 
             .skills-grid {
@@ -6484,20 +6447,6 @@
             backdrop-filter: blur(8px);
         }
 
-        /* info grid items below themed*/
-        .visitor-info-item {
-            background: rgba(14, 165, 233, 0.06);
-            border: 1px solid rgba(14, 165, 233, 0.15);
-            transition: all 0.3s ease;
-        }
-
-        .visitor-info-item:hover {
-            background: rgba(14, 165, 233, 0.12);
-            border-color: rgba(14, 165, 233, 0.3);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 18px rgba(14, 165, 233, 0.15);
-        }
-
         .visitor-info-item.alt {
             background: rgba(99, 102, 241, 0.06);
             border-color: rgba(99, 102, 241, 0.15);
@@ -6507,13 +6456,6 @@
             background: rgba(99, 102, 241, 0.12);
             border-color: rgba(99, 102, 241, 0.3);
             box-shadow: 0 6px 18px rgba(99, 102, 241, 0.15);
-        }
-
-        .visitor-info-label {
-            color: var(--text-secondary) !important;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            letter-spacing: 0.3px;
         }
 
         .visitor-text {
@@ -6723,18 +6665,6 @@
             }
         }
 
-        .visitor-info-item {
-            background: rgba(30, 41, 59, 0.55) !important;
-            border: 1px solid var(--border-glass) !important;
-            border-radius: var(--radius-md) !important;
-            padding: 16px 12px !important;
-            text-align: center;
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-        }
-
         .visitor-info-item::before {
             content: '';
             position: absolute;
@@ -6751,97 +6681,10 @@
             opacity: 1;
         }
 
-        .visitor-info-item:hover {
-            transform: translateY(-4px);
-            border-color: rgba(14, 165, 233, 0.3) !important;
-            background: rgba(14, 165, 233, 0.06) !important;
-            box-shadow: 0 8px 24px rgba(14, 165, 233, 0.15);
-        }
-
         .visitor-info-item.alt:hover {
             border-color: rgba(99, 102, 241, 0.3) !important;
             background: rgba(99, 102, 241, 0.06) !important;
             box-shadow: 0 8px 24px rgba(99, 102, 241, 0.15);
-        }
-
-        /* ── Icon badge ── */
-        .visitor-info-emoji {
-            display: inline-flex !important;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            margin: 0 auto 10px;
-            border-radius: 12px;
-            background: rgba(14, 165, 233, 0.1);
-            border: 1px solid rgba(14, 165, 233, 0.2);
-            box-shadow:
-                0 4px 14px rgba(14, 165, 233, 0.12),
-                inset 0 0 10px rgba(14, 165, 233, 0.05);
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            font-size: 1.2rem !important;
-        }
-
-        .visitor-info-emoji i {
-            background: var(--gradient-main);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
-            font-size: 1.15rem;
-            filter: drop-shadow(0 2px 6px rgba(14, 165, 233, 0.4));
-            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .visitor-info-item.alt .visitor-info-emoji {
-            background: rgba(99, 102, 241, 0.1);
-            border-color: rgba(99, 102, 241, 0.2);
-            box-shadow:
-                0 4px 14px rgba(99, 102, 241, 0.12),
-                inset 0 0 10px rgba(99, 102, 241, 0.05);
-        }
-
-        .visitor-info-item.alt .visitor-info-emoji i {
-            background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
-            filter: drop-shadow(0 2px 6px rgba(99, 102, 241, 0.4));
-        }
-
-        .visitor-info-item:hover .visitor-info-emoji {
-            transform: scale(1.08) translateY(-2px);
-            border-color: rgba(14, 165, 233, 0.4);
-            background: rgba(14, 165, 233, 0.14);
-        }
-
-        .visitor-info-item:hover .visitor-info-emoji i {
-            transform: scale(1.1) rotate(5deg);
-            filter: drop-shadow(0 4px 10px rgba(14, 165, 233, 0.7));
-        }
-
-        .visitor-info-item.alt:hover .visitor-info-emoji {
-            border-color: rgba(99, 102, 241, 0.4);
-            background: rgba(99, 102, 241, 0.14);
-        }
-
-        .visitor-info-item.alt:hover .visitor-info-emoji i {
-            filter: drop-shadow(0 4px 10px rgba(99, 102, 241, 0.7));
-        }
-
-        /* ── Label text ── */
-        .visitor-info-label {
-            color: var(--text-secondary) !important;
-            font-family: 'Inter', sans-serif !important;
-            font-size: 0.78rem !important;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-            transition: color 0.3s ease;
-        }
-
-        .visitor-info-item:hover .visitor-info-label {
-            color: var(--text-primary) !important;
         }
 
    /* "THANKS FOR VISITING " text Theme */
@@ -6902,20 +6745,6 @@
 
         /* ══ Responsive ══ */
         @media (max-width: 768px) {
-            .visitor-info-emoji {
-                width: 40px;
-                height: 40px;
-                border-radius: 11px;
-            }
-
-            .visitor-info-emoji i {
-                font-size: 1.05rem;
-            }
-
-            .visitor-info-label {
-                font-size: 0.74rem !important;
-            }
-
             .visitor-text {
                 font-size: 0.85rem !important;
                 padding: 9px 18px;
@@ -6923,25 +6752,6 @@
         }
 
         @media (max-width: 480px) {
-            .visitor-info-item {
-                padding: 14px 10px !important;
-            }
-
-            .visitor-info-emoji {
-                width: 36px;
-                height: 36px;
-                border-radius: 10px;
-                margin-bottom: 8px;
-            }
-
-            .visitor-info-emoji i {
-                font-size: 0.95rem;
-            }
-
-            .visitor-info-label {
-                font-size: 0.7rem !important;
-            }
-
             .visitor-text {
                 font-size: 0.8rem !important;
                 padding: 8px 16px;
@@ -6950,17 +6760,8 @@
         }
 
         @media (max-width: 380px) {
-            .visitor-info-emoji {
-                width: 32px;
-                height: 32px;
-            }
-
             .visitor-info-emoji i {
                 font-size: 0.85rem;
-            }
-
-            .visitor-info-label {
-                font-size: 0.65rem !important;
             }
         }
 
@@ -7657,21 +7458,6 @@
                                 </div>
                             </div><i class="fas fa-chart-line visitor-side-icon"></i>
                         </div>
-                        <div class="visitor-info-grid">
-                            <div class="visitor-info-item">
-                                <div class="visitor-info-emoji"><i class="fas fa-star"></i></div>
-                                <div class="visitor-info-label">Quality Views</div>
-                            </div>
-                            <div class="visitor-info-item alt">
-                                <div class="visitor-info-emoji"><i class="fas fa-chart-line"></i></div>
-                                <div class="visitor-info-label">Growing Daily</div>
-                            </div>
-                            <div class="visitor-info-item">
-                                <div class="visitor-info-emoji"><i class="fas fa-user-tie"></i></div>
-                                <div class="visitor-info-label">Recruiters</div>
-                            </div>
-                        </div>
-                    </div>
                     <p class="visitor-text">
                         <i class="fas fa-hands-clapping"></i>
                         Thanks for visiting my portfolio
